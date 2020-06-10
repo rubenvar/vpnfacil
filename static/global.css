@@ -1,11 +1,15 @@
 :root {
   --maxWidth: 1200px;
+
+  --purpleLight: hsl(270, 60%, 80%);
+  --purple: hsl(270, 70%, 70%);
+  --purpleDark: hsl(270, 80%, 50%);
 }
 
 body {
   margin: 0;
-  font-family: Quicksand, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 14px;
   line-height: 1.5;
   color: #333;

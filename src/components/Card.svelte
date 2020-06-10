@@ -6,7 +6,6 @@
   const {
     name,
     id,
-    description,
     color,
     logo,
     link,
@@ -35,6 +34,8 @@
     countries,
     countriesPlus
   };
+  // format languages, platforms from string to array
+  // TODO maybe do it in the API (lambda)
   const languages = uiLanguage
     .replace(/ /g, "")
     .replace("english", "inglés")
@@ -46,7 +47,8 @@
 <style>
   div {
     padding: 20px 15px;
-    border: 2px solid #abd;
+    /* border: 2px solid #abd; */
+    border: 2px solid var(--purpleLight);
     border-radius: 15px;
     color: #444;
   }
@@ -55,7 +57,8 @@
     font-size: 24px;
     margin: 0 0 24px;
     text-align: center;
-    font-weight: 500;
+    /* font-weight: 500; */
+    font-family: "Gill Sans";
   }
 
   ul li {
@@ -77,6 +80,10 @@
     margin-left: 10px;
   }
 
+  .tag {
+    font-weight: 300;
+  }
+
   .language,
   .platform {
     margin: 0 2px;
@@ -84,19 +91,14 @@
     padding: 1px;
     border-radius: 3px;
   }
-
-  .description {
-    white-space: pre-line;
-    color: #aaa;
-  }
 </style>
 
 <div {id} style="--border-color: {color}">
   <h2>{name}</h2>
 
-  <!-- {#if rating}
+  {#if rating}
     <StarRating {id} {rating} />
-  {/if} -->
+  {/if}
 
   {#if logo}
     <img src={logo} alt="Logo de {name}" />
@@ -111,7 +113,10 @@
         <svg>
           <use href="#icon-desktop" />
         </svg>
-        <span>{devices} dispositivos</span>
+        <span>
+          {devices}
+          <span class="tag">dispositivos</span>
+        </span>
       </li>
     {/if}
 
@@ -121,7 +126,10 @@
           <use href="#icon-certificate" />
         </svg>
         <span>
-          Garantía de devolución{moneyBackDays ? ` ${moneyBackDays} días` : ''}
+          Garantía
+          <span class="tag">
+            de devolución{moneyBackDays ? ` ${moneyBackDays} días` : ''}
+          </span>
         </span>
       </li>
     {:else if moneyBack === 'no'}
@@ -129,7 +137,10 @@
         <svg>
           <use href="#icon-certificate" />
         </svg>
-        <span>Sin garantía de devolución</span>
+        <span>
+          Sin garantía
+          <span class="tag">de devolución</span>
+        </span>
       </li>
     {/if}
 
@@ -138,7 +149,10 @@
         <svg>
           <use href="#icon-translate" />
         </svg>
-        <span>Solo en {languages[0]}</span>
+        <span>
+          <span class="tag">Solo en</span>
+          {languages[0]}
+        </span>
       </li>
     {:else if languages.length >= 2}
       <li>
@@ -146,7 +160,7 @@
           <use href="#icon-translate" />
         </svg>
         <span>
-          Disponible en:
+          <span class="tag">Disponible en</span>
           {#each languages as lang}
             <span class="language">{lang}</span>
             {' '}
@@ -161,7 +175,7 @@
           <use href="#icon-dashboard" />
         </svg>
         <span>
-          Disponible para:
+          <span class="tag">Disponible para</span>
           {#each plats as plat}
             <span class="platform">{plat}</span>
             {' '}
@@ -182,7 +196,7 @@
         <svg>
           <use href="#icon-document-notes" />
         </svg>
-        <span>Puede que guarde logs...</span>
+        <span>Puede guardar logs</span>
       </li>
     {/if}
 
@@ -202,10 +216,6 @@
       </li>
     {/if}
 
-    <!-- {#if description}
-      <p class="description">{description}</p>
-    {/if} -->
-
     {#if link}
       <li>
         <svg>
@@ -216,5 +226,6 @@
         </span>
       </li>
     {/if}
+
   </ul>
 </div>

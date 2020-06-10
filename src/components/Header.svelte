@@ -17,10 +17,10 @@
   }
 
   .primary {
-    fill: hsl(270, 80%, 50%);
+    fill: var(--purpleDark);
   }
   .secondary {
-    fill: hsl(270, 70%, 70%);
+    fill: var(--purple);
   }
 </style>
 
