@@ -117,8 +117,11 @@
           <use href="#icon-desktop" />
         </svg>
         <span>
-          {devices}
-          <span class="tag">dispositivos</span>
+          {#if devices !== 'unlimited'}{devices}{/if}
+          <span class="tag">
+            {devices === 'unlimited' ? 'D' : 'd'}ispositivos
+          </span>
+          {#if devices === 'unlimited'}ilimitados{/if}
         </span>
       </li>
     {/if}
