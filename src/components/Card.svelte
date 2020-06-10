@@ -97,7 +97,10 @@
   <h2>{name}</h2>
 
   {#if rating}
-    <StarRating {id} {rating} />
+    <StarRating
+      {id}
+      rating={rating / 20}
+      config={{ fullColor: '#ffc107', showText: true }} />
   {/if}
 
   {#if logo}

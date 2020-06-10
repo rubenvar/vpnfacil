@@ -2,15 +2,17 @@
   export let full;
   // use vpn id in the 'half' gradient id to make it unique and avoid same gradient in all 'half' stars
   export let id;
-  // if (full !== 1 && full !== 0) console.log(full * 100);
-  const fullColor = "#ffc107";
-  const emptyColor = "#7f7f7f";
+  export let config;
+  const fullColor = config.fullColor || "#ffcf00";
+  const emptyColor = config.emptyColor || "#7f7f7f";
+  const width = config.size || "20px";
+  const height = width;
 </script>
 
 <style>
   svg {
-    width: 20px;
-    height: 20px;
+    width: var(--width);
+    height: var(--height);
     margin-right: 2px;
   }
 </style>
@@ -19,8 +21,9 @@
   xmlns="http://www.w3.org/2000/svg"
   width="249.748"
   viewBox="0 -10 187.673 179.503"
-  height="239.338">
-  <!-- if not whole nnumber, create gradient -->
+  height="239.338"
+  style="--width:{width};--height:{height}">
+  <!-- if not whole number, create gradient -->
   {#if full !== 1 && full !== 0}
     <defs>
       <linearGradient id="grad-{id}" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -31,7 +34,6 @@
         <stop
           offset="{full * 100}%"
           style="stop-color:{emptyColor};stop-opacity:1" />
-        <stop offset="100%" style="stop-color:{emptyColor};stop-opacity:1" />
       </linearGradient>
     </defs>
   {/if}
