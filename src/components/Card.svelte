@@ -1,5 +1,6 @@
 <script>
-  import StarRating from "./StarRating.svelte";
+  // import StarRating from "./StarRating.svelte";
+  import StarRating from "svelte-star-rating";
   import Numbers from "./Numbers.svelte";
   export let vpn;
 
