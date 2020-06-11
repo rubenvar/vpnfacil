@@ -1,5 +1,5 @@
 <script>
-  import Card from "./Card.svelte";
+  import Card from './Card.svelte';
   // import Filter from "./Filter.svelte";
   // import Sort from "./Sort.svelte";
 

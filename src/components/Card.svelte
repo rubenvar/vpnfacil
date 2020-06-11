@@ -1,7 +1,6 @@
 <script>
-  // import StarRating from "./StarRating.svelte";
-  import StarRating from "svelte-star-rating";
-  import Numbers from "./Numbers.svelte";
+  import StarRating from 'svelte-star-rating';
+  import Numbers from './Numbers.svelte';
   export let vpn;
 
   const {
@@ -38,11 +37,11 @@
   // format languages, platforms from string to array
   // TODO maybe do it in the API (lambda)
   const languages = uiLanguage
-    .replace(/ /g, "")
-    .replace("english", "inglés")
-    .replace("spanish", "español")
-    .split(",");
-  const plats = platforms.split(", ");
+    .replace(/ /g, '')
+    .replace('english', 'inglés')
+    .replace('spanish', 'español')
+    .split(',');
+  const plats = platforms.split(', ');
 </script>
 
 <style>
@@ -59,7 +58,7 @@
     margin: 0 0 24px;
     text-align: center;
     /* font-weight: 500; */
-    font-family: "Gill Sans";
+    font-family: 'Gill Sans';
   }
 
   ul li {

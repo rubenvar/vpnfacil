@@ -11,7 +11,7 @@
     countriesPlus
   } = numbers;
 
-  const formatNumber = num => new Intl.NumberFormat("es-ES").format(num);
+  const formatNumber = num => new Intl.NumberFormat('es-ES').format(num);
 </script>
 
 <style>

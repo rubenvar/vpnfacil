@@ -16,7 +16,7 @@
     "dotenv": "^8.2.0",
     "polka": "next",
     "sirv": "^0.4.0",
-    "svelte-star-rating": "file:../../../../73 - Svelte Star Rating/src"
+    "svelte-star-rating": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

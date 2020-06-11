@@ -1,12 +1,12 @@
 <script>
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher } from 'svelte';
 
   const dispatch = createEventDispatcher();
 
-  let selected = "name";
+  let selected = 'name';
 
   function sort() {
-    dispatch("updateorder", selected);
+    dispatch('updateorder', selected);
   }
 </script>
 

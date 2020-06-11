@@ -5,3 +5,4 @@
 /__sapper__/
 /.vscode/
 .env
+.prettierrc

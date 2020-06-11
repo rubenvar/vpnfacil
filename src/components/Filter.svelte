@@ -1,12 +1,12 @@
 <script>
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher } from 'svelte';
 
   const dispatch = createEventDispatcher();
 
-  let selected = "all";
+  let selected = 'all';
 
   function updateFilter(event) {
-    dispatch("updatefilter", selected);
+    dispatch('updatefilter', selected);
   }
 </script>
 

@@ -7,7 +7,7 @@
 </script>
 
 <script>
-  import List from "../components/List.svelte";
+  import List from '../components/List.svelte';
 
   export let vpns;
 </script>
