@@ -12,6 +12,8 @@
   } = numbers;
 
   const formatNumber = num => new Intl.NumberFormat('es-ES').format(num);
+  const formatBigNumber = num =>
+    num > 1000 ? `${formatNumber(Math.round((num / 1000) * 10) / 10)}k` : num;
 </script>
 
 <style>
@@ -27,7 +29,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .numbers .num .tag {
@@ -39,26 +41,29 @@
 <div class="numbers">
   {#if countries}
     <span class="num">
-      {formatNumber(countries)}{countriesPlus ? '+' : ''}
+      <!-- {formatNumber(countries)}{countriesPlus ? '+' : ''} -->
+      {formatNumber(countries)}
       <span class="tag">países</span>
     </span>
   {/if}
   {#if servers}
     <span class="num">
-      {formatNumber(servers)}{serversPlus ? '+' : ''}
-      <span class="tag">servidores</span>
+      <!-- {formatNumber(servers)}{serversPlus ? '+' : ''} -->
+      {formatBigNumber(servers)}
+      <span class="tag">serv.</span>
     </span>
   {/if}
   {#if ips}
     <span class="num">
-      {formatNumber(ips)}{ipsPlus ? '+' : ''}
+      <!-- {formatNumber(ips)}{ipsPlus ? '+' : ''} -->
+      {formatBigNumber(ips)}
       <span class="tag">ips</span>
     </span>
   {/if}
   {#if locations}
     <span class="num">
       {formatNumber(locations)}
-      <span class="tag">ubicaciones</span>
+      <span class="tag">ubic.</span>
     </span>
   {/if}
 </div>
