@@ -47,10 +47,11 @@
 <style>
   div {
     padding: 20px 15px;
-    /* border: 2px solid #abd; */
+    padding: 20px 0 0;
     border: 2px solid var(--purpleLight);
     border-radius: 15px;
     color: #444;
+    overflow: hidden;
   }
 
   h2 {
@@ -62,6 +63,7 @@
   }
 
   ul li {
+    padding: 0 20px;
     display: flex;
     margin-bottom: 14px;
   }
@@ -91,17 +93,17 @@
     padding: 1px;
     border-radius: 3px;
   }
+
+  .go {
+    background-color: var(--purpleLight);
+    text-align: center;
+    border-radius: 0;
+    padding: 16px 0;
+  }
 </style>
 
 <div {id} style="--border-color: {color}">
   <h2>{name}</h2>
-
-  {#if rating}
-    <StarRating
-      {id}
-      rating={rating / 20}
-      config={{ fullColor: '#ffc107', showText: true }} />
-  {/if}
 
   {#if logo}
     <img src={logo} alt="Logo de {name}" />
@@ -110,6 +112,7 @@
   {#if countries || servers || ips || locations}
     <Numbers {numbers} />
   {/if}
+
   <ul>
     {#if devices}
       <li>
@@ -222,7 +225,7 @@
       </li>
     {/if}
 
-    {#if link}
+    <!-- {#if link}
       <li>
         <svg>
           <use href="#icon-globe" />
@@ -231,7 +234,27 @@
           <a href={link}>Ver más info</a>
         </span>
       </li>
-    {/if}
+    {/if} -->
 
+    {#if rating}
+      <StarRating
+        {id}
+        rating={rating / 20}
+        config={{ fullColor: '#ffc107', showText: true }}
+        style="justify-content: center;margin: 20px 0 30px;" />
+    {/if}
   </ul>
+
+  {#if link}
+    <a href={link}>
+      <div class="go">
+        <!-- <svg>
+          <use href="#icon-globe" />
+        </svg> -->
+        <!-- <span> -->
+        Ver más info
+        <!-- </span> -->
+      </div>
+    </a>
+  {/if}
 </div>
