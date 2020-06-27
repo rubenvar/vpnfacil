@@ -1,9 +1,11 @@
 :root {
   --maxWidth: 1200px;
 
-  --purpleLight: hsl(270, 60%, 90%);
+  --purpleLight: hsl(270, 70%, 90%);
   --purple: hsl(270, 70%, 70%);
   --purpleDark: hsl(270, 80%, 50%);
+
+  --cardRadius: 15px;
 }
 
 body {

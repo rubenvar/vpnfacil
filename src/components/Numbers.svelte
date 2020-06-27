@@ -18,7 +18,7 @@
   .numbers {
     display: flex;
     justify-content: space-around;
-    margin: 24px 0;
+    margin: 0;
     background-color: var(--purpleLight);
     padding: 15px 0;
   }

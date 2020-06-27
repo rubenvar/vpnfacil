@@ -45,21 +45,24 @@
 </script>
 
 <style>
-  div {
-    padding: 20px 15px;
-    padding: 20px 0 0;
+  .card {
     border: 2px solid var(--purpleLight);
-    border-radius: 15px;
+    border-radius: var(--cardRadius);
     color: #444;
     overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr auto 5fr auto;
   }
 
   h2 {
     font-size: 24px;
-    margin: 0 0 24px;
+    margin: 0;
     text-align: center;
-    /* font-weight: 500; */
     font-family: 'Gill Sans';
+    align-self: center;
+  }
+  ul {
+    margin: 24px 0;
   }
 
   ul li {
@@ -99,15 +102,20 @@
     text-align: center;
     border-radius: 0;
     padding: 16px 0;
+    transition: all 0.3s;
+  }
+
+  .go:hover {
+    background-color: var(--purple);
   }
 </style>
 
-<div {id} style="--border-color: {color}">
+<div {id} class="card" style="--border-color: {color}">
   <h2>{name}</h2>
 
-  {#if logo}
+  <!-- {#if logo}
     <img src={logo} alt="Logo de {name}" />
-  {/if}
+  {/if} -->
 
   {#if countries || servers || ips || locations}
     <Numbers {numbers} />
@@ -241,7 +249,7 @@
         {id}
         rating={rating / 20}
         config={{ fullColor: '#ffc107', showText: true }}
-        style="justify-content: center;margin: 20px 0 30px;" />
+        style="justify-content: center;margin: 20px 0 0;" />
     {/if}
   </ul>
 
