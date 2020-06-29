@@ -48,6 +48,11 @@
     overflow: hidden;
     display: grid;
     grid-template-rows: 1fr auto 5fr auto;
+    transition: all 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
   }
 
   h2 {
