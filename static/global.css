@@ -1,5 +1,6 @@
 :root {
   --maxWidth: 1200px;
+  --headerHeight: 56px;
 
   --purpleLight: hsl(270, 70%, 90%);
   --purple: hsl(270, 70%, 70%);

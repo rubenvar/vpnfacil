@@ -1,19 +1,28 @@
 <style>
   header {
-    border-bottom: 1px solid #dfdfdf;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    /* border-bottom: 1px solid #dfdfdf; */
+    height: var(--headerHeight);
+    padding: 0 2em;
+    display: grid;
+    align-items: center;
   }
 
   h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
       sans-serif;
-    font-size: 1.2rem;
+    font-size: 2rem;
     text-transform: uppercase;
     margin: 0;
+    font-family: 'Audiowide', cursive;
+  }
+
+  h1 a {
+    text-decoration: none;
+    opacity: 0.5;
+    transition: all 0.3s;
+  }
+  h1 a:hover {
+    opacity: 0.95;
   }
 
   .primary {
@@ -107,5 +116,7 @@
 </svg>
 
 <header>
-  <h1>VPN Fácil</h1>
+  <h1>
+    <a href="/">VPN Fácil</a>
+  </h1>
 </header>

@@ -1,5 +1,10 @@
 <script>
+  import { stores } from '@sapper/app';
   import Header from '../components/Header.svelte';
+  import Hero from '../components/Hero.svelte';
+
+  const { page } = stores();
+  $: route = $page.path;
 </script>
 
 <style>
@@ -15,6 +20,10 @@
 </style>
 
 <Header />
+
+{#if route === '/'}
+  <Hero />
+{/if}
 
 <main>
   <slot />
