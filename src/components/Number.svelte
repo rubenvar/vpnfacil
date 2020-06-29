@@ -20,6 +20,8 @@
   .num .tag {
     font-size: 15px;
     color: #666;
+    font-weight: 300;
+    line-height: 1;
   }
 </style>
 

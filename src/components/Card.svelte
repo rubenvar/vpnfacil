@@ -49,6 +49,9 @@
     display: grid;
     grid-template-rows: 1fr auto 5fr auto;
     transition: all 0.3s;
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
   }
 
   .card:hover {
@@ -57,10 +60,10 @@
 
   h2 {
     transition: all 0.3s;
-    font-size: 24px;
+    font-size: 28px;
     margin: 0;
     text-align: center;
-    font-family: 'Gill Sans';
+    font-family: 'Ubuntu', sans-serif;
     align-self: center;
   }
   .card:hover h2 {
@@ -96,7 +99,7 @@
 
   .language,
   .platform {
-    margin: 0 2px;
+    margin: 0 2px 2px;
     border: 1px solid #ddd;
     padding: 1px;
     border-radius: 3px;

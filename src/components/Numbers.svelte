@@ -10,10 +10,8 @@
 
 <style>
   .numbers {
-    /* display: flex;
-    justify-content: space-around; */
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     margin: 0;
     background-color: var(--purpleLight);
     padding: 15px 0;
