@@ -26,13 +26,9 @@
     noLogs
   } = vpn;
   const numbers = {
-    locations,
-    servers,
-    serversPlus,
-    ips,
-    ipsPlus,
     countries,
-    countriesPlus
+    servers,
+    ips
   };
   // format languages, platforms from string to array
   // TODO maybe do it in the API (lambda)
@@ -55,11 +51,15 @@
   }
 
   h2 {
+    transition: all 0.3s;
     font-size: 24px;
     margin: 0;
     text-align: center;
     font-family: 'Gill Sans';
     align-self: center;
+  }
+  .card:hover h2 {
+    color: var(--border-color);
   }
   ul {
     margin: 24px 0;
