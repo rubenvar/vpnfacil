@@ -53,8 +53,7 @@
     position: relative;
   }
 
-  .card:hover,
-  .card:focus {
+  .card:hover {
     transform: scale(1.02);
   }
 
@@ -65,6 +64,10 @@
     left: 10px;
     opacity: 0.65;
     border-radius: 20%;
+  }
+
+  .card:hover img {
+    opacity: 0.75;
   }
 
   h2 {
@@ -109,7 +112,6 @@
 
   .platform {
     margin: 2px 2px;
-    /* border: 1px solid #ddd; */
     background: #fafafa;
     padding: 1px 2px;
     border-radius: 5px;
@@ -117,7 +119,6 @@
   }
 
   .card a {
-    /* text-decoration: none; */
     transition: all 0.3s;
   }
   .card a:hover {

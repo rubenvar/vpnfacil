@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-  <title>VPN Fácil</title>
+  <title>Elige tu VPN y Navega con Seguridad – VPN Fácil</title>
 </svelte:head>
 
 <List {vpns} />

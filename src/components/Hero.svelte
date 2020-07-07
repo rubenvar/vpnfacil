@@ -1,5 +1,4 @@
 <script>
-  // import bg from '../../static/bg.jpg';
   import { scrollto } from 'svelte-scrollto';
 </script>
 
