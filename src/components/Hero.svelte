@@ -1,5 +1,6 @@
 <script>
   // import bg from '../../static/bg.jpg';
+  import { scrollto } from 'svelte-scrollto';
 </script>
 
 <style>
@@ -15,30 +16,70 @@
     padding: 2em;
     padding-top: calc(2em + var(--headerHeight));
     margin-top: calc(-1 * var(--headerHeight));
+    padding-bottom: 1.5em;
+    text-align: center;
   }
 
   p {
     color: white;
     font-size: 24px;
+    margin-top: 0;
+  }
+
+  .down {
+    width: 110px;
+    margin: 0 auto;
+  }
+
+  svg {
+    fill: white;
+    width: 60%;
+    height: 70px;
+    animation: down 2s infinite ease-in-out;
+  }
+
+  @keyframes down {
+    0% {
+      transform: translateY(0);
+    }
+    6% {
+      transform: translateY(10px);
+    }
+    12% {
+      transform: translateY(0);
+    }
+    18% {
+      transform: translateY(10px);
+    }
+    24% {
+      transform: translateY(0);
+    }
   }
 
   @media only screen and (min-width: 560px) {
     p {
       font-size: 42px;
-      margin-left: 5%;
-      max-width: 65%;
+      /* margin-left: 5%; */
+      /* max-width: 65%; */
     }
   }
 </style>
 
 <div class="hero">
   <p>
-    Para ser
+    Necesitas un VPN para ser
     <strong>libre</strong>
-    en internet, necesitas un VPN
+    en internet
   </p>
   <p>
     Hay muchas opciones, pero aquí lo tienes
     <strong>fácil</strong>
   </p>
+  <div class="down">
+    <a href="#" use:scrollto={'#main'}>
+      <svg>
+        <use href="#icon-down" />
+      </svg>
+    </a>
+  </div>
 </div>

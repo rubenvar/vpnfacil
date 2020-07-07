@@ -2,6 +2,7 @@
   import { stores } from '@sapper/app';
   import Header from '../components/Header.svelte';
   import Hero from '../components/Hero.svelte';
+  import Footer from '../components/Footer.svelte';
 
   const { page } = stores();
   $: route = $page.path;
@@ -12,7 +13,7 @@
     position: relative;
     max-width: calc(100vw);
     background-color: white;
-    /* background-color: var(--purpleLight); */
+    /* background-color: var(--primary100); */
     padding: 2em;
     margin: 0 auto;
     box-sizing: border-box;
@@ -25,6 +26,8 @@
   <Hero />
 {/if}
 
-<main>
+<main id="main">
   <slot />
 </main>
+
+<Footer />

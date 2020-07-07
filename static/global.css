@@ -2,9 +2,11 @@
   --maxWidth: 1200px;
   --headerHeight: 56px;
 
-  --purpleLight: hsl(270, 70%, 90%);
-  --purple: hsl(270, 70%, 70%);
-  --purpleDark: hsl(270, 80%, 50%);
+  --primary100: hsl(270, 70%, 90%);
+  --primary300: hsl(270, 70%, 80%);
+  --primary500: hsl(270, 70%, 70%);
+  --primary600: hsl(270, 70%, 60%);
+  --primary700: hsl(270, 80%, 50%);
 
   --cardRadius: 15px;
 }

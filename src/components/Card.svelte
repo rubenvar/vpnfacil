@@ -42,7 +42,7 @@
 
 <style>
   .card {
-    border: 2px solid var(--purpleLight);
+    border: 2px solid var(--primary300);
     border-radius: var(--cardRadius);
     color: #444;
     overflow: hidden;
@@ -67,7 +67,7 @@
     align-self: center;
   }
   .card:hover h2 {
-    color: var(--border-color);
+    color: var(--vpn-color);
   }
   ul {
     margin: 24px 0;
@@ -105,20 +105,30 @@
     border-radius: 3px;
   }
 
+  .card a {
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
   .go {
-    background-color: var(--purpleLight);
+    background-color: var(--primary100);
     text-align: center;
     border-radius: 0;
     padding: 16px 0;
     transition: all 0.3s;
   }
 
-  .go:hover {
-    background-color: var(--purple);
+  .card:hover .go {
+    background-color: var(--primary300);
+  }
+
+  .card:hover .go:hover {
+    background-color: var(--primary500);
+    color: white;
   }
 </style>
 
-<div {id} class="card" style="--border-color: {color}">
+<div {id} class="card" style="--vpn-color: {color}">
   <h2>{name}</h2>
 
   <!-- {#if logo}
@@ -241,17 +251,6 @@
       </li>
     {/if}
 
-    <!-- {#if link}
-      <li>
-        <svg>
-          <use href="#icon-globe" />
-        </svg>
-        <span>
-          <a href={link}>Ver más info</a>
-        </span>
-      </li>
-    {/if} -->
-
     {#if rating}
       <StarRating
         {id}
@@ -264,12 +263,7 @@
   {#if link}
     <a href={link}>
       <div class="go">
-        <!-- <svg>
-          <use href="#icon-globe" />
-        </svg> -->
-        <!-- <span> -->
-        Ver más info
-        <!-- </span> -->
+        <span>Ver más info</span>
       </div>
     </a>
   {/if}

@@ -26,10 +26,10 @@
   }
 
   .primary {
-    fill: var(--purpleDark);
+    fill: var(--primary700);
   }
   .secondary {
-    fill: var(--purple);
+    fill: var(--primary500);
   }
 </style>
 
@@ -90,6 +90,13 @@
       2-2zm0 2v10h16V4H4zm4 16a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v.59l.7.7A1 1 0 0 1
       16 23H8a1 1 0 0 1-.7-1.7l.7-.71V20z" />
     <path class="secondary" d="M2 14h20v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-2z" />
+  </symbol>
+  <!-- icon-down -->
+  <symbol viewBox="0 0 512 512" id="icon-down">
+    <path
+      d="M509.121 125.966a9.821 9.821 0 00-13.893 0L256.005 365.194 16.771
+      125.966a9.821 9.821 0 00-13.893 0 9.821 9.821 0 000 13.893l246.18
+      246.175a9.819 9.819 0 0013.893 0l246.17-246.175a9.821 9.821 0 000-13.893z" />
   </symbol>
   <!-- icon-globe -->
   <symbol viewBox="0 0 24 24" id="icon-globe">

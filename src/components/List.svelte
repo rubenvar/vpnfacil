@@ -41,7 +41,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 34px;
-    /* background-color: var(--purpleLight); */
+    /* background-color: var(--primary100); */
   }
 
   @media only screen and (min-width: 560px) {

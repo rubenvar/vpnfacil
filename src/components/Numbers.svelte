@@ -13,7 +13,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 0;
-    background-color: var(--purpleLight);
+    background-color: var(--primary100);
     padding: 15px 0;
   }
 </style>
