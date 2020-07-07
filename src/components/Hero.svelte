@@ -24,17 +24,22 @@
     color: white;
     font-size: 24px;
     margin-top: 0;
+    transition: font-size 0.3s;
   }
 
   .down {
-    width: 110px;
+    max-width: 110px;
     margin: 0 auto;
+  }
+
+  .down span:hover {
+    cursor: pointer;
   }
 
   svg {
     fill: white;
     width: 60%;
-    height: 70px;
+    height: 50px;
     animation: down 2s infinite ease-in-out;
   }
 
@@ -58,9 +63,24 @@
 
   @media only screen and (min-width: 560px) {
     p {
+      font-size: 32px;
+    }
+
+    svg {
+      width: 60%;
+      height: 70px;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    p {
+      font-size: 36px;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    p {
       font-size: 42px;
-      /* margin-left: 5%; */
-      /* max-width: 65%; */
     }
   }
 </style>
@@ -76,10 +96,10 @@
     <strong>fácil</strong>
   </p>
   <div class="down">
-    <a href="#" use:scrollto={'#main'}>
+    <span use:scrollto={'#main'}>
       <svg>
         <use href="#icon-down" />
       </svg>
-    </a>
+    </span>
   </div>
 </div>

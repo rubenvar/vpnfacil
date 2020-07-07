@@ -1,5 +1,6 @@
 .DS_Store
 IDEAS.md
+DOCS.md
 /node_modules/
 /src/node_modules/@sapper/
 /cypress/screenshots/

@@ -49,21 +49,31 @@
     display: grid;
     grid-template-rows: 1fr auto 5fr auto;
     transition: all 0.3s;
-    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
-      'Helvetica Neue', sans-serif;
+    font-family: var(--specialFont);
+    position: relative;
   }
 
-  .card:hover {
+  .card:hover,
+  .card:focus {
     transform: scale(1.02);
   }
 
+  img {
+    position: absolute;
+    width: 40px;
+    top: 10px;
+    left: 10px;
+    opacity: 0.65;
+    border-radius: 20%;
+  }
+
   h2 {
+    position: relative;
     transition: all 0.3s;
-    font-size: 28px;
+    font-size: 22px;
     margin: 0;
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--mainFont);
     align-self: center;
   }
   .card:hover h2 {
@@ -97,17 +107,21 @@
     font-weight: 300;
   }
 
-  .language,
   .platform {
-    margin: 0 2px 2px;
-    border: 1px solid #ddd;
-    padding: 1px;
-    border-radius: 3px;
+    margin: 2px 2px;
+    /* border: 1px solid #ddd; */
+    background: #fafafa;
+    padding: 1px 2px;
+    border-radius: 5px;
+    display: inline-block;
   }
 
   .card a {
-    text-decoration: none;
+    /* text-decoration: none; */
     transition: all 0.3s;
+  }
+  .card a:hover {
+    color: white;
   }
 
   .go {
@@ -124,16 +138,19 @@
 
   .card:hover .go:hover {
     background-color: var(--primary500);
-    color: white;
+  }
+
+  @media only screen and (min-width: 560px) {
+    h2 {
+      font-size: 28px;
+    }
   }
 </style>
 
 <div {id} class="card" style="--vpn-color: {color}">
-  <h2>{name}</h2>
+  <img src="/vpns/{id}.jpg" alt="Logo de {name}" />
 
-  <!-- {#if logo}
-    <img src={logo} alt="Logo de {name}" />
-  {/if} -->
+  <h2>{name}</h2>
 
   {#if countries || servers || ips || locations}
     <Numbers {numbers} />
@@ -195,11 +212,11 @@
           <use href="#icon-translate" />
         </svg>
         <span>
-          <span class="tag">Disponible en</span>
+          <span class="tag">En</span>
           {#each languages as lang}
-            <span class="language">{lang}</span>
-            {' '}
+            <span>{lang}{', '}</span>
           {/each}
+          <span class="tag">etc.</span>
         </span>
       </li>
     {/if}
@@ -261,7 +278,7 @@
   </ul>
 
   {#if link}
-    <a href={link}>
+    <a href={link} target="_blank" title="Ir a {name}">
       <div class="go">
         <span>Ver más info</span>
       </div>

@@ -1,6 +1,5 @@
 <style>
   header {
-    /* border-bottom: 1px solid #dfdfdf; */
     height: var(--headerHeight);
     padding: 0 2em;
     display: grid;
@@ -8,28 +7,36 @@
   }
 
   h1 {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-      sans-serif;
-    font-size: 2rem;
-    text-transform: uppercase;
+    font-size: 26px;
+    /* text-transform: uppercase; */
     margin: 0;
     font-family: 'Audiowide', cursive;
+    text-align: center;
   }
 
   h1 a {
     text-decoration: none;
     opacity: 0.5;
     transition: all 0.3s;
+    color: var(--secondary300);
   }
   h1 a:hover {
     opacity: 0.95;
   }
 
   .primary {
-    fill: var(--primary700);
-  }
-  .secondary {
     fill: var(--primary500);
+  }
+
+  .secondary {
+    fill: var(--primary400);
+  }
+
+  @media only screen and (min-width: 560px) {
+    h1 {
+      font-size: 32px;
+      text-align: left;
+    }
   }
 </style>
 

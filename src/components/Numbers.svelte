@@ -10,6 +10,7 @@
 
 <style>
   .numbers {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 0;

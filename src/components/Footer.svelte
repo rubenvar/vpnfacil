@@ -8,7 +8,7 @@
   }
 
   p {
-    font-size: 15px;
+    font-size: 14px;
     margin: 0;
     color: hsl(272, 65%, 92%);
   }
@@ -19,7 +19,7 @@
 </style>
 
 <footer>
-  <p class="copy">Copyright ©2020 VPN Fácil – No me copies porfa</p>
+  <p class="copy">Copyright ©2020 VPN Fácil, no me copies porfa</p>
   <p>
     hecho con 🍌 por
     <a href="https://platanoplatano.com" target="_blank" title="2 plátanos">
