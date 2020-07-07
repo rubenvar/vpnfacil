@@ -1,39 +1,9 @@
 <script>
   import Card from './Card.svelte';
-  // import Filter from "./Filter.svelte";
-  // import Sort from "./Sort.svelte";
 
   export let vpns;
-  // vpns = vpns.sort((first, sec) => first.name > sec.name);
-  // export let sortedContent = vpns;
-
-  // function sortData(e) {
-  //   // const value = e.detail;
-  //   // console.log(value);
-  //   console.log(e.detail);
-  //   // Default by name
-  //   if (e.detail === "name") {
-  //     sortedContent = vpns.sort((first, sec) => first.name < sec.name);
-  //     // sortedContent = vpns.filter(item => item.name === "NordVPN");
-  //   }
-  //   // sortedContent = vpns.sort((first, sec) => first[value] < sec[value]);
-  //   // console.log(sortedContent);
-  // }
-  // function filterData(event) {
-  //   console.log(event.detail);
-  //   // Show all data
-  //   if (event.detail === "all") {
-  //     filteredContent = vpns;
-  //     // show filtered data
-  //   } else {
-  //     filteredContent = vpns.filter(vpn => vpn.name === event.detail);
-  //   }
-  // }
-  // sort alphabetically by vpn name
-  // vpns =
-  // console.log(vpns);
-  // create array for filtering
-  // export let filteredContent = vpns;
+  vpns = vpns.sort((first, sec) => first.name > sec.name);
+  export let sortedContent = vpns;
 </script>
 
 <style>
@@ -63,12 +33,9 @@
   }
 </style>
 
-<!-- <Filter on:updatefilter={filterData} /> -->
-<!-- <Sort on:updateorder={sortData} /> -->
-
 <div>
-  <!-- {#each filteredContent as vpn} -->
-  {#each vpns as vpn}
+  {#each sortedContent as vpn}
+    <!-- {#each vpns as vpn} -->
     <Card {vpn} />
   {/each}
 </div>
