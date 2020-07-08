@@ -10,6 +10,7 @@ import pkg from './package.json';
 
 require('dotenv').config();
 
+// to make .env variables work, first get the here from the .env file
 const mode = process.env.NODE_ENV;
 const endpoint = JSON.stringify(process.env.ENDPOINT);
 const dev = mode === 'development';
@@ -25,6 +26,7 @@ export default {
     input: config.client.input(),
     output: config.client.output(),
     plugins: [
+      // use the replace plugin to find calls to process.env and replace them with the variable (both here and in server below)
       replace({
         'process.browser': true,
         'process.env.NODE_ENV': JSON.stringify(mode),
