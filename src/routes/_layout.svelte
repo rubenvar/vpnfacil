@@ -1,10 +1,12 @@
 <script>
   import { stores } from '@sapper/app';
+  import GoogleAnalytics from '../components/GoogleAnalytics.svelte';
   import Header from '../components/Header.svelte';
   import Hero from '../components/Hero.svelte';
   import Footer from '../components/Footer.svelte';
 
   const { page } = stores();
+  // get path for conditionally loading the hero
   $: route = $page.path;
 </script>
 
@@ -19,6 +21,8 @@
     box-sizing: border-box;
   }
 </style>
+
+<GoogleAnalytics />
 
 <Header />
 
