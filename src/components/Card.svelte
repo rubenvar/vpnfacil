@@ -59,10 +59,11 @@
     top: 10px;
     left: 10px;
     border-radius: 20%;
-    /* filter: saturate(50%) brightness(150%); */
+    filter: saturate(50%) blur(0.75px) opacity(70%);
   }
 
   .card:hover img {
+    filter: saturate(75%) blur(0px) opacity(90%);
   }
 
   h2 {

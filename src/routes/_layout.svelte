@@ -5,6 +5,7 @@
   import Hero from '../components/Hero.svelte';
   import Footer from '../components/Footer.svelte';
 
+  const dev = process.env.NODE_ENV === 'development';
   const { page } = stores();
   // get path for conditionally loading the hero
   $: route = $page.path;
@@ -22,7 +23,9 @@
   }
 </style>
 
-<GoogleAnalytics />
+{#if !dev}
+  <GoogleAnalytics />
+{/if}
 
 <Header />
 
