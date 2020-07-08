@@ -10,13 +10,9 @@
     logo,
     link,
     rating,
-    locations,
     servers,
-    serversPlus,
     ips,
-    ipsPlus,
     countries,
-    countriesPlus,
     devices,
     moneyBack,
     moneyBackDays,
@@ -62,12 +58,11 @@
     width: 40px;
     top: 10px;
     left: 10px;
-    opacity: 0.65;
     border-radius: 20%;
+    /* filter: saturate(50%) brightness(150%); */
   }
 
   .card:hover img {
-    opacity: 0.75;
   }
 
   h2 {
@@ -153,7 +148,7 @@
 
   <h2>{name}</h2>
 
-  {#if countries || servers || ips || locations}
+  {#if countries || servers || ips}
     <Numbers {numbers} />
   {/if}
 
