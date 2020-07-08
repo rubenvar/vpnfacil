@@ -60,6 +60,7 @@
     left: 10px;
     border-radius: 20%;
     filter: saturate(50%) blur(0.75px) opacity(70%);
+    transition: all 0.3s;
   }
 
   .card:hover img {
