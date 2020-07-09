@@ -18,6 +18,8 @@
     moneyBackDays,
     uiLanguage,
     platforms,
+    browserPlugins,
+    browsers,
     p2p,
     noLogs
   } = vpn;
@@ -26,6 +28,7 @@
     servers,
     ips
   };
+
   // format languages, platforms from string to array
   // TODO maybe do it in the API (lambda)
   const languages = uiLanguage
@@ -33,7 +36,12 @@
     .replace('english', 'inglés')
     .replace('spanish', 'español')
     .split(',');
-  const plats = platforms.split(', ');
+
+  // make array of platforms (shorten if it's too big) and browsers together
+  let plats = platforms.split(', ');
+  if (plats.length > 6) plats = plats.slice(0, 6).concat('...');
+  const brows = browsers.split(', ');
+  plats = plats.concat(brows);
 </script>
 
 <style>
