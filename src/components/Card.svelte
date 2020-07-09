@@ -16,7 +16,7 @@
     devices,
     moneyBack,
     moneyBackDays,
-    uiLanguage,
+    appLanguage,
     platforms,
     browserPlugins,
     browsers,
@@ -31,17 +31,26 @@
 
   // format languages, platforms from string to array
   // TODO maybe do it in the API (lambda)
-  const languages = uiLanguage
-    .replace(/ /g, '')
-    .replace('english', 'inglés')
-    .replace('spanish', 'español')
-    .split(',');
+  let languages;
+  if (appLanguage && appLanguage.length) {
+    languages = appLanguage
+      .replace(/ /g, '')
+      .replace('english', 'inglés')
+      .replace('spanish', 'español')
+      .split(',');
+  }
 
-  // make array of platforms (shorten if it's too big) and browsers together
-  let plats = platforms.split(', ');
-  if (plats.length > 6) plats = plats.slice(0, 6).concat('...');
-  const brows = browsers.split(', ');
-  plats = plats.concat(brows);
+  function managePlatforms(platforms, browsers) {
+    // make array of platforms (shorten if it's too big) and browsers together
+    if (!platforms) return;
+    let plats = platforms.split(', ');
+    if (plats.length > 6) plats = plats.slice(0, 6).concat('...');
+    if (!browsers) return plats;
+    const brows = browsers.split(', ');
+    return plats.concat(brows);
+  }
+
+  const plats = managePlatforms(platforms, browsers);
 </script>
 
 <style>
@@ -202,7 +211,7 @@
       </li>
     {/if}
 
-    {#if languages.length === 1 && languages[0] !== ''}
+    {#if languages && languages.length === 1 && languages[0] !== ''}
       <li>
         <svg>
           <use href="#icon-translate" />
@@ -212,7 +221,7 @@
           {languages[0]}
         </span>
       </li>
-    {:else if languages.length >= 2}
+    {:else if languages && languages.length >= 2}
       <li>
         <svg>
           <use href="#icon-translate" />
@@ -227,7 +236,7 @@
       </li>
     {/if}
 
-    {#if plats.length > 0}
+    {#if plats && plats.length > 0}
       <li>
         <svg>
           <use href="#icon-dashboard" />
