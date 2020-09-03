@@ -21,9 +21,10 @@
 <footer>
   <p class="copy">Copyright ©2020 VPN Fácil, no me copies porfa</p>
   <p>
-    hecho con 🍌 por
+    Diseño web por
     <a href="https://platanoplatano.com" target="_blank" title="2 plátanos">
       platanoPlatano
     </a>
+    🍌
   </p>
 </footer>
