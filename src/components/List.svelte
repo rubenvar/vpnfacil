@@ -2,7 +2,14 @@
   import Card from './Card.svelte';
 
   export let vpns;
-  vpns = vpns.sort((first, sec) => first.name > sec.name);
+
+  vpns = vpns.sort((first, sec) => {
+    if (first.name > sec.name) {
+      return 1;
+    }
+    return -1;
+  });
+
   export let sortedContent = vpns;
 </script>
 

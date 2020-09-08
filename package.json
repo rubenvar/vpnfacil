@@ -1,6 +1,6 @@
 {
-  "name": "vpn-facil",
-  "version": "1.0.0",
+  "name": "vpnfacil",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "sapper dev",
