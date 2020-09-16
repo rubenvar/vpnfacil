@@ -293,7 +293,7 @@
   </ul>
 
   {#if link}
-    <a href={link} target="_blank" title="Ir a {name}">
+    <a href={link} target="_blank" title="Ir a {name}" rel="noopener nofollow">
       <div class="go">
         <span>Ver más info</span>
       </div>
