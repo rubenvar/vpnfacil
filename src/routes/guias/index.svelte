@@ -51,12 +51,11 @@
     color: var(--grey500);
     font-size: 19px;
     display: inline;
-    font-family: var(--mainFont);
   }
 </style>
 
 <svelte:head>
-  <title>Blog</title>
+  <title>Guías sobre VPN, Seguridad Online y más – VPN Fácil</title>
 </svelte:head>
 
 <div class="container">

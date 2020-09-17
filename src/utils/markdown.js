@@ -3,6 +3,7 @@ const prism = require('prismjs');
 const marked = require('marked');
 const matter = require('gray-matter');
 const formatDate = require('date-fns/format');
+const { es } = require('date-fns/locale');
 
 // Support JSX syntax highlighting
 require('prismjs/components/prism-jsx.min');
@@ -54,7 +55,9 @@ export default () => ({
     }
 
     const html = marked(content);
-    const printDate = formatDate(new Date(date), 'MMMM d, yyyy');
+    const printDate = formatDate(new Date(date), "d 'de' MMMM, yyyy", {
+      locale: es,
+    });
 
     const exportFromModule = JSON.stringify({
       title: title || slug,
