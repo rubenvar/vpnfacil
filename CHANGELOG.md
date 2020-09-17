@@ -9,11 +9,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 
 - Add blog functionality.
-- Add a /guias page. It will work as blog index.
+- Add a `/guias` page. It will work as blog index.
 
 ### Changed
 
-- Add a link to /guias in header.
+- Add a link to `/guias` in header (left it commented out for now).
+
+### Fixed
+
+- Fix casing in a VPN name.
+- Update a logo.
 
 ## [1.3.0] - 2020-09-16
 
