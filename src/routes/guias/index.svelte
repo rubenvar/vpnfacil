@@ -11,21 +11,47 @@
 </script>
 
 <style>
-  h2,
-  .post-item-footer {
-    font-family: Rubik, sans-serif;
+  .container {
+    max-width: var(--maxWidthBlog);
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 60px;
+  }
+
+  .post {
+    margin-bottom: 42px;
+  }
+
+  h2 {
+    font-family: var(--specialFont);
     font-weight: 700;
+    font-size: 22px;
+    display: inline;
   }
 
-  .post-item-date {
-    color: #aaa;
-    text-align: left;
-    text-transform: uppercase;
-    margin-right: 16px;
+  h2 a {
+    color: var(--primary600);
+    transition: all 0.3s;
+    text-decoration: none;
   }
 
-  hr {
-    margin: 60px auto;
+  h2 a:hover {
+    color: var(--secondary300);
+  }
+
+  span {
+    margin: 0 5px;
+  }
+
+  span,
+  .excerpt {
+    color: var(--grey500);
+    font-size: 19px;
+    display: inline;
+    font-family: var(--mainFont);
   }
 </style>
 
@@ -34,19 +60,16 @@
 </svelte:head>
 
 <div class="container">
-  <h1>Blog</h1>
-  {#each posts as post, index}
-    {#if index}
-      <hr />
-    {/if}
-    <div class="post-item">
+  <h1>Guías</h1>
+  {#each posts as post}
+    <div class="post">
       <h2>
         <a rel="prefetch" href="guias/{post.slug}">{post.title}</a>
       </h2>
-      <p>{post.excerpt}</p>
-      <div class="post-item-footer">
-        <span class="post-item-date">— {post.printDate}</span>
-      </div>
+      {#if post.excerpt}
+        <span>—</span>
+      {/if}
+      <p class="excerpt">{post.excerpt}</p>
     </div>
   {/each}
 </div>

@@ -5,7 +5,6 @@ const contents = JSON.stringify(
     title: post.title,
     slug: post.slug,
     excerpt: post.excerpt,
-    printDate: post.printDate,
   }))
 );
 

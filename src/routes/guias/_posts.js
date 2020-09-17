@@ -1,3 +1,4 @@
+// this syntax for import available thanks to 'rollup-plugin-glob'
 import all from '../../content/*.md';
 
 export default all
