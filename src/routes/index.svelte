@@ -7,13 +7,20 @@
 </script>
 
 <script>
-  import List from '../components/List.svelte';
-
   export let vpns;
+
+  import List from '../components/List.svelte';
+  import Sort from '../components/Sort.svelte';
+
+  // variable to pass selected option to List
+  let selectedSort;
+  // fn to get selected option from Sort
+  const onChange = obj => (selectedSort = obj);
 </script>
 
 <svelte:head>
   <title>Elige tu VPN y Navega con Seguridad – VPN Fácil</title>
 </svelte:head>
 
-<List {vpns} />
+<Sort {onChange} />
+<List {vpns} {selectedSort} />
