@@ -5,10 +5,6 @@
 
   // sorting type selected, coming from Sort component through index
   export let selectedSort = undefined;
-  $: if (selectedSort) {
-    console.log(`selected ${selectedSort.id}, with text ${selectedSort.text}`);
-  }
-
   let sortedContent;
 
   // default sort vpns for now, criteria will be passed from Sort
@@ -19,20 +15,16 @@
     return -1;
   });
 
-  $: if (selectedSort && selectedSort.id === 2) {
-    console.log('whaaat');
+  $: if (selectedSort) {
     vpns = vpns.sort((first, sec) => {
-      if (first.servers < sec.servers) {
-        return 1;
+      if (first[selectedSort.criteria] < sec[selectedSort.criteria]) {
+        return selectedSort.criteria === 'name' ? -1 : 1;
       }
-      return -1;
+      return selectedSort.criteria === 'name' ? 1 : -1;
     });
   }
 
-  $: {
-    sortedContent = vpns;
-    console.log(sortedContent);
-  }
+  $: sortedContent = vpns;
 </script>
 
 <style>
@@ -62,7 +54,7 @@
 </style>
 
 <div>
-  {#each sortedContent as vpn}
+  {#each sortedContent as vpn (vpn.id)}
     <Card {vpn} />
   {/each}
 </div>
