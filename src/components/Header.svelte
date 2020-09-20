@@ -4,8 +4,10 @@
 
 <style>
   header {
+    max-width: var(--maxWidth);
+    margin: 0 auto;
     height: var(--headerHeight);
-    padding: 0 2em;
+    padding: 0 var(--defSidePadding);
     display: grid;
     align-items: center;
     /* grid-template-columns: 1fr auto; */

@@ -34,7 +34,7 @@
   section {
     max-width: var(--maxWidth);
     margin: 0 auto;
-    padding: 0 2em;
+    padding: 0 var(--defSidePadding);
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 34px;
