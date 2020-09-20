@@ -3,6 +3,8 @@
   --headerHeight: 56px;
   --maxWidthBlog: 780px;
 
+  --defSidePadding: 30px;
+
   --grey500: hsl(160, 5%, 50%);
 
   --primary100: hsl(270, 90%, 90%);

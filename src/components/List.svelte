@@ -1,15 +1,16 @@
 <script>
   import Card from './Card.svelte';
+  import { sortCriteria } from '../stores';
 
   export let vpns;
 
-  // sorting type selected, coming from Sort component through index
-  export let selectedSort = undefined;
-  let sortedContent;
+  // get sorting criteria from store
+  let selectedSort = undefined;
+  sortCriteria.subscribe(val => (selectedSort = val));
 
-  // default sort vpns for now, criteria will be passed from Sort
+  // default sort vpns for first paint, until criteria is read from localStorage/default
   vpns = vpns.sort((first, sec) => {
-    if (first.name > sec.name) {
+    if (first.rating < sec.rating) {
       return 1;
     }
     return -1;
@@ -29,6 +30,9 @@
 
 <style>
   div {
+    max-width: var(--maxWidth);
+    margin: 0 auto;
+    padding: 0 2em;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 34px;
