@@ -54,7 +54,7 @@
 </script>
 
 <style>
-  .card {
+  article {
     border: 2px solid var(--primary300);
     border-radius: var(--cardRadius);
     color: #444;
@@ -66,7 +66,7 @@
     position: relative;
   }
 
-  .card:hover {
+  article:hover {
     transform: scale(1.02);
   }
 
@@ -80,7 +80,7 @@
     transition: all 0.3s;
   }
 
-  .card:hover img {
+  article:hover img {
     filter: saturate(75%) blur(0px) opacity(90%);
   }
 
@@ -93,7 +93,7 @@
     font-family: var(--mainFont);
     align-self: center;
   }
-  .card:hover h2 {
+  article:hover h2 {
     color: var(--vpn-color);
   }
   ul {
@@ -132,10 +132,10 @@
     display: inline-block;
   }
 
-  .card a {
+  article a {
     transition: all 0.3s;
   }
-  .card a:hover {
+  article a:hover {
     color: white;
   }
 
@@ -147,11 +147,11 @@
     transition: all 0.3s;
   }
 
-  .card:hover .go {
+  article:hover .go {
     background-color: var(--primary300);
   }
 
-  .card:hover .go:hover {
+  article:hover .go:hover {
     background-color: var(--primary500);
   }
 
@@ -162,7 +162,7 @@
   }
 </style>
 
-<div {id} class="card" style="--vpn-color: {color}">
+<article {id} style="--vpn-color: {color}">
   <img src="/vpns/{id}.jpg" alt="Logo de {name}" />
 
   <h2>{name}</h2>
@@ -299,4 +299,4 @@
       </div>
     </a>
   {/if}
-</div>
+</article>

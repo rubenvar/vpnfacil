@@ -1,8 +1,10 @@
 <script>
   import Card from './Card.svelte';
-  import { sortCriteria } from '../stores';
+  import { sortCriteria, totalVpns } from '../stores';
 
   export let vpns;
+  // set the total of vpns to store
+  totalVpns.set(vpns.length || 0);
 
   // get sorting criteria from store
   let selectedSort = undefined;
@@ -29,7 +31,7 @@
 </script>
 
 <style>
-  div {
+  section {
     max-width: var(--maxWidth);
     margin: 0 auto;
     padding: 0 2em;
@@ -39,26 +41,26 @@
   }
 
   @media only screen and (min-width: 660px) {
-    div {
+    section {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
   @media only screen and (min-width: 1024px) {
-    div {
+    section {
       grid-template-columns: repeat(3, 1fr);
     }
   }
 
   @media only screen and (min-width: 1280px) {
-    div {
+    section {
       grid-template-columns: repeat(4, 1fr);
     }
   }
 </style>
 
-<div>
+<section>
   {#each sortedContent as vpn (vpn.id)}
     <Card {vpn} />
   {/each}
-</div>
+</section>

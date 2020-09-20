@@ -1,23 +1,51 @@
 <script>
+  import { totalVpns } from '../stores';
   import Sort from '../components/Sort.svelte';
+  import Filter from '../components/Filter.svelte';
+
+  // get the total of vpns from store
+  let total = null;
+  totalVpns.subscribe(val => (total = val));
 </script>
 
 <style>
-  div {
+  header {
     background: white;
-    padding: var(--defSidePadding);
+    padding: 12px var(--defSidePadding) 15px var(--defSidePadding);
     margin: 0 0 30px;
-    border-bottom: 1px solid grey;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    align-items: start;
   }
+
+  header p {
+    margin: 0;
+    color: var(--grey500);
+    display: none;
+  }
+
   @media only screen and (min-width: 1024px) {
-    div {
+    header {
       position: sticky;
       top: 0;
       z-index: 999;
     }
   }
+
+  @media only screen and (min-width: 680px) {
+    header {
+      grid-template-columns: 1fr 1fr 3fr;
+    }
+    header p {
+      display: unset;
+    }
+  }
 </style>
 
-<div>
+<header>
+  <p>Estás viendo {total} VPNs</p>
   <Sort />
-</div>
+  <Filter />
+</header>
