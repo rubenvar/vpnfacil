@@ -4,15 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.5.0] - Unreleased
-
-### Added
-
-- 6 new VPNs added.
+## [1.5.1] - Unreleased
 
 ### Changed
 
 - Alphabetically sorting works with uppercase and lowercase
+
+## [1.5.0] - 2020-09-20
+
+### Added
+
+- 6 new VPNs added.
+- Sorting feature added. 4 options for now: rating (default), VPN name, server and country number.
+- Added a bar under Hero to host total VPN number, and sorting and future filtering features.
 
 ## [1.4.0] - 2020-09-17
 
