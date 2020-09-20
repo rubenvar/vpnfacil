@@ -7,6 +7,7 @@
 </script>
 
 <script>
+  import Bar from '../components/Bar.svelte';
   import List from '../components/List.svelte';
 
   export let vpns;
@@ -16,4 +17,5 @@
   <title>Elige tu VPN y Navega con Seguridad – VPN Fácil</title>
 </svelte:head>
 
+<Bar />
 <List {vpns} />

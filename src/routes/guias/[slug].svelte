@@ -28,7 +28,7 @@
     font-weight: 700;
   }
 
-  .post-header p {
+  header p {
     color: var(--grey500);
   }
 </style>
@@ -41,11 +41,11 @@
 </svelte:head>
 
 <div class="container">
-  <div class="post-header">
+  <header>
     <h1>{post.title}</h1>
     <p>Actualizado: {post.printDate}</p>
-  </div>
-  <article class="content">
+  </header>
+  <article>
     {@html post.html}
   </article>
 </div>

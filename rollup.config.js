@@ -17,10 +17,21 @@ const endpoint = JSON.stringify(process.env.ENDPOINT);
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
-const onwarn = (warning, onwarn) =>
-  (warning.code === 'CIRCULAR_DEPENDENCY' &&
-    /[/\\]@sapper[/\\]/.test(warning.message)) ||
-  onwarn(warning);
+const onwarn = (warning, onwarn) => {
+  // only for @sapper
+  const isCircularWarning =
+    warning.code === 'CIRCULAR_DEPENDENCY' &&
+    /[/\\]@sapper[/\\]/.test(warning.message);
+  // avoid a11y on:blur error messages
+  const isOnBlurInsteadOfOnChangeWarning =
+    warning.code === 'PLUGIN_WARNING' &&
+    warning.pluginCode &&
+    warning.pluginCode === 'a11y-no-onchange';
+
+  return (
+    isCircularWarning || isOnBlurInsteadOfOnChangeWarning || onwarn(warning)
+  );
+};
 
 export default {
   client: {

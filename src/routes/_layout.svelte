@@ -15,10 +15,10 @@
   main {
     position: relative;
     /* max-width: calc(100vw); */
-    max-width: var(--maxWidth);
+    /* max-width: var(--maxWidth); */
     background-color: white;
-    padding: 2em;
-    margin: 0 auto;
+    /* padding: 2em; */
+    /* margin: 0 auto; */
     box-sizing: border-box;
   }
 </style>
