@@ -20,13 +20,18 @@
   // });
 
   $: if (selectedSort) {
-    vpns = vpns.sort((first, sec) => {
-      if (first[selectedSort.criteria] < sec[selectedSort.criteria]) {
-        return selectedSort.criteria === 'name' ? -1 : 1;
+    vpns = vpns.sort((a, b) => {
+      let first = a[selectedSort.criteria];
+      let sec = b[selectedSort.criteria];
+
+      if (selectedSort.criteria === 'name') {
+        // invert order for alphabetical
+        first = b.name.toLowerCase();
+        sec = a.name.toLowerCase();
       }
-      if (first[selectedSort.criteria] > sec[selectedSort.criteria]) {
-        return selectedSort.criteria === 'name' ? 1 : -1;
-      }
+
+      if (first < sec) return 1;
+      if (first > sec) return -1;
       return 0;
     });
   }
