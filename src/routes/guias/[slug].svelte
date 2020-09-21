@@ -17,19 +17,30 @@
 </script>
 
 <style>
-  .container {
+  div {
     max-width: var(--maxWidthBlog);
     margin: 0 auto;
   }
 
+  header {
+    margin: 50px 0 40px;
+  }
+
   h1 {
-    margin-bottom: 0.7em;
+    margin-bottom: 12px;
     font-family: var(--specialFont);
-    font-weight: 700;
+    font-weight: 400;
+    color: var(--primary600);
   }
 
   header p {
-    color: var(--grey500);
+    color: var(--grey300);
+    margin: 0;
+  }
+
+  article {
+    font-size: 20px;
+    line-height: 1.65;
   }
 </style>
 
@@ -40,7 +51,7 @@
   <meta property="og:title" content={post.title} />
 </svelte:head>
 
-<div class="container">
+<div>
   <header>
     <h1>{post.title}</h1>
     <p>Actualizado: {post.printDate}</p>

@@ -49,8 +49,9 @@
   span,
   .excerpt {
     color: var(--grey500);
-    font-size: 19px;
+    font-size: 20px;
     display: inline;
+    line-height: 1.7;
   }
 </style>
 
