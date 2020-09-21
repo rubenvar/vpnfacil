@@ -2,6 +2,7 @@
   import StarRating from 'svelte-star-rating';
   import Numbers from './Numbers.svelte';
   export let vpn;
+  export let i;
 
   const {
     name,
@@ -65,6 +66,10 @@
     font-family: var(--specialFont);
     position: relative;
   }
+
+  /* article.emphasis {
+    box-shadow: 0 0 0 7px #ffcf00;
+  } */
 
   article:hover {
     transform: scale(1.02);
@@ -162,7 +167,7 @@
   }
 </style>
 
-<article {id} style="--vpn-color: {color}">
+<article {id} style="--vpn-color: {color}" class={i < 3 ? 'emphasis' : ''}>
   <img src="/vpns/{id}.jpg" alt="Logo de {name}" />
 
   <h2>{name}</h2>

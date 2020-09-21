@@ -11,14 +11,6 @@
   let selectedSort = undefined;
   sortCriteria.subscribe(val => (selectedSort = val));
 
-  // default sort vpns for first paint, until criteria is read from localStorage/default
-  // vpns = vpns.sort((first, sec) => {
-  //   if (first.rating < sec.rating) {
-  //     return 1;
-  //   }
-  //   return -1;
-  // });
-
   $: if (selectedSort) {
     vpns = vpns.sort((a, b) => {
       let first = a[selectedSort.criteria];
@@ -69,7 +61,7 @@
 </style>
 
 <section>
-  {#each sortedContent as vpn (vpn.id)}
-    <Card {vpn} />
+  {#each sortedContent as vpn, index (vpn.id)}
+    <Card {vpn} i={index} />
   {/each}
 </section>

@@ -1,6 +1,6 @@
 <script>
   import { totalVpns } from '../stores/state';
-  import Sort from '../components/Sort.svelte';
+  import SortSelect from '../components/SortSelect.svelte';
   import Filter from '../components/Filter.svelte';
 
   // get the total of vpns from store
@@ -53,7 +53,7 @@
 <header>
   <div>
     <p>Estás viendo {total} VPNs</p>
-    <Sort />
+    <SortSelect />
     <Filter />
   </div>
 </header>
