@@ -1,5 +1,5 @@
 <script>
-  import { totalVpns } from '../stores';
+  import { totalVpns } from '../stores/state';
   import Sort from '../components/Sort.svelte';
   import Filter from '../components/Filter.svelte';
 

@@ -1,6 +1,7 @@
 <script>
   import Card from './Card.svelte';
-  import { sortCriteria, totalVpns } from '../stores';
+  import { sortCriteria } from '../stores';
+  import { totalVpns } from '../stores/state';
 
   export let vpns;
   // set the total of vpns to store
@@ -11,19 +12,22 @@
   sortCriteria.subscribe(val => (selectedSort = val));
 
   // default sort vpns for first paint, until criteria is read from localStorage/default
-  vpns = vpns.sort((first, sec) => {
-    if (first.rating < sec.rating) {
-      return 1;
-    }
-    return -1;
-  });
+  // vpns = vpns.sort((first, sec) => {
+  //   if (first.rating < sec.rating) {
+  //     return 1;
+  //   }
+  //   return -1;
+  // });
 
   $: if (selectedSort) {
     vpns = vpns.sort((first, sec) => {
       if (first[selectedSort.criteria] < sec[selectedSort.criteria]) {
         return selectedSort.criteria === 'name' ? -1 : 1;
       }
-      return selectedSort.criteria === 'name' ? 1 : -1;
+      if (first[selectedSort.criteria] > sec[selectedSort.criteria]) {
+        return selectedSort.criteria === 'name' ? 1 : -1;
+      }
+      return 0;
     });
   }
 

@@ -11,13 +11,20 @@
 
   // get sorting criteria from store
   let selectedSortCriteria;
-  sortCriteria.subscribe(val => (selectedSortCriteria = val));
+  sortCriteria.subscribe(val => {
+    return (selectedSortCriteria = val);
+  });
 
+  // default by rating if nothing on localStorage (and for first paint)
+  let selected =
+    selectedSortCriteria !== null ? selectedSortCriteria : options[0];
   // store sorting crteria
-  $: selected = selectedSortCriteria;
+  // $: selected = selectedSortCriteria;
 
   // save selected to localStorage
-  const handleChange = () => sortCriteria.set(selected);
+  const handleChange = () => {
+    sortCriteria.set(selected);
+  };
 
   // send default sorting type on mount
   onMount(() => handleChange());
