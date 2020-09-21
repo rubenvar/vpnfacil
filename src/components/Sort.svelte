@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { sortCriteria } from '../stores';
+  import { sortCriteria, direction } from '../stores';
 
   const options = [
     { id: 1, text: 'Puntuación', criteria: 'rating' },
@@ -24,13 +24,23 @@
   // save selected to localStorage
   const handleChange = () => {
     sortCriteria.set(selected);
+    direction.set(true);
   };
 
   // send default sorting type on mount
   onMount(() => handleChange());
+
+  // manage sorting direction
+  let decrease;
+  direction.subscribe(val => (decrease = val));
+  const handleDirection = () => direction.set(!decrease);
 </script>
 
 <style>
+  .buttons {
+    display: flex;
+  }
+
   p {
     color: var(--grey500);
     margin: 0 0 5px;
@@ -66,28 +76,45 @@
   select::-ms-expand {
     display: none;
   }
-  select:hover {
+  select:hover,
+  button:hover {
     border-color: #888;
   }
-  select:focus {
+  select:focus,
+  button:focus {
     border-color: #aaa;
     /* box-shadow: 0 0 0 3px -moz-mac-focusring; */
-    box-shadow: 0 0 0 3px var(--secondary300);
+    box-shadow: 0 0 0 2px var(--secondary300);
     color: #222;
     outline: none;
   }
   select option {
     font-weight: normal;
   }
+
+  button {
+    margin-left: 12px;
+    color: #444;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0 10px;
+  }
 </style>
 
 <div>
   <p>Ordena</p>
-  <select bind:value={selected} on:change={handleChange}>
-    {#each options as option}
-      <option value={option} selected={option.id === selected.id}>
-        {option.text}
-      </option>
-    {/each}
-  </select>
+  <div class="buttons">
+    <select bind:value={selected} on:change={handleChange}>
+      {#each options as option}
+        <option value={option} selected={option.id === selected.id}>
+          {option.text}
+        </option>
+      {/each}
+    </select>
+    <button on:click={handleDirection}>{decrease ? '↑' : '↓'}</button>
+  </div>
 </div>

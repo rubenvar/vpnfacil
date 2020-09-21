@@ -1,6 +1,6 @@
 <script>
   import Card from './Card.svelte';
-  import { sortCriteria } from '../stores';
+  import { sortCriteria, direction } from '../stores';
   import { totalVpns } from '../stores/state';
 
   export let vpns;
@@ -10,6 +10,10 @@
   // get sorting criteria from store
   let selectedSort = undefined;
   sortCriteria.subscribe(val => (selectedSort = val));
+
+  // get sorting direction from store
+  let decrease = true;
+  direction.subscribe(val => (decrease = val));
 
   $: if (selectedSort) {
     vpns = vpns.sort((a, b) => {
@@ -22,8 +26,9 @@
         sec = a.name.toLowerCase();
       }
 
-      if (first < sec) return 1;
-      if (first > sec) return -1;
+      // invert according to direction
+      if (first < sec) return decrease ? 1 : -1;
+      if (first > sec) return decrease ? -1 : 1;
       return 0;
     });
   }
