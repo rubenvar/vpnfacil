@@ -6,7 +6,8 @@
     { id: 1, text: 'Puntuación', criteria: 'rating' },
     { id: 2, text: 'Servidores', criteria: 'servers' },
     { id: 3, text: 'Países', criteria: 'countries' },
-    { id: 4, text: 'Alfabético', criteria: 'name' }
+    { id: 4, text: 'Dispositivos', criteria: 'devices' },
+    { id: 5, text: 'Alfabético', criteria: 'name' }
   ];
 
   // get sorting criteria from store

@@ -26,6 +26,12 @@
         sec = a.name.toLowerCase();
       }
 
+      if (selectedSort.criteria === 'devices') {
+        // convert 'unlimited' string to big number
+        if (first === 'unlimited') first = 999;
+        if (sec === 'unlimited') sec = 999;
+      }
+
       // invert according to direction
       if (first < sec) return decrease ? 1 : -1;
       if (first > sec) return decrease ? -1 : 1;
