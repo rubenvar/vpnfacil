@@ -10,7 +10,7 @@
     padding: 0 var(--defSidePadding);
     display: grid;
     align-items: center;
-    /* grid-template-columns: 1fr auto; */
+    grid-template-columns: 1fr auto;
   }
 
   h1 {
@@ -30,29 +30,30 @@
     opacity: 0.95;
   }
 
-  /* nav {
+  nav {
     display: none;
+    font-size: 20px;
   }
 
   nav a {
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 30px;
     color: var(--primary300);
     transition: all 0.3s;
   }
 
   nav a:hover {
     color: var(--secondary300);
-  } */
+  }
 
   @media only screen and (min-width: 560px) {
     h1 {
       font-size: 32px;
       text-align: left;
     }
-    /* nav {
+    nav {
       display: unset;
-    } */
+    }
   }
 </style>
 
@@ -63,7 +64,8 @@
   <h1>
     <a href="/">VPN Fácil</a>
   </h1>
-  <!-- <nav>
-    <a href="/guias">Guías</a>
-  </nav> -->
+  <nav>
+    <a href="/guias/que-es-vpn">Qué es un VPN</a>
+    <a href="/guias">Todas las Guías</a>
+  </nav>
 </header>

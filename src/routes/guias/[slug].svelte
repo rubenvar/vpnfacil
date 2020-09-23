@@ -31,6 +31,7 @@
     font-family: var(--specialFont);
     font-weight: 400;
     color: var(--primary600);
+    font-size: 46px;
   }
 
   header p {
@@ -41,6 +42,7 @@
   article {
     font-size: 20px;
     line-height: 1.65;
+    margin-bottom: 150px;
   }
 </style>
 
