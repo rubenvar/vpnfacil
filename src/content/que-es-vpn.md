@@ -110,4 +110,4 @@ Cuando proteges todo lo que haces en Internet, nadie podrá limitar tu velocidad
 
 ---
 
-Si todavía no te ha convencido, [mira todas las demás ventajas](/ventajas). No tienes nada que perder.
+Si todavía no te ha convencido, [mira todas las demás ventajas](/guias/ventajas). No tienes nada que perder.
