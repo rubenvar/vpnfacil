@@ -56,7 +56,7 @@
     <h1>{post.title}</h1>
     <p>Actualizado: {post.printDate}</p>
   </header>
-  <article>
+  <article class="blog-post">
     {@html post.html}
   </article>
 </div>
