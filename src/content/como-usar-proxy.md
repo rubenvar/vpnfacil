@@ -1,5 +1,5 @@
 ---
-title: Cómo configurar y usar un Proxy (parte 2)
+title: Cómo Configurar y Usar un Proxy (parte 2)
 date: 2020-08-23
 ---
 
@@ -68,7 +68,7 @@ Te he dejado los enlaces a la ayuda oficial para no repetir más detalles aquí.
 
 ---
 
-Entendido.
+## Vale, me interesa… Pero, ¿dónde encuentro un proxy?
 
 Así que ya tenemos claro lo que es un proxy y cómo configurarlo. Solo nos falta...
 
