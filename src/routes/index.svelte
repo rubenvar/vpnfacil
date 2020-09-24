@@ -1,6 +1,11 @@
 <script context="module">
   export async function preload() {
-    const response = await this.fetch(process.env.ENDPOINT);
+    const response = await this.fetch(process.env.ENDPOINT, {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
     const data = await response.json();
     return { vpns: data.body };
   }
