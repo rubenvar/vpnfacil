@@ -21,8 +21,8 @@
     margin-bottom: 60px;
   }
 
-  .post {
-    margin-bottom: 42px;
+  article {
+    margin-bottom: 52px;
   }
 
   h2 {
@@ -62,7 +62,7 @@
 <div class="container">
   <h1>Guías</h1>
   {#each posts as post}
-    <div class="post">
+    <article>
       <h2>
         <a rel="prefetch" href="guias/{post.slug}">{post.title}</a>
       </h2>
@@ -70,6 +70,6 @@
         <span>—</span>
       {/if}
       <p class="excerpt">{post.excerpt}</p>
-    </div>
+    </article>
   {/each}
 </div>

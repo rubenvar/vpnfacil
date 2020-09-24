@@ -46,7 +46,7 @@
 </style>
 
 <svelte:head>
-  <title>{post.title}</title>
+  <title>{post.title} ~ VPNFácil</title>
   <meta name="description" content={post.excerpt} />
   <link rel="canonical" href="https://vpnfacil.com/guias/{post.slug}" />
   <meta property="og:title" content={post.title} />
