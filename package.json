@@ -1,6 +1,6 @@
 {
   "name": "vpnfacil",
-  "version": "1.5.5",
+  "version": "1.6.0",
   "private": true,
   "scripts": {
     "dev": "sapper dev",
@@ -17,6 +17,7 @@
     "dotenv": "^8.2.0",
     "gray-matter": "^4.0.2",
     "marked": "^1.1.1",
+    "node-fetch": "^2.6.1",
     "polka": "next",
     "prismjs": "^1.21.0",
     "sirv": "^0.4.0",

@@ -3,6 +3,7 @@ import posts from './_posts.js';
 const contents = JSON.stringify(
   posts.map(post => ({
     title: post.title,
+    date: post.date,
     slug: post.slug,
     excerpt: post.excerpt,
   }))
