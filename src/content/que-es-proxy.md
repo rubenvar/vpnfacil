@@ -23,8 +23,8 @@ Si lo que quieres es **tener las cosas claras** en _dos minutos_, mira:
 
 Y en las siguientes partes de la guía:
 
-- Cómo configurar un Proxy (parte 2).
-- Y donde encontrar opciones **gratis** (parte 3).
+- Cómo configurar un Proxy ([parte 2](/guias/como-usar-proxy)).
+- Y donde encontrar opciones **gratis** ([parte 3](/guias/mejores-servicios-proxy-gratis)).
 
 ¿Suena interesante? Pues sigue. Lo vas a ver todo claro en un par de minutos.
 
@@ -126,4 +126,4 @@ Espero que lo veas mucho más claro ya.
 
 Si quieres saber cómo configurar un proxy en tu navegador (Chrome o el que sea) o en tu µTorrent, y dónde encontrar proxy gratis, sigue con la guía:
 
-[Parte 2: cómo configurar un proxy](/guias/como-configurar-proxy)
+[Parte 2: cómo configurar un proxy](/guias/como-usar-proxy)
