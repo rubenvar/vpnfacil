@@ -65,6 +65,7 @@
     <a href="/">VPN Fácil</a>
   </h1>
   <nav>
+    <a href="/guias/preguntas-frecuentes">FAQ</a>
     <a href="/guias/que-es-vpn">Qué es un VPN</a>
     <a href="/guias">Todas las Guías</a>
   </nav>
