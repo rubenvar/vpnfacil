@@ -1,7 +1,7 @@
 <style>
   footer {
     padding: 2em 2em 20px;
-    margin-top: 4em;
+    margin-top: 150px;
     text-align: center;
     background: linear-gradient(var(--primary500), var(--primary600));
     color: white;

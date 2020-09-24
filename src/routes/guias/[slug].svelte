@@ -42,7 +42,6 @@
   article {
     font-size: 20px;
     line-height: 1.65;
-    margin-bottom: 150px;
   }
 </style>
 
