@@ -174,3 +174,12 @@ hr {
   margin: 0;
   color: var(--primary800);
 }
+
+.blog-post table {
+  font-size: 16px;
+  margin-bottom: 26px;
+}
+
+.blog-post table tbody tr:nth-child(odd) {
+  background: #eee;
+}
