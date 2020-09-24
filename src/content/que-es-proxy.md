@@ -24,7 +24,7 @@ Si lo que quieres es **tener las cosas claras** en _dos minutos_, mira:
 Y en las siguientes partes de la guía:
 
 - Cómo configurar un Proxy ([parte 2](/guias/como-usar-proxy)).
-- Y donde encontrar opciones **gratis** ([parte 3](/guias/mejores-servicios-proxy-gratis)).
+- Y donde encontrar opciones **gratis** ([parte 3](/guias/mejores-servidores-proxy-gratis)).
 
 ¿Suena interesante? Pues sigue. Lo vas a ver todo claro en un par de minutos.
 

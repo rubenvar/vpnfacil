@@ -74,4 +74,4 @@ Así que ya tenemos claro lo que es un proxy y cómo configurarlo. Solo nos falt
 
 ¿Dónde encontrar servidores Proxy **gratis** y **de calidad**?
 
-Vamos con la parte 3: [los mejores servicios de Proxy](/guias/mejores-servicios-proxy-gratis)
+Vamos con la parte 3: [los mejores servicios de Proxy](/guias/mejores-servidores-proxy-gratis)
