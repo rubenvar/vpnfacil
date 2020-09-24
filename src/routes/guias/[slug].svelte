@@ -55,7 +55,10 @@
 <div>
   <header>
     <h1>{post.title}</h1>
-    <p>Actualizado: {post.printDate}</p>
+    <p>
+      Actualizado:
+      <time datetime={post.date}>{post.printDate}</time>
+    </p>
   </header>
   <article class="blog-post">
     {@html post.html}
