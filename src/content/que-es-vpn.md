@@ -70,7 +70,7 @@ Esto hace tu experiencia online más **neutral y anónima**, como debería ser.
 
 ## Bueno: ¿para qué me sirve todo esto?
 
-[Listado: Todas las ventajas de usar una VPN](/guias/ventajas)
+[Listado: Todas las ventajas de usar una VPN](/guias/ventajas-de-usar-vpn)
 
 Usar un VPN para navegar por Internet no tiene inconvenientes. Lo que sí tiene son muchas ventajas:
 
@@ -110,4 +110,4 @@ Cuando proteges todo lo que haces en Internet, nadie podrá limitar tu velocidad
 
 ---
 
-Si todavía no te ha convencido, [mira todas las demás ventajas](/guias/ventajas). No tienes nada que perder.
+Si todavía no te ha convencido, [mira todas las demás ventajas](/guias/ventajas-de-usar-vpn). No tienes nada que perder.

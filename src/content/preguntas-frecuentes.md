@@ -1,6 +1,6 @@
 ---
 title: Preguntas Frecuentes
-date: 2020-09-24
+date: 2020-08-04
 ---
 
 Todas tus dudas, resueltas al detalle y con palabras normales para que lo veas clarísimo
