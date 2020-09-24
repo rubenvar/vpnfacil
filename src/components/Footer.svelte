@@ -27,4 +27,7 @@
     </a>
     🍌
   </p>
+  <p>
+    <a href="/sitemap.xml">Mapa del sitio</a>
+  </p>
 </footer>

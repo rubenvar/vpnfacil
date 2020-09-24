@@ -9,7 +9,7 @@ Navegar siendo anónimo y superar bloqueos... Y todo eso, gratis. Mira todas las
 
 Ya hemos llegado por fin a la 3ª parte: cómo encontrar **proxys gratis** online
 
-Si ya tienes claro [qué es un proxy (parte 1)](/guias/que-es-proxy) y [cómo configurarlo (parte 2)](/guias/como-configurar-proxy)...
+Si ya tienes claro [qué es un proxy (parte 1)](/guias/que-es-proxy) y [cómo configurarlo (parte 2)](/guias/como-usar-proxy)...
 
 Mira aquí los **mejores** servicios seleccionados, para que no tengas que preocuparte de nada.
 
