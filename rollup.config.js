@@ -4,9 +4,11 @@ import commonjs from '@rollup/plugin-commonjs';
 import svelte from 'rollup-plugin-svelte';
 import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
-import glob from 'rollup-plugin-glob';
 import config from 'sapper/config/rollup.js';
-import markdown from './src/utils/markdown';
+import glob from 'rollup-plugin-glob';
+import { mdsvex } from 'mdsvex';
+import a11yEmoji from '@fec/remark-a11y-emoji';
+import { join } from 'path';
 import pkg from './package.json';
 
 require('dotenv').config();
@@ -17,22 +19,16 @@ const endpoint = JSON.stringify(process.env.ENDPOINT);
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
-const onwarn = (warning, onwarn) => {
-  // only for @sapper
-  const isCircularWarning =
-    warning.code === 'CIRCULAR_DEPENDENCY' &&
-    /[/\\]@sapper[/\\]/.test(warning.message);
-  // avoid a11y on:blur error messages
-  const isOnBlurInsteadOfOnChangeWarning =
-    warning.code === 'PLUGIN_WARNING' &&
+const onwarn = (warning, onwarn) =>
+  (warning.code === 'CIRCULAR_DEPENDENCY' &&
+    /[/\\]@sapper[/\\]/.test(warning.message)) ||
+  (warning.code === 'PLUGIN_WARNING' &&
     warning.pluginCode &&
-    warning.pluginCode === 'a11y-no-onchange';
+    warning.pluginCode === 'a11y-no-onchange') ||
+  onwarn(warning);
 
-  return (
-    isCircularWarning || isOnBlurInsteadOfOnChangeWarning || onwarn(warning)
-  );
-};
-
+const extensions = ['.svelte', '.svx'];
+const layout = join(__dirname, './src/routes/_post-layout.svelte');
 export default {
   client: {
     input: config.client.input(),
@@ -45,9 +41,11 @@ export default {
         'process.env.ENDPOINT': endpoint,
       }),
       svelte({
+        extensions,
         dev,
         hydratable: true,
         emitCss: true,
+        preprocess: mdsvex({ layout, remarkPlugins: [a11yEmoji] }),
       }),
       resolve({
         browser: true,
@@ -55,10 +53,9 @@ export default {
       }),
       commonjs(),
       glob(),
-      markdown(),
       legacy &&
         babel({
-          extensions: ['.js', '.mjs', '.html', '.svelte'],
+          extensions: ['.js', '.mjs', '.html', ...extensions],
           babelHelpers: 'runtime',
           exclude: ['node_modules/@babel/**'],
           presets: [
@@ -85,7 +82,6 @@ export default {
           module: true,
         }),
     ],
-
     preserveEntrySignatures: false,
     onwarn,
   },
@@ -100,21 +96,21 @@ export default {
         'process.env.ENDPOINT': endpoint,
       }),
       svelte({
+        extensions,
         generate: 'ssr',
         dev,
+        preprocess: mdsvex({ layout, remarkPlugins: [a11yEmoji] }),
       }),
       resolve({
         dedupe: ['svelte'],
       }),
       commonjs(),
       glob(),
-      markdown(),
     ],
     external: Object.keys(pkg.dependencies).concat(
       require('module').builtinModules ||
         Object.keys(process.binding('natives'))
     ),
-
     preserveEntrySignatures: 'strict',
     onwarn,
   },
