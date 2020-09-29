@@ -104,7 +104,7 @@ Algunos servicios de proxies de pago usan estos listados para ofrecerte **una mu
 
 - Por supuesto, **promocionan** sus opciones de pago.
 
-Esto es lo mismo que pasa con [los VPN gratis](/guias/vpn-gratis/), creados normalmente como promoción. Pero aun así, es **completamente gratuito** usarlos y te servirán en muchas ocasiones
+Esto es lo mismo que pasa con [los VPN gratis](/guias/vpn-gratis), creados normalmente como promoción. Pero aun así, es **completamente gratuito** usarlos y te servirán en muchas ocasiones
 
 - Simplemente ten en cuenta que es posible que las garantías y anonimato que te ofrecen sean **_menores a un servicio completo_**.
 
