@@ -50,7 +50,7 @@ Una de las mejores opciones del mundo, y por algo más de 5\$ al mes te aseguran
 
 Ubicaciones en más de 20 países para que no tengas problemas para **elegir**
 
-![My IP Hide](/content/proxy-server1.jpg)
+![My IP Hide](images/_proxy-server1.jpg)
 
 Te ofrecen una **garantía de reembolso de 30 días**, para que puedas probarlo y ver si es lo que necesitas.
 
@@ -88,7 +88,7 @@ NordVPN es uno de [los mejores VPN del mundo](/), está en español y tiene uno 
 
 [Este proveedor de VPN](https://comousarutorrent.com/ipva) también te ofrece servicios de proxy SOCKS5 para tus descargas en uTorrent
 
-[![IPVANISH - Proxy SOCKS5 incluidos en sus servicios](/content/proxy-server2.jpg)](https://www.ipvanish.com/?a_bid=48f95966&a_aid=facil)
+[![IPVANISH - Proxy SOCKS5 incluidos en sus servicios](images/_proxy-server2.jpg)](https://www.ipvanish.com/?a_bid=48f95966&a_aid=facil)
 
 Eso sí, accedes una vez que **contrates sus servicios** (puedes leer más sobre eso en [la comparativa de los mejores VPN](/))
 
@@ -116,7 +116,7 @@ _Con listados completos que actualizan habitualmente_
 
 [Este proveedor de VPN](https://hidemy.name/#5f57a8c7dd77e) también te ofrece hasta 1.000 servidores proxy gratis. En un listado actualizado cada muy poco
 
-![Listado proxy de HideMy.name](/content/proxy-server3.jpg)
+![Listado proxy de HideMy.name](images/_proxy-server3.jpg)
 
 Con su filtro para que elijas la opción que mejor te viene, como **ubicación o protocolo**.
 
@@ -135,7 +135,7 @@ Como te decía, estos servidores proxy gratis dependen de _HideMy.name_, un serv
 
 El mismo servicio del que te hablaba, [NordVPN](https://go.nordvpn.net/aff_c?offer_id=15&aff_id=46155&url_id=902), ofrece también un listado enorme de proxies gratis (más de 29.000 opciones):
 
-![Listado de proxies de NordVPN](/content/proxy-server4.jpg)
+![Listado de proxies de NordVPN](images/_proxy-server4.jpg)
 
 - Tienen un **filtro** para que elijas el país que prefieras
 - Y si tienes **preferencias de puerto o protocolo**

@@ -11,7 +11,7 @@ Una VPN es una herramienta **muy potente** para protegerte mientras navegas por
 
 ¿Que cómo te protege?
 
-<span class="emphasis">Cualquier VPN ocultará tu IP y encriptará tu conexión. Así tendrás privacidad y seguridad en la Red.</span>
+Cualquier VPN ocultará tu IP y encriptará tu conexión. Así tendrás privacidad y seguridad en la Red.
 
 Idealmente, si usas una VPN mientras estás en Internet, **nadie podrá saber quién eres** ni qué intereses tienes. Nadie podrá saber tus contraseñas, tus datos bancarios, ni tu historial.
 
@@ -21,11 +21,11 @@ Así podrás navegar libremente por Internet, sin miedo a censura, espías, o ma
 
 ## Cómo funciona una VPN
 
-<span class="emphasis">Básicamente, un servicio de VPN crea un túnel virtual que va desde tu dispositivo hasta _el Internet_.</span>
+Básicamente, un servicio de VPN crea un túnel virtual que va desde tu dispositivo hasta _el Internet_.
 
 Este túnel es blindado y encripta (cifra) todos los datos para que nadie tenga acceso a ellos: ni tu ISP (proveedor de servicios de Internet) ni cualquier hacker podrá ver tus actividades online.
 
-![Así funciona PureVPN](./content/esquema.jpg)
+![Así funciona PureVPN](images/_esquema.jpg)
 
 Las partes importantes del sistema:
 
@@ -76,7 +76,7 @@ Usar un VPN para navegar por Internet no tiene inconvenientes. Lo que sí tiene 
 
 ### 🔐 Navega con seguridad y privacidad
 
-<span class="emphasis">Protege tu información. Tus fotos, videos, documentos. Si decides compartir algo en las redes sociales o en tu blog, que sea tu decisión, y que nadie más pueda **robar** tus recuerdos y tus archivos.</span>
+Protege tu información. Tus fotos, videos, documentos. Si decides compartir algo en las redes sociales o en tu blog, que sea tu decisión, y que nadie más pueda **robar** tus recuerdos y tus archivos.
 
 Si [eliges un buen VPN](/guias/como-elegir-un-buen-vpn), te ofrecerá múltiples protocolos para conectarte, muchos países y servidores disponibles, y podrás usarlo en varios dispositivos al mismo tiempo.
 

@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import grayMatter from 'gray-matter';
-import marked from 'marked';
 
 function isDir(p) {
   try {
@@ -13,20 +12,25 @@ function isDir(p) {
   // lstatSync throws an error if path doesn't exist
 }
 
-const route = 'src/routes/goals';
+const route = 'src/routes/guias';
+const separator = '<!-- more -->';
 const posts = fs
   .readdirSync(route)
   .filter(file => isDir(`${route}/${file}`))
   .map((file, index) => {
     const post = fs.readFileSync(
-      path.resolve(route, `${file}/index.md`),
+      path.resolve(route, `${file}/index.svx`),
       'utf-8'
     );
+    const { data, content } = grayMatter(post);
+    let excerpt = '';
+    if (content.indexOf(separator) !== -1) {
+      [excerpt] = content.split(separator);
+    }
     return {
-      ...grayMatter(post).data,
+      ...data,
       slug: file,
-      // remove frontmatter then transform
-      html: marked(post.replace(/---([\S\s]*?)---/, '')),
+      excerpt,
     };
   })
   .sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -38,7 +42,7 @@ const contents = JSON.stringify(
     date: post.title,
     index: post.index,
     slug: post.slug,
-    experpt: post.excerpt,
+    excerpt: post.excerpt,
     html: post.html,
   }))
 );

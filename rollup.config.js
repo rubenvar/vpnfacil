@@ -9,6 +9,7 @@ import glob from 'rollup-plugin-glob';
 import { mdsvex } from 'mdsvex';
 import a11yEmoji from '@fec/remark-a11y-emoji';
 import { join } from 'path';
+import copy from 'rollup-plugin-copy';
 import pkg from './package.json';
 
 require('dotenv').config();
@@ -28,7 +29,9 @@ const onwarn = (warning, onwarn) =>
   onwarn(warning);
 
 const extensions = ['.svelte', '.svx'];
-const layout = join(__dirname, './src/routes/_post-layout.svelte');
+const layout = join(__dirname, './src/routes/guias/_guias-layout.svelte');
+const preprocess = mdsvex({ layout, remarkPlugins: [a11yEmoji] });
+
 export default {
   client: {
     input: config.client.input(),
@@ -45,7 +48,7 @@ export default {
         dev,
         hydratable: true,
         emitCss: true,
-        preprocess: mdsvex({ layout, remarkPlugins: [a11yEmoji] }),
+        preprocess,
       }),
       resolve({
         browser: true,
@@ -53,6 +56,9 @@ export default {
       }),
       commonjs(),
       glob(),
+      copy({
+        targets: [{ src: 'src/**/images/*.*', dest: 'static/images' }],
+      }),
       legacy &&
         babel({
           extensions: ['.js', '.mjs', '.html', ...extensions],
@@ -99,7 +105,7 @@ export default {
         extensions,
         generate: 'ssr',
         dev,
-        preprocess: mdsvex({ layout, remarkPlugins: [a11yEmoji] }),
+        preprocess,
       }),
       resolve({
         dedupe: ['svelte'],

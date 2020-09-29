@@ -2,11 +2,11 @@
   import { format } from 'date-fns';
   import { es } from 'date-fns/locale';
 
-  export let slug;
   export let title;
   export let date;
+  // export let slug;
+  // export let excerpt;
   const formattedDate = format(new Date(date), 'MMMM, yyyy', { locale: es });
-  export let excerpt;
 </script>
 
 <style>
@@ -40,8 +40,8 @@
 
 <svelte:head>
   <title>{title} ~ VPNFácil</title>
-  <meta name="description" content={excerpt} />
-  <link rel="canonical" href="https://vpnfacil.com/guias/{slug}" />
+  <!-- <meta name="description" content={excerpt} /> -->
+  <!-- <link rel="canonical" href="https://vpnfacil.com/guias/{slug}" /> -->
   <meta property="og:title" content={title} />
 </svelte:head>
 
@@ -51,7 +51,6 @@
     <p>
       Actualizado:
       <time datetime={date}>{formattedDate}</time>
-      <span>{excerpt}</span>
     </p>
   </header>
   <article class="blog-post">
