@@ -6,7 +6,9 @@
   export let date;
   // export let slug;
   // export let excerpt;
-  const formattedDate = format(new Date(date), 'MMMM, yyyy', { locale: es });
+  const formattedDate = format(new Date(date), "d 'de' MMMM, yyyy", {
+    locale: es
+  });
 </script>
 
 <style>

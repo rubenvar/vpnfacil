@@ -17,30 +17,26 @@ const separator = '<!-- more -->';
 const posts = fs
   .readdirSync(route)
   .filter(file => isDir(`${route}/${file}`))
-  .map((file, index) => {
+  .map(file => {
     const post = fs.readFileSync(
       path.resolve(route, `${file}/index.svx`),
       'utf-8'
     );
     const { data, content } = grayMatter(post);
-    let excerpt = '';
-    if (content.indexOf(separator) !== -1) {
-      [excerpt] = content.split(separator);
-    }
+    const excerpt =
+      content.indexOf(separator) !== -1 ? content.split(separator)[0] : '';
     return {
       ...data,
       slug: file,
       excerpt,
     };
   })
-  .sort((a, b) => new Date(b.date) - new Date(a.date))
-  .map((post, index) => ({ ...post, index }));
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
 
 const contents = JSON.stringify(
   posts.map(post => ({
     title: post.title,
-    date: post.title,
-    index: post.index,
+    date: post.date,
     slug: post.slug,
     excerpt: post.excerpt,
     html: post.html,
