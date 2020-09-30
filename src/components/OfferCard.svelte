@@ -21,6 +21,7 @@
 
 <style lang="scss">
   article {
+    position: relative;
     border: 3px solid var(--primary500);
     border-radius: var(--cardRadius);
     padding: 25px;
@@ -38,8 +39,10 @@
     }
     .info {
       display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 30px;
+      @media only screen and (min-width: 640px) {
+        grid-template-columns: 3fr 2fr;
+        gap: 30px;
+      }
       .text {
         ul {
           li {
@@ -50,9 +53,14 @@
           }
         }
         p {
-          margin: 0;
+          text-align: center;
+          margin-bottom: 20px;
           font-size: 18px;
           color: var(--grey700);
+          @media only screen and (min-width: 640px) {
+            margin: 0;
+            text-align: unset;
+          }
         }
       }
       .details {
@@ -61,11 +69,23 @@
         justify-content: space-between;
         align-items: center;
         img {
-          display: block;
+          position: absolute;
+          top: 18px;
+          right: 18px;
+          z-index: 99;
+          opacity: 0.6;
+          width: 80px;
           margin: 0 auto;
           border-radius: 5px;
           border: 1px solid transparent;
           transition: all 0.3s;
+          @media only screen and (min-width: 640px) {
+            display: block;
+            position: relative;
+            top: 0;
+            right: 0;
+            opacity: 1;
+          }
           &:hover {
             transform: scale(1.01);
             border-color: var(--primary500);
@@ -80,6 +100,10 @@
           color: white;
           background-color: var(--primary700);
           cursor: pointer;
+          margin-top: 20px;
+          @media only screen and (min-width: 640px) {
+            margin-top: 0;
+          }
           &:hover {
             background-color: var(--secondary700);
           }
@@ -121,7 +145,7 @@
         rating={vpn.rating / 20}
         config={{ size: 30, fullColor: '#ffc107', showText: true }}
         style="" />
-      <a href={vpn.link} target="_blank" rel="nofollow"><button>Mira la oferta
+      <a href={vpn.link} target="_blank" rel="nofollow"><button>Mirar la oferta
           <strong>actualizada</strong></button></a>
     </div>
   </div>
