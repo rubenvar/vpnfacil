@@ -1,23 +1,20 @@
 <script>
+  import Fluid from 'svelte-fluid-header';
   import SVGs from './SVGs.svelte';
 </script>
 
-<style>
+<style lang="scss">
   header {
     max-width: var(--maxWidth);
     margin: 0 auto;
-    height: var(--headerHeight);
     padding: 0 var(--defSidePadding);
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr auto;
+    height: var(--headerHeight);
   }
 
   h1 {
     font-size: 26px;
     margin: 0;
     font-family: 'Audiowide', cursive;
-    text-align: center;
   }
 
   h1 a {
@@ -31,8 +28,22 @@
   }
 
   nav {
-    display: none;
+    display: flex;
     font-size: 20px;
+    &.mobile {
+      flex-direction: column;
+      position: relative;
+      z-index: 99;
+      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+      a {
+        background: #fffe;
+        margin: 0;
+        padding: 12px 0 12px 30px;
+        &:nth-child(even) {
+          background-color: #fafafaee;
+        }
+      }
+    }
   }
 
   nav a {
@@ -46,14 +57,8 @@
     color: var(--secondary300);
   }
 
-  @media only screen and (min-width: 560px) {
-    h1 {
-      font-size: 32px;
-      text-align: left;
-    }
-    nav {
-      display: unset;
-    }
+  :global(.svelte-fluid-header--button) {
+    color: var(--secondary600);
   }
 </style>
 
@@ -61,10 +66,17 @@
 <SVGs />
 
 <header>
-  <h1><a href="/">VPN Fácil</a></h1>
-  <nav>
-    <a href="/guias/ofertas-vpn-2020">Mejores Ofertas 2020</a>
-    <a href="/guias">Todas las Guías</a>
-    <a href="/guias/preguntas-frecuentes">FAQ</a>
-  </nav>
+  <Fluid>
+    <h1 slot="left"><a href="/">VPN Fácil</a></h1>
+    <nav slot="right">
+      <a href="/guias/ofertas-vpn-2020">Mejores Ofertas 2020</a>
+      <a href="/guias">Todas las Guías</a>
+      <a href="/guias/preguntas-frecuentes">FAQ</a>
+    </nav>
+    <nav class="mobile" slot="drawer">
+      <a href="/guias/ofertas-vpn-2020">Mejores Ofertas 2020</a>
+      <a href="/guias">Todas las Guías</a>
+      <a href="/guias/preguntas-frecuentes">FAQ</a>
+    </nav>
+  </Fluid>
 </header>
