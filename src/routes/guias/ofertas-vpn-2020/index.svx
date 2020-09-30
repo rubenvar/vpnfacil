@@ -1,6 +1,6 @@
 ---
 title: 'Las 3 Mejores Ofertas de VPN en 2020'
-date: '2020-09-30'
+date: 2020-09-30
 excerpt: 'Cómo elegir entre las decenas de VPN disponibles... Los 3 mejores calidad/precio, seleccionados para ti'
 ---
 
@@ -45,7 +45,43 @@ excerpt: 'Cómo elegir entre las decenas de VPN disponibles... Los 3 mejores cal
 </script>
 
 
-sisisi
+<style>
+  .box {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .box p {
+    margin: 0 0 20px;
+  }
+</style>
+
+
+¿Sabes lo que es un VPN? Te lo resumo en **3 frases**:
+
+<div class="box">
+
+
+<p>
+  En Internet, cualquier página puede <strong>rastrearte mediante tu IP</strong>
+  . Es como tu número de identidad.
+</p>
+
+<p>
+  Además, tu compañía de Internet y otros espías o hackers pueden ver lo que
+  haces online, controlar tus actividades, y hasta bloquearlas.
+</p>
+
+<p>
+  Un VPN <strong>te protege de todo esto</strong>. Cambia tu IP y mete tus datos
+  en un túnel encriptado. Así nadie puede leer tu información ni restrarte.
+</p>
+
+</div>
+
+
+Bastante más claro, ¿no? [Aquí tienes una explicación más detallada](/guias/que-es-vpn), si te interesa la parte técnica.
+
+Si quieres encontrar **las mejores opciones calidad/precio**, las tienes aquí. Echa un vistazo y elige ahora mismo:
 
 {#each topVpns as vpn}
 
@@ -53,7 +89,13 @@ sisisi
 {/each}
 
 
-sadadasd
+¿Qué te parecen? ¿Sabías que un servicio VPN podía ser **tan barato**?
 
-- waaaw
-- wawa
+No hace falta que sigas leyendo. Lo importante es que elijas uno 👆 y accedas ahora mismo.
+
+---
+
+Pero si quieres saber más sobre este tema, no me enrollo. Te dejo los recursos más útiles:
+
+- [**Todos** los VPN](/), rankeados y ordenados para que compares
+- [Las ventajas de usar uno](/guias/ventajas-de-usar-vpn) (y por qué deberías usarlo siempre, para todo)
