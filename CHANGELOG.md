@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.1] - 2020-09-30
+
+### Added
+
+- Added SCSS support (https://github.com/dceddia/svelte-sass-template).
+
+## [1.8.0] - 2020-09-29
+
+### Added
+
+- Added mdx (mdsvex) support instead of md. Now I can add charts/other components in the posts (https://www.ryanfiller.com/blog/a-deep-dive-into-sapper).
+
 ## [1.7.0] - 2020-09-24
 
 ### Fixed
