@@ -8,7 +8,6 @@
     name,
     id,
     color,
-    logo,
     link,
     rating,
     servers,
