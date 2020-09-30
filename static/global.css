@@ -122,21 +122,36 @@ hr {
 
 .blog-post h2 {
   margin: 45px 0 20px;
-  font-size: 34px;
+  font-size: 28px;
 }
 
 .blog-post h3 {
   margin: 35px 0 20px;
-  font-size: 28px;
+  font-size: 25px;
 }
 
 .blog-post h4 {
   margin: 25px 0 15px;
-  font-size: 25px;
+  font-size: 22px;
+}
+
+@media only screen and (min-width: 640px) {
+  .blog-post h2 {
+    font-size: 34px;
+  }
+  .blog-post h3 {
+    font-size: 28px;
+  }
+  .blog-post h4 {
+    font-size: 25px;
+  }
+  .blog-post p {
+    margin-bottom: 26px;
+  }
 }
 
 .blog-post p {
-  margin: 0 0 26px;
+  margin: 0 0 22px;
 }
 
 .blog-post a {
@@ -146,6 +161,12 @@ hr {
 
 .blog-post a:hover {
   color: var(--grey900);
+}
+
+.blog-post img {
+  display: block;
+  margin: 0 auto 26px;
+  max-width: 100%;
 }
 
 .blog-post ul {
@@ -173,7 +194,7 @@ hr {
 }
 
 .blog-post .box p {
-  margin: 0;
+  /* margin: 0; */
   color: var(--primary800);
 }
 
