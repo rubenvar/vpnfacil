@@ -9,3 +9,4 @@ DOCS.md
 .env
 .prettierrc
 /static/images/*
+/src/routes/guias/mejores-vpn/
