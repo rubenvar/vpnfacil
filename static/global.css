@@ -5,8 +5,10 @@
 
   --defSidePadding: 30px;
 
+  --grey100: hsl(160, 15%, 99%);
   --grey300: hsl(160, 5%, 70%);
   --grey500: hsl(160, 5%, 50%);
+  --grey700: hsl(160, 5%, 30%);
   --grey900: hsl(160, 15%, 9%);
 
   --primary100: hsl(270, 90%, 90%);
