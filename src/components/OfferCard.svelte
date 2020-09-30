@@ -2,10 +2,13 @@
   export let vpn;
 </script>
 
-<style>
+<style lang="scss">
   article {
     border: 3px solid var(--primary500);
     border-radius: var(--cardRadius);
+    h2 {
+      color: firebrick;
+    }
   }
 </style>
 

@@ -10,6 +10,8 @@ import { mdsvex } from 'mdsvex';
 import a11yEmoji from '@fec/remark-a11y-emoji';
 import { join } from 'path';
 import copy from 'rollup-plugin-copy';
+// add sass support
+import sveltePreprocess from 'svelte-preprocess';
 import pkg from './package.json';
 
 require('dotenv').config();
@@ -30,7 +32,10 @@ const onwarn = (warning, onwarn) =>
 
 const extensions = ['.svelte', '.svx'];
 const layout = join(__dirname, './src/routes/guias/_guias-layout.svelte');
-const preprocess = mdsvex({ layout, remarkPlugins: [a11yEmoji] });
+const preprocess = [
+  sveltePreprocess(),
+  mdsvex({ layout, remarkPlugins: [a11yEmoji] }),
+];
 
 export default {
   client: {
