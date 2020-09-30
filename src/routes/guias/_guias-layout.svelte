@@ -4,10 +4,10 @@
 
   export let title;
   export let date;
+  export let excerpt;
   // export let slug;
-  // export let excerpt;
   const formattedDate = format(new Date(date), "d 'de' MMMM, yyyy", {
-    locale: es
+    locale: es,
   });
 </script>
 
@@ -42,7 +42,7 @@
 
 <svelte:head>
   <title>{title} ~ VPNFácil</title>
-  <!-- <meta name="description" content={excerpt} /> -->
+  <meta name="description" content={excerpt} />
   <!-- <link rel="canonical" href="https://vpnfacil.com/guias/{slug}" /> -->
   <meta property="og:title" content={title} />
 </svelte:head>
@@ -50,10 +50,7 @@
 <div>
   <header>
     <h1>{title}</h1>
-    <p>
-      Actualizado:
-      <time datetime={date}>{formattedDate}</time>
-    </p>
+    <p>Actualizado: <time datetime={date}>{formattedDate}</time></p>
   </header>
   <article class="blog-post">
     <slot>

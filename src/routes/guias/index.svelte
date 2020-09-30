@@ -63,13 +63,11 @@
   <h1>Guías</h1>
   {#each posts as post}
     <article>
-      <h2>
-        <a rel="prefetch" href="guias/{post.slug}">{post.title}</a>
-      </h2>
+      <h2><a rel="prefetch" href="guias/{post.slug}">{post.title}</a></h2>
       {#if post.excerpt}
         <span>—</span>
+        <p class="excerpt">{post.excerpt}</p>
       {/if}
-      <p class="excerpt">{post.excerpt}</p>
     </article>
   {/each}
 </div>

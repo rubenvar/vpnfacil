@@ -22,13 +22,10 @@ const posts = fs
       path.resolve(route, `${file}/index.svx`),
       'utf-8'
     );
-    const { data, content } = grayMatter(post);
-    const excerpt =
-      content.indexOf(separator) !== -1 ? content.split(separator)[0] : '';
+    const { data } = grayMatter(post);
     return {
       ...data,
       slug: file,
-      excerpt,
     };
   })
   .sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -39,7 +36,6 @@ const contents = JSON.stringify(
     date: post.date,
     slug: post.slug,
     excerpt: post.excerpt,
-    html: post.html,
   }))
 );
 

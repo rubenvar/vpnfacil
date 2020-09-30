@@ -1,11 +1,8 @@
 ---
 title: 'Las 3 Mejores Ofertas de VPN en 2020'
 date: '2020-09-30'
+excerpt: 'Cómo elegir entre las decenas de VPN disponibles... Los 3 mejores calidad/precio, seleccionados para ti'
 ---
-
-Cómo elegir entre las decenas de VPN disponibles... Los 3 mejores calidad/precio, seleccionados para ti
-
-<!-- more -->
 
 <script context="module">
   export async function preload() {
