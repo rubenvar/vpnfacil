@@ -1,6 +1,4 @@
 .DS_Store
-IDEAS.md
-DOCS.md
 /node_modules/
 /src/node_modules/@sapper/
 /cypress/screenshots/
@@ -8,5 +6,11 @@ DOCS.md
 /.vscode/
 .env
 .prettierrc
+# docs
+IDEAS.md
+DOCS.md
+# keep images in routes but copy them to static on build
 /static/images/*
-/src/routes/guias/mejores-vpn/
+# drafts and aux
+/src/routes/guias/mejores-vpn
+_index.*

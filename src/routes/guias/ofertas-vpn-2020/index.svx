@@ -1,0 +1,43 @@
+---
+title: 'Las Mejores Ofertas de VPN'
+date: '2020-09-21'
+---
+
+Los tres mejores VPN
+
+<!-- more -->
+
+<script context="module">
+  export async function preload() {
+    const response = await this.fetch(process.env.ENDPOINT, {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const data = await response.json();
+    return { vpns: data.body };
+  }
+</script>
+
+<script>
+  import OfferCard from '../../../components/OfferCard.svelte';
+  export let vpns;
+  const topIds = ['F001', 'F004', 'F019'];
+  // get the vpns that match ids from id array
+  const topVpns = vpns.filter(vpn => topIds.some(id => id === vpn.id));
+  // mabe not the most efficient way, but the number of items in arrays is really small 🤷‍♂️
+</script>
+
+# Hola!
+
+sisisi
+
+{#each topVpns as vpn}
+  <OfferCard {vpn} />
+{/each}
+
+sadadasd
+
+- waaaw
+- wawa
