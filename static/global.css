@@ -187,14 +187,14 @@ hr {
 .blog-post .box {
   border-left: 3px solid var(--primary500);
   padding: 10px 14px 12px 18px;
-  margin: 0 12px 26px;
+  margin: 30px 12px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
 }
 
 .blog-post .box p {
-  /* margin: 0; */
+  margin-bottom: 30px;
   color: var(--primary800);
 }
 

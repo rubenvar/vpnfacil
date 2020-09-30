@@ -50,9 +50,6 @@ excerpt: 'Cómo elegir entre las decenas de VPN disponibles... Los 3 mejores cal
     margin-left: 0;
     margin-right: 0;
   }
-  .box p {
-    margin: 0 0 20px;
-  }
 </style>
 
 
