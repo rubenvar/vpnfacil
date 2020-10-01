@@ -1,6 +1,6 @@
 {
   "name": "vpnfacil",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "private": true,
   "scripts": {
     "dev": "sapper dev --ext '.svelte .svx'",
@@ -38,6 +38,7 @@
     "node-fetch": "^2.6.1",
     "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
+    "remark-external-links": "^7.0.1",
     "rollup": "^2.21.0",
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-glob": "^1.0.2",
