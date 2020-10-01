@@ -1,7 +1,9 @@
 ---
 title: 'Los 8 Mejores Servidores de Proxy Gratis (parte 3)'
+seoTitle: 'Los 8 Mejores Servidores Proxy Gratis [Listado Completo]'
 date: 2020-08-30
 excerpt: 'Navegar siendo anónimo y superar bloqueos... Y todo eso, gratis. Mira todas las opciones que tienes para usar un proxy sin pagar'
+slug: 'mejores-servidores-proxy-gratis'
 ---
 
 Ya hemos llegado por fin a la 3ª parte: cómo encontrar **proxys gratis** online

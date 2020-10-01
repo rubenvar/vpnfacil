@@ -1,7 +1,9 @@
 ---
 title: 'Las 3 Mejores Ofertas de VPN en 2020'
+seoTitle: 'Las 3 Mejores Ofertas VPN – 🤑 Menos de 1,7€/mes! [Actualizado Oct-2020]'
 date: 2020-09-30
 excerpt: 'Cómo elegir entre las decenas de VPN disponibles... Los 3 mejores calidad/precio, seleccionados para ti'
+slug: ofertas-vpn-2020
 ---
 
 <script context="module">

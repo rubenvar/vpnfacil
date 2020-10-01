@@ -23,10 +23,7 @@ const posts = fs
       'utf-8'
     );
     const { data } = grayMatter(post);
-    return {
-      ...data,
-      slug: file,
-    };
+    return data;
   })
   .sort((a, b) => new Date(b.date) - new Date(a.date));
 

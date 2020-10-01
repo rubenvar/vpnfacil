@@ -2,6 +2,7 @@
 title: Las 7 Ventajas de Protegerte con un VPN
 date: 2020-09-13
 excerpt: 'Usar un VPN cambia tu IP. Esto tiene muchos más beneficios de los que piensas'
+slug: ventajas-de-usar-vpn
 ---
 
 Si ya tienes controlado [qué es un VPN](/guias/que-es-vpn), sabrás que tiene muchas ventajas usar uno.

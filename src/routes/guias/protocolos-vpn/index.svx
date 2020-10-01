@@ -1,7 +1,9 @@
 ---
 title: 'Protocolos VPN: Qué son y Cómo Elegir'
+seoTitle: 'Protocolos VPN: Qué son y Cómo Elegir [Tabla Comparativa]'
 date: 2020-10-01
-excerpt: ''
+excerpt: 'Otra de esas cosas que no quieres hacer, pero tienes que elegir el mejor para tu conexión VPN. Mira aquí cómo escoger, explicado con palabras normales'
+slug: protocolos-vpn
 ---
 
 <style>
@@ -10,11 +12,25 @@ excerpt: ''
     margin-left: -5%;
     font-size: 15px;
   }
+  thead {
+     font-size: 16px;
+  }
+  thead tr {
+     background-color: var(--secondary200);
+  }
   th {
     text-align: left;
   }
   tr {
-    height: 36px;
+    height: 43px;
+    transition: all 0.3s;
+    background-color: white;
+  }
+  tr:nth-child(even) {
+     background-color: var(--secondary100);
+  }
+  tr:hover {
+     background-color: var(--primary100);
   }
   td {
     padding: 5px 8px 5px 1px;
@@ -111,7 +127,7 @@ El protocolo VPN **más rápido** es PPTP.
 
 Después estarían L2TP y IKEv2, también bastante rápidos.
 
-![speed GIF (giphy.com)](https://media.giphy.com/media/3o6ozpK8rA9OPAM3ra/giphy.gif)
+![faster GIF (giphy.com)](https://media.giphy.com/media/NhkMeVafqPkPK/giphy.gif)
 
 OpenVPN y SSTP son algo más lentos que otros protocolos.
 
@@ -142,6 +158,8 @@ Como es lógico, si vas a usar un VPN para [descargar archivos por P2P](https://
 Al fin y al cabo, una encriptación más alta necesita más tiempo y recursos para procesar tus datos, así que bajará el rendimiento.
 
 Primero, sea como sea, **evita PPTP**.
+
+![security GIF (giphy.com)](https://media.giphy.com/media/IeKgCDlpTqRQbZEhBF/giphy.gif)
 
 Después, te podrían interesar L2TP y IKEv2, que usan encriptación 256-bit a través de IPSec.
 

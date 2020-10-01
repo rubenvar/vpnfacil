@@ -2,6 +2,7 @@
 title: Preguntas Frecuentes
 date: 2020-08-04
 excerpt: 'Todas tus dudas, resueltas al detalle y con palabras normales para que lo veas clarísimo'
+slug: preguntas-frecuentes
 ---
 
 ## ¿Es legal usar un VPN?

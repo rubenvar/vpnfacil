@@ -2,6 +2,7 @@
 title: Cómo Configurar y Usar un Proxy (parte 2)
 date: 2020-08-23
 excerpt: 'La teoría está bien pero... ¿Cómo puedes usar un proxy para ser anónimo? Aquí lo tienes, paso a paso'
+slug: 'como-usar-proxy'
 ---
 
 Después de haber leído [la primera parte para saber qué es un proxy](/guias/que-es-proxy)...

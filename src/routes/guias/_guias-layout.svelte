@@ -5,7 +5,8 @@
   export let title;
   export let date;
   export let excerpt;
-  // export let slug;
+  export let slug;
+  export let seoTitle = null;
   const formattedDate = format(new Date(date), "d 'de' MMMM, yyyy", {
     locale: es,
   });
@@ -63,10 +64,10 @@
 </style>
 
 <svelte:head>
-  <title>{title} ~ VPNFácil</title>
+  <title>{seoTitle || title + ' ~ VPNFácil'}</title>
   <meta name="description" content={excerpt} />
-  <!-- <link rel="canonical" href="https://vpnfacil.com/guias/{slug}" /> -->
-  <meta property="og:title" content={title} />
+  <link rel="canonical" href="https://vpnfacil.com/guias/{slug}" />
+  <meta property="og:title" content={seoTitle || title} />
 </svelte:head>
 
 <div>

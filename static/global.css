@@ -19,6 +19,8 @@
   --primary700: hsl(270, 80%, 50%);
   --primary800: hsl(270, 89%, 30%);
 
+  --secondary100: hsl(160, 59%, 95%);
+  --secondary200: hsl(160, 59%, 79%);
   --secondary300: hsl(160, 59%, 53%);
   --secondary500: hsl(160, 65%, 44%);
   --secondary600: hsl(160, 70%, 34%);
@@ -204,6 +206,6 @@ hr {
   margin-bottom: 26px;
 }
 
-.blog-post table tbody tr:nth-child(odd) {
+/* .blog-post table tbody tr:nth-child(odd) {
   background: #eee;
-}
+} */

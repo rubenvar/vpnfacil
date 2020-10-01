@@ -2,6 +2,7 @@
 title: 'Qué es Proxy y para qué sirve (parte 1)'
 date: 2020-08-20
 excerpt: 'Entiende de una vez qué es un Proxy: Explicado para personas normales, sin palabras raras ni parrafadas. Y con emojis'
+slug: que-es-proxy
 ---
 
 Si quieres **saber qué es proxy** porque lo has visto en tu ordenador, o en algún programa, como la [configuración de uTorrent](https://comousarutorrent.com/como-configurar-utorrent/)...

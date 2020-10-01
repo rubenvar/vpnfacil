@@ -1,7 +1,9 @@
 ---
 title: 'VPN: Qué es y para qué sirve'
+seoTitle: 'VPN: Qué Es, Para Qué Sirve, y Por Qué 🛡 SIEMPRE Deberías Usar Uno'
 date: 2020-09-23
 excerpt: 'Si no lo tienes muy claro, necesitas saber esto: Es una herramienta contra todos los espías y amenazas que acechan mientras navegas por Internet'
+slug: que-es-vpn
 ---
 
 Una VPN es una herramienta **muy potente** para protegerte mientras navegas por Internet. Así de claro.
