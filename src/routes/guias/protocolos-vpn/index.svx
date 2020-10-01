@@ -1,0 +1,27 @@
+---
+title: 'Protocolos VPN: Qué son y Cómo Elegir'
+date: 2020-10-01
+excerpt: ''
+---
+
+## VPN Protocols
+
+We use a variety of robust VPN protocols to encrypt the traffic and data you send through our network. Each protocol has its own set of pros and cons when it comes to speed, security, and device/OS support.
+
+### PPTP
+
+- It is one of the oldest VPN protocols today. PPTP provides fast speeds for streaming, downloading, and browsing. After all, it uses low encryption.
+
+### L2TP
+
+- L2TP/IPSec is a more reliable and secure VPN protocol than its predecessor, PPTP. But the extra security results in slower speeds.
+
+### SSTP
+
+- SSTP delivers high levels of security like OpenVPN. You may encounter speed issues though unless you have enough bandwidth.
+
+### OpenVPN
+
+- OpenVPN is the most popular VPN protocol out there. It is highly secure, fast, and compatible with most platforms.
+
+Via | [PureVPN](https://www.purevpn.com/what-is-vpn/protocols), [SaferVPN](https://www.safervpn.com/es/vpn-protocols)
