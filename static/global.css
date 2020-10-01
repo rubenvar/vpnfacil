@@ -199,6 +199,7 @@ hr {
 }
 
 .blog-post table {
+  border-collapse: collapse;
   font-size: 16px;
   margin-bottom: 26px;
 }
