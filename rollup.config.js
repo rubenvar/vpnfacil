@@ -24,6 +24,7 @@ const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
 const onwarn = (warning, onwarn) =>
+  (warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
   (warning.code === 'CIRCULAR_DEPENDENCY' &&
     /[/\\]@sapper[/\\]/.test(warning.message)) ||
   (warning.code === 'PLUGIN_WARNING' &&
@@ -59,8 +60,8 @@ export default {
         extensions,
         dev,
         hydratable: true,
-        emitCss: true,
         preprocess,
+        emitCss: true,
       }),
       resolve({
         browser: true,
@@ -115,9 +116,10 @@ export default {
       }),
       svelte({
         extensions,
-        generate: 'ssr',
         dev,
+        hydratable: true,
         preprocess,
+        generate: 'ssr',
       }),
       resolve({
         dedupe: ['svelte'],
