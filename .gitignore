@@ -12,5 +12,4 @@ DOCS.md
 # keep images in routes but copy them to static on build
 /static/images/*
 # drafts and aux
-/src/routes/guias/mejores-vpn
 _index.*

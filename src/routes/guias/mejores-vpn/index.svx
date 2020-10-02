@@ -1,0 +1,150 @@
+---
+title: 'Los mejores VPNs'
+date: 2020-09-21
+slug: 'mejores-vpn'
+---
+
+<script context="module">
+  export async function preload() {
+    const response = await this.fetch(process.env.ENDPOINT, {
+      method: 'get',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await response.json();
+    return { vpns: data.body };
+  }
+</script>
+
+
+<script>
+  export let vpns;
+  const bestVpns = vpns
+    .sort((a, b) => {
+      if (a.rating > b.rating) return -1;
+      if (a.rating < b.rating) return 1;
+      return 0;
+    })
+    .filter((vpn, i) => i < 10);
+</script>
+
+
+<style>
+  table {
+    margin-left: -25%;
+    width: 150%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  }
+
+  table thead {
+    background-color: var(--secondary200);
+  }
+
+  table thead tr {
+    height: 36px;
+  }
+
+  table th {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  table tbody tr {
+    background-color: white;
+    transition: all 0.3s;
+    height: 45px;
+  }
+
+  table tbody tr:nth-child(odd) {
+    background-color: var(--secondary100);
+    transition: all 0.3s;
+  }
+
+  table tbody tr:hover {
+    background-color: var(--vpn-color);
+  }
+
+  table td {
+    margin: 5px;
+  }
+
+  table td img {
+    margin: 0 auto;
+  }
+
+  table th.servers,
+  table th.countries,
+  table th.devices,
+  table td.servers,
+  table td.countries,
+  table td.devices {
+    text-align: right;
+  }
+
+  table th.app-language,
+  table th.money-back,
+  table th.p2p,
+  table th.no-logs,
+  table th.mas-info,
+  table td.money-back,
+  table td.p2p,
+  table td.no-logs,
+  table td.mas-info {
+    text-align: center;
+  }
+  
+  table td.money-back,
+  table td.app-language {
+    color: #666;
+  }
+</style>
+
+
+<table>
+  <thead>
+    <tr>
+      <th />
+      <th />
+      <th class="servers">Servidores</th>
+      <th class="countries">Países</th>
+      <th class="devices">Disp.</th>
+      <th class="money-back">Garantía</th>
+      <th class="app-language">Idioma</th>
+      <th class="p2p">P2P</th>
+      <th class="no-logs">No Logs</th>
+      <th class="mas-info">Más info</th>
+    </tr>
+  </thead>
+  <tbody>
+    {#each bestVpns as vpn}
+      <tr style="--vpn-color: {vpn.color}">
+        <td class="img">
+          <img
+            height="30px"
+            src="/vpns/{vpn.id}.jpg"
+            alt="Logo de {vpn.name}" />
+        </td>
+        <td class="name">{vpn.name}</td>
+        <td class="servers">{vpn.servers}</td>
+        <td class="countries">{vpn.countries}</td>
+        <td class="devices">
+          {vpn.devices === 'unlimited' ? '∞' : vpn.devices}
+        </td>
+        <td class="money-back">
+          {vpn.moneyBack === 'yes' ? '✅' : '❌'}
+          {#if vpn.moneyBack === 'yes'}{' '}{vpn.moneyBackDays}{' días'}{/if}
+        </td>
+        <td class="app-language">
+          {vpn.appLanguage
+            .replace('spanish, english', '🇪🇸 español')
+            .replace('english', '🇬🇧 inglés')}
+        </td>
+        <td class="p2p">{vpn.p2p === 'yes' ? '✅' : '❌'}</td>
+        <td class="no-logs">{vpn.noLogs === 'yes' ? '✅' : '❌'}</td>
+        <td class="mas-info"><a href={vpn.link}>Más info</a></td>
+      </tr>
+    {/each}
+  </tbody>
+</table>
+
