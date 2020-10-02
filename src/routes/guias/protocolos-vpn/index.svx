@@ -2,21 +2,26 @@
 title: 'Protocolos VPN: Qué son y Cómo Elegir'
 seoTitle: 'Protocolos VPN: Qué son y Cómo Elegir [Tabla Comparativa]'
 date: 2020-10-01
-excerpt: 'Otra de esas cosas que no quieres hacer, pero tienes que elegir el mejor para tu conexión VPN. Mira aquí cómo escoger, explicado con palabras normales'
+excerpt: 'Otra de esas cosas que no quieres hacer, pero tienes que saber cómo elegir el mejor protocolo VPN para tu conexión. Mira aquí cómo escoger, explicado con palabras normales'
 slug: protocolos-vpn
 ---
 
 <style>
   table {
-    width: 110%;
-    margin-left: -5%;
-    font-size: 15px;
+    font-size: 14px;
+  }
+  @media only screen and (min-width: 640px) {
+    table {
+      font-size: 15px;
+      width: 110%;
+      margin-left: -5%;
+    }
   }
   thead {
-     font-size: 16px;
+    font-size: 16px;
   }
   thead tr {
-     background-color: var(--secondary200);
+    background-color: var(--secondary200);
   }
   th {
     text-align: left;
@@ -27,10 +32,10 @@ slug: protocolos-vpn
     background-color: white;
   }
   tr:nth-child(even) {
-     background-color: var(--secondary100);
+    background-color: var(--secondary100);
   }
   tr:hover {
-     background-color: var(--primary100);
+    background-color: var(--primary100);
   }
   td {
     padding: 5px 8px 5px 1px;
