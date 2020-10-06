@@ -84,10 +84,12 @@ slug: 'mejores-vpn'
 
   table th.app-language,
   table th.money-back,
+  table th.browsers,
   table th.p2p,
   table th.no-logs,
   table th.mas-info,
   table td.money-back,
+  table td.browsers,
   table td.p2p,
   table td.no-logs,
   table td.mas-info {
@@ -111,6 +113,7 @@ slug: 'mejores-vpn'
       <th class="devices">Disp.</th>
       <th class="money-back">Garantía</th>
       <th class="app-language">Idioma</th>
+      <th class="browsers">Navegador</th>
       <th class="p2p">P2P</th>
       <th class="no-logs">No Logs</th>
       <th class="mas-info">Más info</th>
@@ -126,7 +129,7 @@ slug: 'mejores-vpn'
             alt="Logo de {vpn.name}" />
         </td>
         <td class="name">{vpn.name}</td>
-        <td class="servers">{vpn.servers}</td>
+        <td class="servers">{vpn.servers || '-'}</td>
         <td class="countries">{vpn.countries}</td>
         <td class="devices">
           {vpn.devices === 'unlimited' ? '∞' : vpn.devices}
@@ -140,6 +143,7 @@ slug: 'mejores-vpn'
             .replace('spanish, english', '🇪🇸 español')
             .replace('english', '🇬🇧 inglés')}
         </td>
+        <td class="browsers">{vpn.browserPlugins === 'yes' ? '✅' : '❌'}</td>
         <td class="p2p">{vpn.p2p === 'yes' ? '✅' : '❌'}</td>
         <td class="no-logs">{vpn.noLogs === 'yes' ? '✅' : '❌'}</td>
         <td class="mas-info"><a href={vpn.link}>Más info</a></td>
@@ -148,3 +152,77 @@ slug: 'mejores-vpn'
   </tbody>
 </table>
 
+
+## Los apartados de esta comparativa de VPNs
+
+Aquí tienes los _detalles_ que usados para **evaluar los diez mejores VPNs** que puedes contratar:
+
+Ten en cuenta estos factores y asegúrate de que el servicio que eliges será siempre **la mejor opción online**.
+
+### Entre lo más importante en una VPN: Servidores y Países
+
+A cuántos puntos distintos puedes conectarte en todo el mundo.
+
+Está claro que, cuanto mayor sea el número de servidores de una VPN, **mejor**.
+
+Pero más importante:
+
+El número de **países** a los que puedes conectarte. Cuántos países puedes elegir para que tu conexión a internet _se haga desde allí_:
+
+![Mapra de Servidores de un VPN](images/_mejores1.jpg)
+
+Un buen VPN te dejará elegir fácilmente desde dónde conectar en cada momento
+
+De nuevo, está claro que cuantos **más países** te ofrezca, será **mejor VPN** porque tendrás mayor libertad en internet.
+
+### ¿Tienen extensión para el navegador?
+
+Algunos de estos servicios VPN te ofrecen **extensiones para tu navegador** (Firefox, Chrome, etc.).
+
+Esto significa que no tienes que instalar nada en tu ordenador:
+
+Da igual que uses Linux, Mac o lo que quieras.
+
+Simple y muy rápido:
+
+1. Instalas la **extensión** en el navegador
+2. Metes tus **datos de acceso**
+3. Y puedes conectarte al servidor de la VPN que tengas contratada
+
+Esto será útil si estás en un ordenador/dispositivo **que no es el tuyo** y quieres poder navegar por Internet siendo anónimo... sin tener que instalar ningún programa extra
+
+### 3. Número de Dispositivos y Sistemas operativos
+
+Este apartado se explica por sí mismo:
+
+**Cuántos dispositivos puedes conectar al mismo tiempo** con una sola cuenta en cada servicio de VPN
+
+Como puedes ver, todos los mejores VPN que hemos recopilado pueden usarse en tu ordenador o tu [Smartphone](https://comousarutorrent.com/para-android/), uses el sistema que uses (excepto Linux, que algunos VPN no soportan…)
+
+Aunque instales el mejor VPN en tu ordenador y tengas la App en tu Smartphone, **no podrás conectar todos los dispositivos que quieras**
+
+_El objetivo es limitar el uso del servicio para que no pueda haber **varias personas** a la vez usando una sola cuenta_
+
+Pero como ves, si vas a usarlo tú solo o con otra persona, no tendréis problemas para conectar dos o tres [teléfonos móviles baratos](https://comousarutorrent.com/mejores-smartphones-gama-baja/) y ordenadores
+
+En cualquiera de los servicios que te dejo en esta **comparativa de VPN**
+
+### 4. Garantía y Reembolso
+
+Los mejores VPNs que hemos incluido en la comparativa no ofrecen un periodo de prueba (excepto [NordVPN](https://comousarutorrent.com/nvpn) y [SpyOFF](https://comousarutorrent.com/spyo))
+
+Aun así, **todos ellos te ofrecen una garantía con 100% reembolso:**
+
+Esto significa que puedes contratar el servicio y _usarlo durante los días que cubra la garantía_, para **probarlo**.
+
+Antes de que pase el número total de días **puedes reclamar un reembolso** completo 100%:
+
+Todos los servicios de VPN que aparecen en la tabla **te devolverán tu dinero** sin ninguna pregunta
+
+### 5. ¿Tiene el VPN soporte en español?
+
+Si no hablas inglés o no te manejas lo suficiente en este idioma, te interesará que cuando elijas el mejor servicio de VPN **la aplicación esté en español**
+
+O que al menos, aunque el programa instalado en tu ordenador tenga las opciones en inglés, **la ayuda en internet esté en español**
+
+_Así lo verás todo mucho más claro_
