@@ -69,14 +69,14 @@
   <Fluid>
     <h1 slot="left"><a href="/">VPN Fácil</a></h1>
     <nav slot="right">
-      <a href="/guias/ofertas-vpn-2020">Mejores Ofertas 2020</a>
-      <a href="/guias">Todas las Guías</a>
-      <a href="/guias/preguntas-frecuentes">FAQ</a>
+      <a href="/guias/ofertas-vpn-2020/">Mejores Ofertas 2020</a>
+      <a href="/guias/">Todas las Guías</a>
+      <a href="/guias/preguntas-frecuentes/">FAQ</a>
     </nav>
     <nav class="mobile" slot="drawer">
-      <a href="/guias/ofertas-vpn-2020">Mejores Ofertas 2020</a>
-      <a href="/guias">Todas las Guías</a>
-      <a href="/guias/preguntas-frecuentes">FAQ</a>
+      <a href="/guias/ofertas-vpn-2020/">Mejores Ofertas 2020</a>
+      <a href="/guias/">Todas las Guías</a>
+      <a href="/guias/preguntas-frecuentes/">FAQ</a>
     </nav>
   </Fluid>
 </header>

@@ -66,7 +66,7 @@
 <svelte:head>
   <title>{seoTitle || title + ' ~ VPNFácil'}</title>
   <meta name="description" content={excerpt} />
-  <link rel="canonical" href="https://vpnfacil.com/guias/{slug}" />
+  <link rel="canonical" href="https://vpnfacil.com/guias/{slug}/" />
   <meta property="og:title" content={seoTitle || title} />
 </svelte:head>
 
