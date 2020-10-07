@@ -6,7 +6,7 @@ excerpt: 'Navegar siendo anónimo y superar bloqueos... Y todo eso, gratis. Mira
 slug: 'mejores-servidores-proxy-gratis'
 ---
 
-Ya hemos llegado por fin a la 3ª parte: cómo encontrar **proxys gratis** online
+Ya hemos llegado por fin a la 3ª parte: cómo encontrar **proxys gratis** online.
 
 Si ya tienes claro [qué es un proxy (parte 1)](/guias/que-es-proxy) y [cómo configurarlo (parte 2)](/guias/como-usar-proxy)...
 
@@ -14,10 +14,10 @@ Mira aquí los **mejores** servicios seleccionados, para que no tengas que preoc
 
 Esto es lo que vas a ver:
 
-- Opciones de pago (y todas sus **ventajas**)
-- Las opciones incluidas _gratis_ en otros servicios
-- Y las opciones 100% **gratuitas**
-- Además, BONUS: la opción **más rápida**
+- Opciones de pago (y todas sus **ventajas**).
+- Las opciones incluidas _gratis_ en otros servicios.
+- Y las opciones 100% **gratuitas**.
+- Además, BONUS: la opción **más rápida**.
 
 Vamos!
 
@@ -25,17 +25,17 @@ Vamos!
 
 Ya te avisaba de que tienes varias opciones:
 
-- 💰 Puedes pagar una **cuota mensual o anual** por tener acceso a listados enormes de servidores
-- 🚗 Puedes aprovechar los proxys **incluidos** en otros servicios que contrates
-- 🎁 O puedes usar **servidores proxy gratis**
+- 💰 Puedes pagar una **cuota mensual o anual** por tener acceso a listados enormes de servidores.
+- 🚗 Puedes aprovechar los proxys **incluidos** en otros servicios que contrates.
+- 🎁 O puedes usar **servidores proxy gratis**.
 
 Te explico cada opción, y **tú decides** qué necesitas en tu caso, ¿vale?
 
 ## Los más completos y seguros: Proxys de pago
 
-Normalmente listados de **proxys privados** que te ofrecen la mayor **seguridad y disponibilidad** (para algo pagas)
+Normalmente listados de **proxys privados** que te ofrecen la mayor **seguridad y disponibilidad** (para algo pagas).
 
-- En cualquier punto del mundo
+- En cualquier punto del mundo.
 
 Para que puedas conectarte a través de un proxy en tu navegador o en uTorrent, y **siempre** tengas disponible la ubicación que necesitas.
 
@@ -45,9 +45,9 @@ Te dejo 2 de los **mejores proxies privados** que puedes encontrar online (con p
 
 ### 1. My IP Hide
 
-Una de las mejores opciones del mundo, y por algo más de 5\$ al mes te aseguran ser **más rapidos** que cualquier otro servicio
+Una de las mejores opciones del mundo, y por algo más de 5\$ al mes te aseguran ser **más rapidos** que cualquier otro servicio.
 
-Ubicaciones en más de 20 países para que no tengas problemas para **elegir**
+Ubicaciones en más de 20 países para que no tengas problemas para **elegir**.
 
 ![My IP Hide](images/_proxy-server1.jpg)
 
@@ -81,11 +81,11 @@ Puedes usarlos como un servicio VPN, pero también para **conectar uTorrent a tr
 
 [Tienes el listado entero aquí mismo](https://nordvpn.com/es/servers/)
 
-NordVPN es uno de [los mejores VPN del mundo](/), está en español y tiene uno de los precios más competitivos
+NordVPN es uno de [los mejores VPN del mundo](/), está en español y tiene uno de los precios más competitivos.
 
 ### 2. IP Vanish
 
-[Este proveedor de VPN](https://comousarutorrent.com/ipva) también te ofrece servicios de proxy SOCKS5 para tus descargas en uTorrent
+[Este proveedor de VPN](https://comousarutorrent.com/ipva) también te ofrece servicios de proxy SOCKS5 para tus descargas en uTorrent.
 
 [![IPVANISH - Proxy SOCKS5 incluidos en sus servicios](images/_proxy-server2.jpg)](https://www.ipvanish.com/?a_bid=48f95966&a_aid=facil)
 
@@ -159,3 +159,7 @@ Mira un par de servicios de proxy web online que **funcionan a la perfección**:
 Puedes encontrar muchos más haciendo **una simple búsqueda online**.
 
 ---
+
+Si todavía no tienes claro [qué es un proxy, revisa la parte 1](/guias/que-es-proxy/).
+
+Y si quieres ver [cómo se configuran, mira la parte 2](/guias/como-usar-proxy/).

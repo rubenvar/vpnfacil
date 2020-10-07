@@ -65,11 +65,11 @@ Así que puedes imaginarte que estos protocolos son _importantes_. Son los respo
 
 ---
 
-Los protocolos VPN configuran el _túnel_ por el que pasan tus datos ([mira aquí cómo funciona un VPN](/guias/que-es-vpn)). Algunos protocolos te darán más velocidad. Otros más seguridad. La idea es encontrar el equilibrio perfecto.
+Los protocolos VPN configuran el _túnel_ por el que pasan tus datos ([mira aquí cómo funciona un VPN](/guias/que-es-vpn/)). Algunos protocolos te darán más velocidad. Otros más seguridad. La idea es encontrar el equilibrio perfecto.
 
 ![balance GIF (giphy.com)](https://media.giphy.com/media/26tniIl2HHKZCMLgA/giphy.gif)
 
-Hay unos cuantos tipos disponibles. Si usas [un buen servicio VPN](/guias/como-elegir-mejor-vpn) tendrás varios para elegir cuando te conectes a un servidor.
+Hay unos cuantos tipos disponibles. Si usas [un buen servicio VPN](/guias/como-elegir-mejor-vpn/) tendrás varios para elegir cuando te conectes a un servidor.
 
 Si vas a usar tu VPN en un smartphone, te interesarán determinados protocolos. También hay protocolos para instalar un VPN en tu router directamente. Otros son **súper-seguros**. Depende de lo que busques.
 
@@ -177,7 +177,7 @@ Así que nos queda OpenVPN: es uno de los más seguros (AES-256 bits también), 
 
 ## Todos los protocolos, detallados
 
-[Los mejores servicios VPN](/guias/ofertas-vpn-2020) te ofrecen casi todas las opciones que hemos visto hasta ahora. Y en muchas ocasiones, eligen por ti el mejor protocolo según el uso que vayas a hacer. Sin que tú tengas que hacer nada.
+[Los mejores servicios VPN](/guias/mejor-vpn-comparativa/) te ofrecen casi todas las opciones que hemos visto hasta ahora. Y en muchas ocasiones, eligen por ti el mejor protocolo según el uso que vayas a hacer. Sin que tú tengas que hacer nada.
 
 Aun así, hay ocasiones o servicios en los que tendrás que elegir por ti mismo, así que mejor tener ciertas nociones (al fin y al cabo, se trata de tu información personal).
 

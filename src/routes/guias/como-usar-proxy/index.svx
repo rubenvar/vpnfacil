@@ -5,7 +5,7 @@ excerpt: 'La teoría está bien pero... ¿Cómo puedes usar un proxy para ser an
 slug: 'como-usar-proxy'
 ---
 
-Después de haber leído [la primera parte para saber qué es un proxy](/guias/que-es-proxy)...
+Después de haber leído [la primera parte para saber qué es un proxy](/guias/que-es-proxy/)...
 
 Ya tienes todo lo que hace falta para poder **configurar** uno
 
@@ -72,4 +72,6 @@ Así que ya tenemos claro lo que es un proxy y cómo configurarlo. Solo nos falt
 
 ¿Dónde encontrar servidores Proxy **gratis** y **de calidad**?
 
-Vamos con la parte 3: [los mejores servicios de Proxy](/guias/mejores-servidores-proxy-gratis)
+Vamos con la parte 3: [los mejores servicios de Proxy](/guias/mejores-servidores-proxy-gratis/).
+
+O revisa la [parte 1: qué es proxy](/guias/que-es-proxy/), si aún no lo tienes claro.

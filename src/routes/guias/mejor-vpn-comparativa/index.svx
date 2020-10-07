@@ -1,7 +1,9 @@
 ---
-title: 'Los mejores VPNs'
-date: 2020-09-21
-slug: 'mejores-vpn'
+title: 'Tabla Comparativa: los 10 Mejores VPN'
+seoTitle: 'Elige el Mejor VPN: los 10 Mejores Online [Comparativa 2020]'
+date: 2020-10-07
+slug: 'mejor-vpn-comparativa'
+excerpt: 'Cómo elegir el mejor VPN para ti: navega 100% seguro por Internet, al mejor precio y con un servicio óptimo [actualizado octubre 2020]'
 ---
 
 <script context="module">
@@ -19,6 +21,9 @@ slug: 'mejores-vpn'
 
 
 <script>
+  {/* import Card from '../../../components/Card.svelte'; */}
+  import { format } from 'date-fns';
+  import { es } from 'date-fns/locale'
   export let vpns;
   const bestVpns = vpns
     .sort((a, b) => {
@@ -27,6 +32,8 @@ slug: 'mejores-vpn'
       return 0;
     })
     .filter((vpn, i) => i < 10);
+  
+  const currentDate = format(new Date(), "MMMM yyyy", {locale: es});
 </script>
 
 
@@ -35,6 +42,20 @@ slug: 'mejores-vpn'
     margin-left: -25%;
     width: 150%;
     box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  }
+
+  @media only screen and (max-width: 1150px) {
+    table {
+      width: 110%;
+      margin-left: -5%;
+    }
+  }
+
+  @media only screen and (max-width: 820px) {
+    table {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 
   table thead {
@@ -73,6 +94,10 @@ slug: 'mejores-vpn'
     margin: 0 auto;
   }
 
+  table td.name {
+    width: 11%;
+  }
+
   table th.servers,
   table th.countries,
   table th.devices,
@@ -84,11 +109,13 @@ slug: 'mejores-vpn'
 
   table th.app-language,
   table th.money-back,
+  table th.app-language,
   table th.browsers,
   table th.p2p,
   table th.no-logs,
   table th.mas-info,
   table td.money-back,
+  table td.app-language,
   table td.browsers,
   table td.p2p,
   table td.no-logs,
@@ -103,6 +130,16 @@ slug: 'mejores-vpn'
 </style>
 
 
+Usar Internet sin protección puede ser **muy peligroso**. Ya lo vimos en la teoría de [qués es un VPN](/guias/que-es-vpn/)... Bueno, aquí tienes la _práctica_.
+
+Mira la tabla comparativa para descubrir el mejor VPN para ti [actualizada {currentDate}].
+
+Revisa números, idioma y caracaterísticas y **elige ahora mismo**:
+
+<!-- for mobile?
+{#each bestVpns as vpn, index}
+  <Card {vpn} i={index} />
+{/each} -->
 <table>
   <thead>
     <tr>
@@ -112,7 +149,7 @@ slug: 'mejores-vpn'
       <th class="countries">Países</th>
       <th class="devices">Disp.</th>
       <th class="money-back">Garantía</th>
-      <th class="app-language">Idioma</th>
+      <th class="app-language">Soporte</th>
       <th class="browsers">Navegador</th>
       <th class="p2p">P2P</th>
       <th class="no-logs">No Logs</th>
@@ -140,8 +177,8 @@ slug: 'mejores-vpn'
         </td>
         <td class="app-language">
           {vpn.appLanguage
-            .replace('spanish, english', '🇪🇸 español')
-            .replace('english', '🇬🇧 inglés')}
+            .replace('spanish, english', '🇪🇸 esp')
+            .replace('english', '🇬🇧 ing')}
         </td>
         <td class="browsers">{vpn.browserPlugins === 'yes' ? '✅' : '❌'}</td>
         <td class="p2p">{vpn.p2p === 'yes' ? '✅' : '❌'}</td>
@@ -151,6 +188,8 @@ slug: 'mejores-vpn'
     {/each}
   </tbody>
 </table>
+
+[Mira aquí las mejores ofertas de 2020](/guias/ofertas-vpn-2020/) y consigue un VPN **ya**.
 
 
 ## Los apartados de esta comparativa de VPNs
@@ -191,38 +230,36 @@ Simple y muy rápido:
 
 Esto será útil si estás en un ordenador/dispositivo **que no es el tuyo** y quieres poder navegar por Internet siendo anónimo... sin tener que instalar ningún programa extra
 
-### 3. Número de Dispositivos y Sistemas operativos
+### Dispositivos y Sistemas operativos
 
-Este apartado se explica por sí mismo:
+¿Cuántos dispositivos puedes conectar **al mismo tiempo** con una sola cuenta?
 
-**Cuántos dispositivos puedes conectar al mismo tiempo** con una sola cuenta en cada servicio de VPN
+Como puedes ver, todos los mejores VPN pueden usarse en tu ordenador o tu Smartphone, uses el sistema que uses.
 
-Como puedes ver, todos los mejores VPN que hemos recopilado pueden usarse en tu ordenador o tu [Smartphone](https://comousarutorrent.com/para-android/), uses el sistema que uses (excepto Linux, que algunos VPN no soportan…)
+Aun así, hay servicios con los que no podrás conectar todos los dispositivos que quieras. Mira en la tabla el apartado **Disp.** (dispositivos).
 
-Aunque instales el mejor VPN en tu ordenador y tengas la App en tu Smartphone, **no podrás conectar todos los dispositivos que quieras**
+Verás que hay varios VPN con acceso ilimitado (∞) y otros que permiten unos cuantos dispositivos (hasta 10 en algunos casos).
 
-_El objetivo es limitar el uso del servicio para que no pueda haber **varias personas** a la vez usando una sola cuenta_
+Así que si vas a usarlo tú solo o con otra persona con la que convivas, por ejemplo, no tendréis problemas para conectar varios dispositivos.
 
-Pero como ves, si vas a usarlo tú solo o con otra persona, no tendréis problemas para conectar dos o tres [teléfonos móviles baratos](https://comousarutorrent.com/mejores-smartphones-gama-baja/) y ordenadores
+### Garantía y Reembolso
 
-En cualquiera de los servicios que te dejo en esta **comparativa de VPN**
+Los mejores VPNs que hemos incluido en la comparativa no ofrecen un periodo de prueba:
 
-### 4. Garantía y Reembolso
+Aun así, todos ellos te ofrecen una garantía con **100% reembolso**.
 
-Los mejores VPNs que hemos incluido en la comparativa no ofrecen un periodo de prueba (excepto [NordVPN](https://comousarutorrent.com/nvpn) y [SpyOFF](https://comousarutorrent.com/spyo))
+Esto significa que puedes contratar el servicio y usarlo durante los días que cubra la garantía (también en la tabla), para **probarlo**.
 
-Aun así, **todos ellos te ofrecen una garantía con 100% reembolso:**
+Antes de que pase el número total de días puedes reclamar un reembolso completo 100%.
 
-Esto significa que puedes contratar el servicio y _usarlo durante los días que cubra la garantía_, para **probarlo**.
+Sin comisiones ni problemas.
 
-Antes de que pase el número total de días **puedes reclamar un reembolso** completo 100%:
+Todos los servicios de VPN que aparecen en la tabla **te devolverán tu dinero** sin ninguna pregunta.
 
-Todos los servicios de VPN que aparecen en la tabla **te devolverán tu dinero** sin ninguna pregunta
+### Soporte en español
 
-### 5. ¿Tiene el VPN soporte en español?
+Si no hablas inglés o no te manejas lo suficiente en este idioma, te interesará que cuando elijas el mejor servicio de VPN **la aplicación esté en español**.
 
-Si no hablas inglés o no te manejas lo suficiente en este idioma, te interesará que cuando elijas el mejor servicio de VPN **la aplicación esté en español**
+Esto no es un problema, ya que el idioma de la app que instales es configurable, y todos los VPN de esta comparativa te ofrecen idioma español.
 
-O que al menos, aunque el programa instalado en tu ordenador tenga las opciones en inglés, **la ayuda en internet esté en español**
-
-_Así lo verás todo mucho más claro_
+Lo importante es que, si tienes que contactar con soporte o revisar las guías de ayuda, estás **también estén en español**.

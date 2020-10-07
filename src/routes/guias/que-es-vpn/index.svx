@@ -45,6 +45,8 @@ Cuando tus datos salen de tu ordenador, pasan por el servidor de VPN antes de ll
 - Te asigna una IP anónima (en un momento hablamos más sobre la IP). Ninguna página o servicio podrá identificar tu ordenador, sino la IP aleatoria que te asigna tu VPN.
 - A través del servidor de VPN, que puede estar en cualquier punto del mundo, tus datos llegarán a Internet desde ese punto, simulando así que te conectas desde otra ubicación. Esto te aporta **anonimato** y **privacidad**.
 
+Elige el mejor VPN para ti en esta [comparativa actualizada](/guias/mejor-vpn-comparativa/).
+
 ## Un VPN esconde tu IP real. Así funciona:
 
 Una de las razones principales por las que la gente usa una VPN es porque esconde la IP real de tu dispositivo.
@@ -69,7 +71,7 @@ Esto hace tu experiencia online más **neutral y anónima**, como debería ser.
 
 ## Bueno: ¿para qué me sirve todo esto?
 
-[Listado: Todas las ventajas de usar una VPN](/guias/ventajas-de-usar-vpn)
+[Listado: Todas las ventajas de usar una VPN](/guias/ventajas-de-usar-vpn/)
 
 Usar un VPN para navegar por Internet no tiene inconvenientes. Lo que sí tiene son muchas ventajas:
 
@@ -77,7 +79,7 @@ Usar un VPN para navegar por Internet no tiene inconvenientes. Lo que sí tiene 
 
 Protege tu información. Tus fotos, videos, documentos. Si decides compartir algo en las redes sociales o en tu blog, que sea tu decisión, y que nadie más pueda **robar** tus recuerdos y tus archivos.
 
-Si [eliges un buen VPN](/guias/como-elegir-mejor-vpn), te ofrecerá múltiples protocolos para conectarte, muchos países y servidores disponibles, y podrás usarlo en varios dispositivos al mismo tiempo.
+Si [eliges un buen VPN](/guias/como-elegir-mejor-vpn/), te ofrecerá múltiples protocolos para conectarte, muchos países y servidores disponibles, y podrás usarlo en varios dispositivos al mismo tiempo.
 
 Así podrás proteger tu teléfono, tablet, y ordenador, los del resto de tu familia, tu Smart TV, etc. eligiendo la mejor configuración para cada dispositivo.
 
@@ -109,4 +111,4 @@ Cuando proteges todo lo que haces en Internet, nadie podrá limitar tu velocidad
 
 ---
 
-Si todavía no te ha convencido, [mira todas las demás ventajas](/guias/ventajas-de-usar-vpn). No tienes nada que perder.
+Si todavía no te ha convencido, [mira todas las demás ventajas](/guias/ventajas-de-usar-vpn/). No tienes nada que perder.
