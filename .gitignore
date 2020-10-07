@@ -13,3 +13,4 @@ DOCS.md
 /static/images/*
 # drafts and aux
 _index.*
+_text.*
