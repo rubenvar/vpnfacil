@@ -61,8 +61,8 @@ slug: ofertas-vpn-2020
 
 
 <p>
-  En Internet, cualquier página puede <strong>rastrearte mediante tu IP</strong>
-  . Es como tu número de identidad.
+  En Internet, cualquier página puede <strong>rastrearte mediante tu IP</strong>.
+  Es como tu número de identidad.
 </p>
 
 <p>
@@ -96,5 +96,6 @@ No hace falta que sigas leyendo. Lo importante es que elijas uno 👆 y accedas 
 
 Pero si quieres saber más sobre este tema, no me enrollo. Te dejo los recursos más útiles:
 
-- [**Todos** los VPN](/), rankeados y ordenados para que compares
+- La [comparativa de VPNs](/guias/mejor-vpn-comparativa/) con las 10 mejores opciones, actualizada 2020.
+- O [**todos** los VPN](/), rankeados y ordenados para que compares
 - [Las ventajas de usar uno](/guias/ventajas-de-usar-vpn/) (y por qué deberías usarlo siempre, para todo)
