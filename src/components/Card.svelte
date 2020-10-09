@@ -7,8 +7,9 @@
   const {
     name,
     id,
+    slug,
     color,
-    link,
+    // link,
     rating,
     servers,
     ips,
@@ -21,12 +22,12 @@
     browserPlugins,
     browsers,
     p2p,
-    noLogs
+    noLogs,
   } = vpn;
   const numbers = {
     countries,
     servers,
-    ips
+    ips,
   };
 
   // format languages, platforms from string to array
@@ -208,10 +209,7 @@
         <svg>
           <use href="#icon-certificate" />
         </svg>
-        <span>
-          Sin garantía
-          <span class="tag">de devolución</span>
-        </span>
+        <span> Sin garantía <span class="tag">de devolución</span> </span>
       </li>
     {/if}
 
@@ -220,10 +218,7 @@
         <svg>
           <use href="#icon-translate" />
         </svg>
-        <span>
-          <span class="tag">Solo en</span>
-          {languages[0]}
-        </span>
+        <span> <span class="tag">Solo en</span> {languages[0]} </span>
       </li>
     {:else if languages && languages.length >= 2}
       <li>
@@ -232,9 +227,7 @@
         </svg>
         <span>
           <span class="tag">En</span>
-          {#each languages as lang}
-            <span>{lang}{', '}</span>
-          {/each}
+          {#each languages as lang}<span>{lang}{', '}</span>{/each}
           <span class="tag">etc.</span>
         </span>
       </li>
@@ -247,10 +240,7 @@
         </svg>
         <span>
           <span class="tag">Disponible para</span>
-          {#each plats as plat}
-            <span class="platform">{plat}</span>
-            {' '}
-          {/each}
+          {#each plats as plat}<span class="platform">{plat}</span> {' '}{/each}
         </span>
       </li>
     {/if}
@@ -296,11 +286,9 @@
     {/if}
   </ul>
 
-  {#if link}
-    <a href={link} target="_blank" title="Ir a {name}" rel="noopener nofollow">
-      <div class="go">
-        <span>Ver más info</span>
-      </div>
+  {#if slug}
+    <a href="/vpn/{slug}/" title="Ir a {name}">
+      <div class="go"><span>Ver más info</span></div>
     </a>
   {/if}
 </article>
