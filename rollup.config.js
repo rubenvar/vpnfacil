@@ -30,6 +30,9 @@ const onwarn = (warning, onwarn) =>
   (warning.code === 'PLUGIN_WARNING' &&
     warning.pluginCode &&
     warning.pluginCode === 'a11y-no-onchange') ||
+  warning.message.includes(
+    'Use of eval is strongly discouraged, as it poses security risks and may cause issues with minification'
+  ) ||
   onwarn(warning);
 
 const extensions = ['.svelte', '.svx'];
