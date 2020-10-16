@@ -9,3 +9,5 @@ slug: que-es-killswitch
 ## What is the Mozilla VPN kill switch?
 
 A VPN kill switch is a must-have for privacy reasons when using a VPN. If you are actively using the VPN to transfer data and your Internet connection becomes unstable or drops, the entire network connection on your device will be blocked to prevent your local IP address from being exposed to the outside world. The kill switch is on by default on Windows, Android and iOS and there is no setting to turn it off.
+
+https://support.mozilla.org/en-US/kb/mozilla-vpn-kill-switch
