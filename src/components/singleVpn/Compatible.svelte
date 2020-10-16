@@ -1,4 +1,6 @@
 <script>
+  import SingleSection from './SingleSection.svelte';
+
   export let vpn;
 
   const compatible = [
@@ -48,32 +50,36 @@
   }
 </style>
 
-<h2>Compatibilidad</h2>
-<div id="main-list">
-  {#each compatible as cat}
+<SingleSection id="compatible">
+  <h2>Compatibilidad</h2>
+  <div id="main-list">
+    {#each compatible as cat}
+      <div>
+        <h4>{cat.title}</h4>
+        {#each cat.values as logo}
+          <div class="platform">
+            <img
+              src="compatible/{logo.toLowerCase()}.png"
+              alt="Logo de {logo}" />
+            <span>{logo}</span>
+          </div>
+        {/each}
+      </div>
+    {/each}
     <div>
-      <h4>{cat.title}</h4>
-      {#each cat.values as logo}
+      <h4>Otros</h4>
+      {#if vpn.routers === 'yes'}
         <div class="platform">
-          <img src="compatible/{logo.toLowerCase()}.png" alt="Logo de {logo}" />
-          <span>{logo}</span>
+          <img src="compatible/routers.png" alt="Logo de Routers" />
+          <span>Routers</span>
         </div>
-      {/each}
+      {/if}
+      {#if vpn.nas === 'yes'}
+        <div class="platform">
+          <img src="compatible/nas.png" alt="Logo de NAS" />
+          <span>NAS</span>
+        </div>
+      {/if}
     </div>
-  {/each}
-  <div>
-    <h4>Otros</h4>
-    {#if vpn.routers === 'yes'}
-      <div class="platform">
-        <img src="compatible/routers.png" alt="Logo de Routers" />
-        <span>Routers</span>
-      </div>
-    {/if}
-    {#if vpn.nas === 'yes'}
-      <div class="platform">
-        <img src="compatible/nas.png" alt="Logo de NAS" />
-        <span>NAS</span>
-      </div>
-    {/if}
   </div>
-</div>
+</SingleSection>
