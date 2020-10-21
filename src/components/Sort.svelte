@@ -7,12 +7,12 @@
     { id: 2, text: 'Servidores', criteria: 'servers' },
     { id: 3, text: 'Países', criteria: 'countries' },
     { id: 4, text: 'Dispositivos', criteria: 'devices' },
-    { id: 5, text: 'Alfabético', criteria: 'name' }
+    { id: 5, text: 'Alfabético', criteria: 'name' },
   ];
 
   // get sorting criteria from store
   let selectedSortCriteria;
-  sortCriteria.subscribe(val => {
+  sortCriteria.subscribe((val) => {
     return (selectedSortCriteria = val);
   });
 
@@ -33,7 +33,7 @@
 
   // manage sorting direction
   let decrease;
-  direction.subscribe(val => (decrease = val));
+  direction.subscribe((val) => (decrease = val));
   const handleDirection = () => direction.set(!decrease);
 </script>
 
@@ -60,7 +60,6 @@
     box-sizing: border-box;
     margin: 0;
     border: 1px solid #ddd;
-    /* border: none; */
     box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
     border-radius: 10px;
     transition: all 0.3s;
