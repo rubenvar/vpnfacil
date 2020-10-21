@@ -6,14 +6,10 @@
 <style lang="scss">
   section {
     padding: 40px 0;
+    position: relative;
     div {
-      border: 1px solid;
-      border-radius: 15px;
       max-width: 780px;
       margin: 0 auto;
-    }
-    &:nth-child(even) {
-      background-color: #fafafa;
     }
   }
 </style>

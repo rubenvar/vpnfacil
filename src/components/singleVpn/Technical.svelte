@@ -25,7 +25,7 @@
   {/if}
   {#if vpn.socks5 !== ''}
     <div class="feature">
-      <p>SOCKS5</p>
+      <p>Proxy SOCKS5</p>
       <p>{vpn.socks5 === 'yes' ? 'Sí 👍' : 'No 👎'}</p>
     </div>
   {/if}

@@ -1,6 +1,6 @@
 <script>
   import formatMoney from '../../utils/formatMoney';
-  import formatPercent from '../../utils/formatPercent';
+  import { formatPercent } from '../../utils';
   import SingleSection from './SingleSection.svelte';
   export let vpn;
 
