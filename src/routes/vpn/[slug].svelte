@@ -13,7 +13,6 @@
 
 <script>
   import { scrollto } from 'svelte-scrollto';
-  // import fetch from 'node-fetch';
 
   import Compatible from '../../components/singleVpn/Compatible.svelte';
   import Details from '../../components/singleVpn/Details.svelte';
@@ -32,15 +31,6 @@
 
   const technicalExists =
     vpn.protocolsList !== '' || vpn.socks5 !== '' || vpn.moreList !== '';
-
-  async function postVote(rat) {
-    const resp = await fetch(`${process.env.ENDPOINT}/user-rating`, {
-      method: 'POST',
-      body: JSON.stringify({ slug: vpn.slug, rating: rat }),
-    });
-    const json = await resp.json();
-    console.log(json);
-  }
 </script>
 
 <style lang="scss">
@@ -76,8 +66,6 @@
     <h1>{vpn.name}</h1>
     <img src="screenshots/{vpn.id}.png" alt="Página principal de {vpn.name}" />
     <p>{vpn.description}</p>
-    <button on:click={() => postVote('Good')}>Good {vpn.userRatingGood}</button>
-    <button on:click={() => postVote('Bad')}>Bad {vpn.userRatingBad}</button>
   </SingleSection>
 
   <section id="bar">
