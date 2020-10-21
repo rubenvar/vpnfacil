@@ -12,8 +12,8 @@
 </script>
 
 <script>
-  import { scrollto } from 'svelte-scrollto';
-
+  import Nav from '../../components/singleVpn/Nav.svelte';
+  import Top from '../../components/singleVpn/Top.svelte';
   import Compatible from '../../components/singleVpn/Compatible.svelte';
   import Details from '../../components/singleVpn/Details.svelte';
   import Languages from '../../components/singleVpn/Languages.svelte';
@@ -33,59 +33,12 @@
     vpn.protocolsList !== '' || vpn.socks5 !== '' || vpn.moreList !== '';
 </script>
 
-<style lang="scss">
-  #bar {
-    div {
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-    background: white;
-    padding: 20px var(--defSidePadding);
-    position: sticky;
-    top: 0;
-    z-index: 99;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
-    nav {
-      display: flex;
-      justify-content: space-between;
-      span {
-        cursor: pointer;
-        &:hover {
-          color: var(--primary500);
-        }
-      }
-    }
-  }
-</style>
-
 {#if !vpn.name}
   <p>Este VPN no existe...</p>
 {:else}
-  <SingleSection id="top">
-    <img src="vpns/{vpn.id}.jpg" alt="Logo de {vpn.name}" />
-    <h1>{vpn.name}</h1>
-    <img src="screenshots/{vpn.id}.png" alt="Página principal de {vpn.name}" />
-    <p>{vpn.description}</p>
-  </SingleSection>
+  <Top {vpn} />
 
-  <section id="bar">
-    <div>
-      <nav>
-        <span use:scrollto={'#ratings'}>Puntuaciones</span>
-        <span use:scrollto={'#numbers'}>Números</span>
-        <span use:scrollto={'#languages'}>Idiomas</span>
-        <span use:scrollto={'#warranty'}>Garantía</span>
-        <span use:scrollto={'#compatible'}>Compatibilidad</span>
-        {#if tests}<span use:scrollto={'#test'}>Pruebas</span>{/if}
-        <span use:scrollto={'#details'}>Detalles</span>
-        {#if technicalExists}
-          <span use:scrollto={'#technical'}>Técnico</span>
-        {/if}
-        <span use:scrollto={'#pricing'}>Precios</span>
-        {#if review}<span use:scrollto={'#review'}>Review</span>{/if}
-      </nav>
-    </div>
-  </section>
+  <Nav {tests} {review} {technicalExists} />
 
   <Ratings {vpn} />
 

@@ -1,6 +1,6 @@
 <script>
   import StarRating from 'svelte-star-rating';
-  import formatMoney from '../utils/formatMoney';
+  import { formatMoney } from '../utils';
   export let vpn;
   export let subtitle;
   export let comment;

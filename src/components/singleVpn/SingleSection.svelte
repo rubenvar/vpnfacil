@@ -1,5 +1,6 @@
 <script>
   import ToTop from './ToTop.svelte';
+  export let wide = false;
   export let id = '';
 </script>
 
@@ -8,17 +9,24 @@
     padding: 40px 0;
     position: relative;
     div {
+      width: 100%;
       max-width: 780px;
       margin: 0 auto;
+      &.wider {
+        max-width: var(--maxWidth);
+        padding: 0 var(--defSidePadding);
+      }
     }
   }
 </style>
 
 <section {id}>
-  <div>
+  <div class={wide && 'wider'}>
     <slot>
       <!-- optional fallback -->
     </slot>
   </div>
-  <ToTop />
+  {#if id !== 'top'}
+    <ToTop />
+  {/if}
 </section>
