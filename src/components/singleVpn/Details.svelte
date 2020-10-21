@@ -1,4 +1,6 @@
 <script>
+  import countryFlagEmoji from 'country-flag-emoji';
+
   import SingleSection from './SingleSection.svelte';
 
   export let vpn;
@@ -43,7 +45,10 @@
     },
   ];
 
-  const flag = `🇵🇹`;
+  const casa = `🇵🇹`;
+  let country, flag;
+  if (vpn.basedIn)
+    ({ name: country, emoji: flag } = countryFlagEmoji.get(vpn.basedIn));
 </script>
 
 <style lang="scss">
@@ -152,7 +157,9 @@
           {vpn.name}
           y cuyas leyes aplican</span>
       </div>
-      <p id="country">{flag} {vpn.basedIn}</p>
+      {#if vpn.basedIn}
+        <p id="country">{flag} {country}</p>
+      {/if}
     </div>
   {/if}
 </SingleSection>

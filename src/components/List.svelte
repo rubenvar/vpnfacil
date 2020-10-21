@@ -9,11 +9,11 @@
 
   // get sorting criteria from store
   let selectedSort = undefined;
-  sortCriteria.subscribe(val => (selectedSort = val));
+  sortCriteria.subscribe((val) => (selectedSort = val));
 
   // get sorting direction from store
   let decrease = true;
-  direction.subscribe(val => (decrease = val));
+  direction.subscribe((val) => (decrease = val));
 
   $: if (selectedSort) {
     vpns = vpns.sort((a, b) => {

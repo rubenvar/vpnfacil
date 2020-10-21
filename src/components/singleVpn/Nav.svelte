@@ -9,11 +9,11 @@
   #bar {
     div {
       width: 100%;
-      max-width: var(--maxWidth);
+      max-width: var(--widerWidth);
       margin: 0 auto;
+      padding: 20px var(--defSidePadding);
     }
     background: white;
-    padding: 20px var(--defSidePadding);
     position: sticky;
     top: 0;
     z-index: 99;

@@ -13,7 +13,7 @@
       max-width: 780px;
       margin: 0 auto;
       &.wider {
-        max-width: var(--maxWidth);
+        max-width: var(--widerWidth);
         padding: 0 var(--defSidePadding);
       }
     }

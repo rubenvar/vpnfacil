@@ -88,7 +88,7 @@
       <span>¿incluye {vpn.name} este protocolo para proxy?</span>
     </div>
     <p id="socks">{vpn.socks5 === 'yes' ? '✅ sí' : '❌ no'}</p>
-    <p id="chart"><a href="">ver VPNs con SOCKS5</a></p>
+    <p id="chart"><a href="/">ver VPNs con SOCKS5</a></p>
   </div>
   {#if vpn.moreList !== ''}
     <div class="row">

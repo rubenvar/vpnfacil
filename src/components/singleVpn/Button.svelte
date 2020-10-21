@@ -14,7 +14,7 @@
     margin: 10px 0;
     transition: all 0.3s;
     &.main {
-      background: var(--primary800);
+      background: var(--primary700);
       color: var(--grey100);
     }
     &.light {

@@ -63,7 +63,7 @@
         después de comprarlo?
       </span>
     </div>
-    <p class="detail">{vpn.moneyBack === 'yes' ? '✅ SÍ' : '❌ NO'}</p>
+    <p class="detail">{vpn.moneyBack === 'yes' ? '✅ sí' : '❌ no'}</p>
     <div class="chart">ESTADÍSTICA</div>
   </div>
   {#if vpn.moneyBack === 'yes'}
@@ -84,7 +84,7 @@
       <h3>Prueba Gratuita</h3>
       <span>¿puedes probar GRATIS este VPN, sin que pidan tu tarjeta de crédito?</span>
     </div>
-    <p class="detail">{vpn.freeTrial === 'yes' ? '✅ SÍ' : '❌ NO'}</p>
+    <p class="detail">{vpn.freeTrial === 'yes' ? '✅ sí' : '❌ no'}</p>
     <div class="chart">ESTADÍSTICA</div>
   </div>
   {#if vpn.freeTrial === 'yes'}
