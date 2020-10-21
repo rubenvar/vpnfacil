@@ -13,6 +13,7 @@
     padding: 14px 36px;
     margin: 10px 0;
     transition: all 0.3s;
+    font-size: 21px;
     &.main {
       background: var(--primary700);
       color: var(--grey100);

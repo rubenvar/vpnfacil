@@ -29,7 +29,7 @@
       value: manageBool(vpn.students),
     },
     {
-      title: 'Política Estricta de No-Logs',
+      title: 'No-Logs',
       text: `¿tiene ${vpn.name} explícitamente una política de no-logs?`,
       value: manageBool(vpn.noLogs),
     },
@@ -67,7 +67,7 @@
     gap: 15px;
     transition: all 0.3s;
     padding: 7px;
-    margin: 20px 0;
+    margin: 30px 0;
     &--longer {
       grid-template-columns: 1fr 2fr;
     }

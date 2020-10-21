@@ -92,15 +92,19 @@
 <SingleSection id="numbers">
   <h2>En Cifras</h2>
   {#each numbers as number}
-    {#if number.value > 0}
+    {#if number.value > 0 || number.value === 'unlimited'}
       <div class="row">
         <div class="title">
           <h3>{number.title}</h3>
           {#if number.text}<span>{number.text}</span>{/if}
         </div>
         <p class="number">
-          {formatNumber(number.value, false)}{#if number.plus}
-            <span>+</span>
+          {#if number.value === 'unlimited'}
+            ilimitados
+          {:else}
+            {formatNumber(number.value, false)}{#if number.plus}
+              <span>+</span>
+            {/if}
           {/if}
         </p>
         <div class="chart">

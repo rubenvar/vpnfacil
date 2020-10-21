@@ -1,21 +1,12 @@
 <script>
   import countryFlagEmoji from 'country-flag-emoji';
   import StarRating from 'svelte-star-rating';
+
   import SingleSection from './SingleSection.svelte';
   import Button from './Button.svelte';
   import { formatMoney } from '../../utils';
 
   export let vpn;
-
-  const compatibleLength =
-    vpn.platforms.split(',').length +
-    (vpn.browserPlugins === 'yes' ? vpn.browsers.split(',').length : 0) +
-    (vpn.compatibilityList !== ''
-      ? vpn.compatibilityList.split(',').length
-      : 0) +
-    (vpn.routers === 'yes' ? 1 : 0) +
-    (vpn.nas === 'yes' ? 1 : 0);
-  console.log(compatibleLength);
 </script>
 
 <style lang="scss">
@@ -23,11 +14,13 @@
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 30px;
+    align-items: center;
     .text {
       h1 {
         font-size: 50px;
         grid-area: text;
         margin-bottom: 10px;
+        color: var(--vpnColor);
       }
       #description {
         max-width: 75%;
@@ -47,15 +40,20 @@
       }
     }
     img {
-      border: 3px solid var(--secondary500);
+      border: 3px solid var(--vpnColor);
       border-radius: var(--cardRadius);
       box-shadow: var(--boxShadow);
+      transition: all 0.3s;
+      transform: rotate(1.5deg);
+      &:hover {
+        transform: scale(1.02) rotate(3deg);
+      }
     }
   }
 </style>
 
 <SingleSection id="top" wide={true}>
-  <div id="top-container">
+  <div id="top-container" style="--vpnColor: {vpn.color}">
     <div class="text">
       <h1>{vpn.name}</h1>
       <StarRating
@@ -66,7 +64,10 @@
       <p id="description">{vpn.description}</p>
       <div class="details">
         <p>
-          {#if vpn.devices}<span>{vpn.devices} dispositivos</span>{/if}
+          {#if vpn.devices}
+            <span>{vpn.devices === 'unlimited' ? '∞' : vpn.devices}
+              dispositivos</span>
+          {/if}
           {#if vpn.countries}<span>{vpn.countries} países</span>{/if}
           {#if vpn.basedIn}
             <span>{countryFlagEmoji.get(vpn.basedIn).emoji}
@@ -85,14 +86,17 @@
             </span>
           {/if}
           <span>compatibilidad:
-            {compatibleLength < 6 ? 'baja' : compatibleLength > 5 && compatibleLength < 12 ? 'media' : 'alta'}</span>
+            {vpn.compatIndex < 6 ? 'baja' : vpn.compatIndex > 5 && vpn.compatIndex < 12 ? 'media' : 'alta'}</span>
         </p>
       </div>
       <!-- <img id="logo" src="vpns/{vpn.id}.jpg" alt="Logo de {vpn.name}" /> -->
       <Button link={vpn.link} text="ver oferta AHORA" main={true} />
     </div>
-    <img
-      src={'screenshots/placeholder.png'}
-      alt="Página principal de {vpn.name}" />
+    <a href={vpn.link} target="_blank">
+      <img
+        src={'screenshots/placeholder.png'}
+        alt="Página principal de {vpn.name}"
+        title={vpn.name} />
+    </a>
   </div>
 </SingleSection>
