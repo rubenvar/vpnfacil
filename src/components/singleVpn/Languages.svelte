@@ -41,9 +41,19 @@
     }
     .language {
       text-align: center;
+      font-size: 20px;
     }
-    .chart {
+    .see-more {
+      justify-self: end;
       text-align: right;
+      max-width: 75%;
+      a {
+        text-decoration: none;
+        color: var(--primary400);
+        &:hover {
+          color: var(--grey900);
+        }
+      }
     }
   }
 </style>
@@ -62,7 +72,7 @@
         🇪🇸 Disponible en español
       {:else}🇬🇧 Solo en inglés{/if}
     </p>
-    <div class="chart">
+    <div class="see-more">
       {#if !vpn.appLanguage.includes('spanish')}
         <a href="/">
           mira
@@ -82,7 +92,7 @@
         🇪🇸 Disponible en español
       {:else}🇬🇧 Solo en inglés{/if}
     </p>
-    <div class="chart">
+    <div class="see-more">
       {#if !vpn.uiLanguage.includes('spanish')}
         <a href="/">
           mira
@@ -102,7 +112,7 @@
         🇪🇸 Disponible en español
       {:else}🇬🇧 Solo en inglés{/if}
     </p>
-    <div class="chart">
+    <div class="see-more">
       {#if !vpn.supportLanguage.includes('spanish')}
         <a href="/">
           mira

@@ -49,10 +49,19 @@
       text-align: center;
       margin: 0;
     }
-    .chart {
-      display: flex;
-      flex-direction: column;
+    // .chart {
+    // }
+    .see-more {
+      justify-self: end;
       text-align: right;
+      max-width: 75%;
+      a {
+        text-decoration: none;
+        color: var(--primary400);
+        &:hover {
+          color: var(--grey900);
+        }
+      }
     }
   }
 </style>
@@ -69,7 +78,7 @@
       </span>
     </div>
     <p class="detail">{vpn.moneyBack === 'yes' ? '✅ sí' : '❌ no'}</p>
-    <div class="chart">
+    <div class="see-more">
       {#if vpn.moneyBack !== 'yes'}
         <a href="/">mira
           {vpns.filter((vpn) => vpn.moneyBack === 'yes').length}
@@ -100,7 +109,7 @@
       <span>¿puedes probar GRATIS este VPN, sin que pidan tu tarjeta de crédito?</span>
     </div>
     <p class="detail">{vpn.freeTrial === 'yes' ? '✅ sí' : '❌ no'}</p>
-    <div class="chart">
+    <div class="see-more">
       {#if vpn.freeTrial !== 'yes'}
         <a href="/">mira
           {vpns.filter((vpn) => vpn.freeTrial === 'yes').length}

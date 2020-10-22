@@ -2,6 +2,7 @@
   import SingleSection from './SingleSection.svelte';
 
   export let vpn;
+  export let vpns;
 </script>
 
 <style lang="scss">
@@ -20,7 +21,7 @@
     padding: 7px;
     align-items: center;
     gap: 15px;
-    margin: 20px 0;
+    margin: 30px 0;
     &--longer {
       grid-template-columns: 1fr 1fr 1fr;
     }
@@ -60,8 +61,17 @@
       text-align: center;
       margin: 0;
     }
-    #chart {
+    .see-more {
+      justify-self: end;
       text-align: right;
+      max-width: 75%;
+      a {
+        text-decoration: none;
+        color: var(--primary400);
+        &:hover {
+          color: var(--grey900);
+        }
+      }
     }
   }
 </style>
@@ -88,7 +98,13 @@
       <span>¿incluye {vpn.name} este protocolo para proxy?</span>
     </div>
     <p id="socks">{vpn.socks5 === 'yes' ? '✅ sí' : '❌ no'}</p>
-    <p id="chart"><a href="/">ver VPNs con SOCKS5</a></p>
+    <div class="see-more">
+      {#if vpn.socks5 !== 'yes'}
+        <a href="/">mira
+          {vpns.filter((vpn) => vpn.socks5 === 'yes').length}
+          VPNs que sí tienen SOCKS5</a>
+      {/if}
+    </div>
   </div>
   {#if vpn.moreList !== ''}
     <div class="row">

@@ -102,8 +102,14 @@
     text-align: right;
     a {
       color: var(--primary500);
+      text-decoration: none;
       &:hover {
         color: var(--secondary500);
+      }
+      svg {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
       }
     }
   }

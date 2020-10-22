@@ -59,10 +59,10 @@
     </SingleSection>
   {/if}
 
-  <Details {vpn} />
+  <Details {vpn} {vpns} />
 
   {#if technicalExists}
-    <Technical {vpn} />
+    <Technical {vpn} {vpns} />
   {/if}
 
   <Pricing {vpn} />

@@ -4,6 +4,7 @@
   import SingleSection from './SingleSection.svelte';
 
   export let vpn;
+  export let vpns;
 
   const manageBool = (opt) => {
     if (opt === 'yes') return true;
@@ -17,31 +18,49 @@
       text:
         '¿se permiten descargas usando tecnología peer2peer (como µTorrent)?',
       value: manageBool(vpn.p2p),
+      seeMore: `mira ${
+        vpns.filter((vpn) => vpn.p2p === 'yes').length
+      } VPNs que sí soportan P2P`,
     },
     {
       title: 'Plan Business',
       text: '¿tiene un plan especial con ventajas para empresas?',
       value: manageBool(vpn.business),
+      seeMore: `mira ${
+        vpns.filter((vpn) => vpn.business === 'yes').length
+      } VPNs que sí tienen plan business`,
     },
     {
       title: 'Plan Estudiantes',
       text: '¿tiene este VPN un plan con descuentos para estudiantes?',
       value: manageBool(vpn.students),
+      seeMore: `mira ${
+        vpns.filter((vpn) => vpn.students === 'yes').length
+      } VPNs que sí tienen plan para estudiantes`,
     },
     {
       title: 'No-Logs',
       text: `¿tiene ${vpn.name} explícitamente una política de no-logs?`,
       value: manageBool(vpn.noLogs),
+      seeMore: `mira ${
+        vpns.filter((vpn) => vpn.noLogs === 'yes').length
+      } VPNs que sí garantizan No-Logs`,
     },
     {
       title: 'Pago Anónimo',
       text: '¿puedes pagar de forma anónima?',
       value: manageBool(vpn.anonPay),
+      seeMore: `mira ${
+        vpns.filter((vpn) => vpn.anonPay === 'yes').length
+      } VPNs que sí tienen pago anónimo`,
     },
     {
       title: 'Pago con Criptomonedas',
       text: `¿tiene ${vpn.name} opción de pago con criptomoneda?`,
       value: manageBool(vpn.cryptoPay),
+      seeMore: `mira ${
+        vpns.filter((vpn) => vpn.cryptoPay === 'yes').length
+      } VPNs que sí aceptan pago con cripto`,
     },
   ];
 
@@ -112,6 +131,18 @@
       flex-direction: column;
       text-align: right;
     }
+    .see-more {
+      justify-self: end;
+      text-align: right;
+      max-width: 75%;
+      a {
+        text-decoration: none;
+        color: var(--primary400);
+        &:hover {
+          color: var(--grey900);
+        }
+      }
+    }
     #country {
       font-size: 23px;
       text-align: right;
@@ -129,9 +160,8 @@
           {#if detail.text}<span>{detail.text}</span>{/if}
         </div>
         <p class="detail">{detail.value ? '✅ sí' : '❌ no'}</p>
-        <div class="chart">
-          <span>Posición # de 37</span>
-          <span><a href="/">Mira los mejores</a></span>
+        <div class="see-more">
+          {#if !detail.value}<a href="/">{detail.seeMore}</a>{/if}
         </div>
       </div>
     {/if}
