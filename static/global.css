@@ -94,6 +94,7 @@ h1 {
 
 a {
   color: inherit;
+  transition: all 0.3s;
 }
 
 ul {

@@ -2,6 +2,7 @@
   import SingleSection from './SingleSection.svelte';
 
   export let vpn;
+  export let vpns;
 
   const hasBrowsers = vpn.browserPlugins === 'yes';
 
@@ -95,6 +96,17 @@
       }
     }
   }
+  .see-more {
+    margin: 36px 0;
+    font-size: 20px;
+    text-align: right;
+    a {
+      color: var(--primary500);
+      &:hover {
+        color: var(--secondary500);
+      }
+    }
+  }
 </style>
 
 <SingleSection id="compatible">
@@ -137,5 +149,14 @@
         {/if}
       </div>
     </div>
+  {/if}
+
+  {#if vpn.compatIndex < 12}
+    <p class="see-more">
+      <a href="/">Mira aquí
+        {vpns.filter((vpn) => vpn.compatIndex > 11).length}
+        VPNs con mayor compatibilidad
+        <svg><use href="#icon-external-window" /></svg></a>
+    </p>
   {/if}
 </SingleSection>

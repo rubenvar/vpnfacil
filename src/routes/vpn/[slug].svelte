@@ -47,11 +47,11 @@
 
   <Numbers {vpn} {vpns} />
 
-  <Languages {vpn} />
+  <Languages {vpn} {vpns} />
 
   <Warranty {vpn} {vpns} />
 
-  <Compatible {vpn} />
+  <Compatible {vpn} {vpns} />
 
   {#if tests}
     <SingleSection>

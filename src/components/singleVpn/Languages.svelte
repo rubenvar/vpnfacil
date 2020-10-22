@@ -2,6 +2,7 @@
   import SingleSection from './SingleSection.svelte';
 
   export let vpn;
+  export let vpns;
 </script>
 
 <style lang="scss">
@@ -61,11 +62,19 @@
         🇪🇸 Disponible en español
       {:else}🇬🇧 Solo en inglés{/if}
     </p>
-    <div class="chart">Posición # de 37</div>
+    <div class="chart">
+      {#if !vpn.appLanguage.includes('spanish')}
+        <a href="/">
+          mira
+          {vpns.filter((vpn) => vpn.appLanguage.includes('spanish')).length}
+          VPNs con la app en español
+        </a>
+      {/if}
+    </div>
   </div>
   <div class="row">
     <div class="title">
-      <h3>Página/Panel de Usuario</h3>
+      <h3>Panel de Usuario</h3>
       <span>el lenguaje de la plataforma web y cuenta de usuario online</span>
     </div>
     <p class="language">
@@ -73,7 +82,15 @@
         🇪🇸 Disponible en español
       {:else}🇬🇧 Solo en inglés{/if}
     </p>
-    <div class="chart">Posición # de 37</div>
+    <div class="chart">
+      {#if !vpn.uiLanguage.includes('spanish')}
+        <a href="/">
+          mira
+          {vpns.filter((vpn) => vpn.uiLanguage.includes('spanish')).length}
+          VPNs con interfaz en español
+        </a>
+      {/if}
+    </div>
   </div>
   <div class="row">
     <div class="title">
@@ -85,6 +102,14 @@
         🇪🇸 Disponible en español
       {:else}🇬🇧 Solo en inglés{/if}
     </p>
-    <div class="chart">Posición # de 37</div>
+    <div class="chart">
+      {#if !vpn.supportLanguage.includes('spanish')}
+        <a href="/">
+          mira
+          {vpns.filter((vpn) => vpn.supportLanguage.includes('spanish')).length}
+          VPNs con soporte en español
+        </a>
+      {/if}
+    </div>
   </div>
 </SingleSection>

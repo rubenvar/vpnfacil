@@ -35,7 +35,7 @@
   <div>
     <nav>
       <span use:scrollto={'#ratings'}>Puntuaciones</span>
-      <span use:scrollto={'#numbers'}>Números</span>
+      <span use:scrollto={'#numbers'}>En Cifras</span>
       <span use:scrollto={'#languages'}>Idiomas</span>
       <span use:scrollto={'#warranty'}>Garantía</span>
       <span use:scrollto={'#compatible'}>Compatibilidad</span>

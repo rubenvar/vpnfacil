@@ -7,8 +7,10 @@
   export let id;
   export let color;
 
+  // find the index of the single vpn in the whole vpns data array
   const ind = data.findIndex((obj) => obj.id === id);
-  const backgroundColor = new Array(data.length);
+  // and use it to replace a default color with the vpn color in the final
+  const backgroundColor = new Array(data.length).fill('hsl(160, 10%, 90%)');
   backgroundColor[ind] = color;
 
   function createChart() {
@@ -16,11 +18,11 @@
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: data.map((obj) => obj.name),
+        labels: data.map((obj) => obj.name).reverse(),
         datasets: [
           {
-            data: data.map((obj) => obj.value),
-            backgroundColor,
+            data: data.map((obj) => obj.value).reverse(),
+            backgroundColor: backgroundColor.reverse(),
           },
         ],
       },
@@ -43,4 +45,10 @@
   onMount(createChart);
 </script>
 
-<canvas id={`${title}-chart`} />
+<style>
+  canvas {
+    width: 220px;
+  }
+</style>
+
+<canvas id={`${title}-chart`} width="220" />

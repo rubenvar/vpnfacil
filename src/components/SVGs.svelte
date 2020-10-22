@@ -73,6 +73,15 @@
       125.966a9.821 9.821 0 00-13.893 0 9.821 9.821 0 000 13.893l246.18
       246.175a9.819 9.819 0 0013.893 0l246.17-246.175a9.821 9.821 0 000-13.893z" />
   </symbol>
+  <!-- icon-external-window -->
+  <symbol viewBox="0 0 24 24" id="icon-external-window">
+    <path
+      class="primary"
+      d="M12 8a1 1 0 0 1-1 1H5v10h10v-6a1 1 0 0 1 2 0v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9c0-1.1.9-2 2-2h6a1 1 0 0 1 1 1z" />
+    <path
+      class="secondary"
+      d="M19 6.41L8.7 16.71a1 1 0 1 1-1.4-1.42L17.58 5H14a1 1 0 0 1 0-2h6a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0V6.41z" />
+  </symbol>
   <!-- icon-globe -->
   <symbol viewBox="0 0 24 24" id="icon-globe">
     <circle cx="12" cy="12" r="10" class="primary" />

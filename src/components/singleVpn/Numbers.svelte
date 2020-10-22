@@ -1,6 +1,6 @@
 <script>
   import SingleSection from './SingleSection.svelte';
-  import Chart from './Chart.svelte';
+  import BarChart from './BarChart.svelte';
   import { formatNumber } from '../../utils';
   export let vpn;
   export let vpns;
@@ -136,21 +136,13 @@
           {/if}
         </p>
         <div class="chart">
-          <Chart
-            title={number.title}
-            data={number.data}
-            id={vpn.id}
-            color={vpn.color} />
-          <!-- {:else if number.title === 'Países'}
-            <Chart
-              title="paises"
-              data={paisesData}
+          {#if number.title !== 'IPs' && number.title !== 'Dispositivos'}
+            <BarChart
+              title={number.title}
+              data={number.data}
               id={vpn.id}
               color={vpn.color} />
-          {:else}
-            <span>Posición # de 37</span>
-            <span><a href="/">Mira los mejores</a></span>
-          {/if} -->
+          {/if}
         </div>
       </div>
     {/if}

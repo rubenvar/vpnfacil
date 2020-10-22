@@ -1,13 +1,12 @@
 <script>
   import SingleSection from './SingleSection.svelte';
-  import Chart from './Chart.svelte';
+  // import PieChart from './PieChart.svelte';
+  // import { countReps } from '../../utils';
 
   export let vpn;
   export let vpns;
-  const days = vpns
-    .filter((vpn) => vpn.moneyBack === 'yes')
-    .map((vpn) => ({ name: vpn.name, id: vpn.id, value: vpn.moneyBackDays }))
-    .sort((a, b) => a.value < b.value);
+  // const days = countReps(vpns, 'moneyBackDays');
+  // const free = countReps(vpns, 'freeTrialDays');
 </script>
 
 <style lang="scss">
@@ -70,7 +69,13 @@
       </span>
     </div>
     <p class="detail">{vpn.moneyBack === 'yes' ? '✅ sí' : '❌ no'}</p>
-    <div class="chart">ESTADÍSTICA</div>
+    <div class="chart">
+      {#if vpn.moneyBack !== 'yes'}
+        <a href="/">mira
+          {vpns.filter((vpn) => vpn.moneyBack === 'yes').length}
+          VPNs con reembolso</a>
+      {/if}
+    </div>
   </div>
   {#if vpn.moneyBack === 'yes'}
     <div class="row">
@@ -80,7 +85,12 @@
       </div>
       <p class="detail">{vpn.moneyBackDays}</p>
       <div class="chart">
-        <Chart title="reembolso" data={days} id={vpn.id} color={vpn.color} />
+        <!-- <PieChart
+          data={days}
+          value={vpn.moneyBackDays}
+          title="Back"
+          addToLabel="días"
+          color={vpn.color} /> -->
       </div>
     </div>
   {/if}
@@ -90,7 +100,13 @@
       <span>¿puedes probar GRATIS este VPN, sin que pidan tu tarjeta de crédito?</span>
     </div>
     <p class="detail">{vpn.freeTrial === 'yes' ? '✅ sí' : '❌ no'}</p>
-    <div class="chart">ESTADÍSTICA</div>
+    <div class="chart">
+      {#if vpn.freeTrial !== 'yes'}
+        <a href="/">mira
+          {vpns.filter((vpn) => vpn.freeTrial === 'yes').length}
+          VPNs con prueba gratis</a>
+      {/if}
+    </div>
   </div>
   {#if vpn.freeTrial === 'yes'}
     <div class="row">
@@ -98,10 +114,18 @@
         <h3>Duración de la Prueba</h3>
         <span>cuántos días tienes para probar GRATIS este VPN</span>
       </div>
-      <p class="detail">{vpn.freeTrialDays}</p>
+      <p class="detail">
+        {#if vpn.freeTrialDays === 'unlimited'}
+          ilimitados
+        {:else}{vpn.freeTrialDays}{/if}
+      </p>
       <div class="chart">
-        <span>Posición # de 37</span>
-        <span><a href="/">Mira los mejores</a></span>
+        <!-- <PieChart
+          data={free}
+          value={vpn.freeTrialDays}
+          title="Free"
+          addToLabel="días"
+          color={vpn.color} /> -->
       </div>
     </div>
   {/if}
