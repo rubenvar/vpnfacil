@@ -94,7 +94,7 @@
     </div>
     <a href={vpn.link} target="_blank">
       <img
-        src={'screenshots/placeholder.png'}
+        src="screenshots/{vpn.id}.png"
         alt="Página principal de {vpn.name}"
         title={vpn.name} />
     </a>
