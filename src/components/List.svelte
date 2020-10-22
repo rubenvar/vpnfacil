@@ -5,7 +5,7 @@
 
   export let vpns;
   // set the total of vpns to store
-  totalVpns.set(vpns.length || 0);
+  if (vpns) totalVpns.set(vpns.length || 0);
 
   // get sorting criteria from store
   let selectedSort = undefined;
