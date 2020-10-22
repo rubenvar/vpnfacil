@@ -1,10 +1,12 @@
 <script context="module">
   export async function preload({ params }) {
     const response = await this.fetch(`${process.env.ENDPOINT}/${params.slug}`);
+    const allResponse = await this.fetch(`${process.env.ENDPOINT}`);
     const data = await response.json();
+    const allData = await allResponse.json();
 
     if (data.statusCode === 200) {
-      return { vpn: data.body };
+      return { vpn: data.body, vpns: allData.body };
     } else {
       this.error(data.statusCode, data.body);
     }
@@ -25,6 +27,7 @@
   import Numbers from '../../components/singleVpn/Numbers.svelte';
 
   export let vpn;
+  export let vpns;
 
   const tests = false;
   const review = false;
@@ -42,11 +45,11 @@
 
   <Ratings {vpn} />
 
-  <Numbers {vpn} />
+  <Numbers {vpn} {vpns} />
 
   <Languages {vpn} />
 
-  <Warranty {vpn} />
+  <Warranty {vpn} {vpns} />
 
   <Compatible {vpn} />
 

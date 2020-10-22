@@ -130,10 +130,13 @@ export default {
       commonjs(),
       glob(),
     ],
-    external: Object.keys(pkg.dependencies).concat(
-      require('module').builtinModules ||
-        Object.keys(process.binding('natives'))
-    ),
+    external: [
+      ...Object.keys(pkg.dependencies).concat(
+        require('module').builtinModules ||
+          Object.keys(process.binding('natives'))
+      ),
+      'moment',
+    ],
     preserveEntrySignatures: 'strict',
     onwarn,
   },

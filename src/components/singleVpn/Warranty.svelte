@@ -1,7 +1,13 @@
 <script>
   import SingleSection from './SingleSection.svelte';
+  import Chart from './Chart.svelte';
 
   export let vpn;
+  export let vpns;
+  const days = vpns
+    .filter((vpn) => vpn.moneyBack === 'yes')
+    .map((vpn) => ({ name: vpn.name, id: vpn.id, value: vpn.moneyBackDays }))
+    .sort((a, b) => a.value < b.value);
 </script>
 
 <style lang="scss">
@@ -74,8 +80,7 @@
       </div>
       <p class="detail">{vpn.moneyBackDays}</p>
       <div class="chart">
-        <span>Posición # de 37</span>
-        <span><a href="/">Mira los mejores</a></span>
+        <Chart title="reembolso" data={days} id={vpn.id} color={vpn.color} />
       </div>
     </div>
   {/if}

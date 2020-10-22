@@ -89,7 +89,7 @@
           id="rat-{i}"
           rating={rat.value / 20}
           config={{ fullColor: '#ffc107', showText: true, size: 28 }}
-          style="justify-content: end;margin: 0;" />
+          style="justify-content: flex-end;margin: 0;" />
       </div>
     {/if}
   {/each}

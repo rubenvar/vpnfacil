@@ -44,7 +44,7 @@
     .list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: end;
+      justify-content: flex-end;
       span {
         background: var(--grey300);
         color: var(--grey100);

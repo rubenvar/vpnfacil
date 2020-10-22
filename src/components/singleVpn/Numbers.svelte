@@ -1,36 +1,64 @@
 <script>
   import SingleSection from './SingleSection.svelte';
+  import Chart from './Chart.svelte';
   import { formatNumber } from '../../utils';
   export let vpn;
+  export let vpns;
+
+  const serversData = vpns
+    .filter((vpn) => vpn.servers > 0)
+    .map((vpn) => ({ name: vpn.name, id: vpn.id, value: vpn.servers }))
+    .sort((a, b) => a.value < b.value);
+  const ipsData = vpns
+    .filter((vpn) => vpn.ips > 0)
+    .map((vpn) => ({ name: vpn.name, id: vpn.id, value: vpn.ips }))
+    .sort((a, b) => a.value < b.value);
+  const countriesData = vpns
+    .filter((vpn) => vpn.countries > 0)
+    .map((vpn) => ({ name: vpn.name, id: vpn.id, value: vpn.countries }))
+    .sort((a, b) => a.value < b.value);
+  const locationsData = vpns
+    .filter((vpn) => vpn.locations > 0)
+    .map((vpn) => ({ name: vpn.name, id: vpn.id, value: vpn.locations }))
+    .sort((a, b) => a.value < b.value);
+  const devicesData = vpns
+    .filter((vpn) => vpn.devices > 0)
+    .map((vpn) => ({ name: vpn.name, id: vpn.id, value: vpn.devices }))
+    .sort((a, b) => a.value < b.value);
 
   const numbers = [
     {
       title: 'Servidores',
       text: 'más servidores VPN = más opciones tienes para conectarte',
       value: vpn.servers,
+      data: serversData,
       plus: vpn.serversPlus && vpn.serversPlus === 'yes',
     },
     {
       title: 'IPs',
       text: 'más IPs = más posibles IPs podrán asignarte',
       value: vpn.ips,
+      data: ipsData,
       plus: vpn.ipsPlus && vpn.ipsPlus === 'yes',
     },
     {
       title: 'Países',
       text: 'más países = más ubicaciones desde las que hacer tu conexión',
       value: vpn.countries,
+      data: countriesData,
       plus: vpn.countriesPlus && vpn.countriesPlus === 'yes',
     },
     {
       title: 'Ubicaciones',
       text: 'lugares totales (cuidades, etc.) donde hay servidores',
       value: vpn.locations,
+      data: locationsData,
     },
     {
       title: 'Dispositivos',
       text: 'cuántos dispositivos puedes conectar al mismo tiempo',
       value: vpn.devices,
+      data: devicesData,
     },
   ];
 </script>
@@ -108,8 +136,21 @@
           {/if}
         </p>
         <div class="chart">
-          <span>Posición # de 37</span>
-          <span><a href="/">Mira los mejores</a></span>
+          <Chart
+            title={number.title}
+            data={number.data}
+            id={vpn.id}
+            color={vpn.color} />
+          <!-- {:else if number.title === 'Países'}
+            <Chart
+              title="paises"
+              data={paisesData}
+              id={vpn.id}
+              color={vpn.color} />
+          {:else}
+            <span>Posición # de 37</span>
+            <span><a href="/">Mira los mejores</a></span>
+          {/if} -->
         </div>
       </div>
     {/if}
