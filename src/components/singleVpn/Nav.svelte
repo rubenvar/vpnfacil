@@ -21,8 +21,13 @@
     nav {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
       span {
         cursor: pointer;
+        margin: 5px 15px;
+        @media only screen and (min-width: 720px) {
+          margin: 0;
+        }
         &:hover {
           color: var(--primary500);
         }

@@ -12,9 +12,12 @@
 <style lang="scss">
   #top-container {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1fr;
     gap: 30px;
     align-items: center;
+    @media only screen and (min-width: 680px) {
+      grid-template-columns: 1.2fr 1fr;
+    }
     .text {
       h1 {
         font-size: 50px;
@@ -23,10 +26,14 @@
         color: var(--vpnColor);
       }
       #description {
-        max-width: 75%;
+        @media only screen and (min-width: 880px) {
+          max-width: 75%;
+        }
       }
       .details {
-        max-width: 85%;
+        @media only screen and (min-width: 880px) {
+          max-width: 85%;
+        }
         color: var(--grey700);
         span {
           margin: 0 10px 10px 0;
@@ -35,7 +42,10 @@
           border-radius: 3px;
           display: inline-block;
           line-height: 1;
-          font-size: 14px;
+          font-size: 13px;
+          @media only screen and (min-width: 680px) {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -70,8 +80,10 @@
           {/if}
           {#if vpn.countries}<span>{vpn.countries} países</span>{/if}
           {#if vpn.basedIn}
-            <span>{countryFlagEmoji.get(vpn.basedIn).emoji}
-              {countryFlagEmoji.get(vpn.basedIn).name}</span>
+            <span>
+              {countryFlagEmoji.get(vpn.basedIn).emoji}
+              {countryFlagEmoji.get(vpn.basedIn).name}
+            </span>
           {/if}
           {#if vpn.moneyBack === 'yes'}
             <span>garantía {vpn.moneyBackDays} días</span>

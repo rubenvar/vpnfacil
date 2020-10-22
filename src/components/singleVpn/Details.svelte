@@ -126,11 +126,6 @@
       text-align: center;
       margin: 0;
     }
-    .chart {
-      display: flex;
-      flex-direction: column;
-      text-align: right;
-    }
     .see-more {
       justify-self: end;
       text-align: right;
