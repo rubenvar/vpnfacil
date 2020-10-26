@@ -148,6 +148,10 @@
     border-radius: 0;
     padding: 16px 0;
     transition: all 0.3s;
+    font-size: 20px;
+    @media only screen and (min-width: 580px) {
+      font-size: unset;
+    }
   }
 </style>
 
