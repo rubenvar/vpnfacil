@@ -5,15 +5,15 @@
 
   export let vpns;
   // set the total of vpns to store
-  totalVpns.set(vpns.length || 0);
+  if (vpns) totalVpns.set(vpns.length || 0);
 
   // get sorting criteria from store
   let selectedSort = undefined;
-  sortCriteria.subscribe(val => (selectedSort = val));
+  sortCriteria.subscribe((val) => (selectedSort = val));
 
   // get sorting direction from store
   let decrease = true;
-  direction.subscribe(val => (decrease = val));
+  direction.subscribe((val) => (decrease = val));
 
   $: if (selectedSort) {
     vpns = vpns.sort((a, b) => {

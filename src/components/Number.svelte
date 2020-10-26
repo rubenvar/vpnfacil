@@ -1,12 +1,7 @@
 <script>
+  import { formatNumber } from '../utils';
   export let number;
   const { tag, value } = number;
-  const formatNumber = num =>
-    num > 1000
-      ? `${new Intl.NumberFormat('es-ES').format(
-          Math.round((num / 1000) * 10) / 10
-        )}k`
-      : num;
 </script>
 
 <style>
@@ -31,7 +26,5 @@
     <span class="tag">países</span>
   {:else if tag === 'servers'}
     <span class="tag">servidores</span>
-  {:else if tag === 'ips'}
-    <span class="tag">ips</span>
-  {/if}
+  {:else if tag === 'ips'}<span class="tag">ips</span>{/if}
 </span>

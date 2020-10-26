@@ -1,11 +1,13 @@
 :root {
-  --maxWidth: 1480px;
+  --maxWidth: 1440px;
+  --widerWidth: 1280px;
   --headerHeight: 56px;
   --maxWidthBlog: 720px;
 
   --defSidePadding: 30px;
 
   --grey100: hsl(160, 15%, 99%);
+  --grey200: hsl(160, 10%, 90%);
   --grey300: hsl(160, 5%, 70%);
   --grey500: hsl(160, 5%, 50%);
   --grey700: hsl(160, 5%, 30%);
@@ -26,7 +28,12 @@
   --secondary600: hsl(160, 70%, 34%);
   --secondary700: hsl(160, 65%, 25%);
 
+  --winner500: #ffcf00;
+
   --cardRadius: 15px;
+  --buttonRadius: 5px;
+
+  --boxShadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 
   --mainFont: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -87,6 +94,7 @@ h1 {
 
 a {
   color: inherit;
+  transition: all 0.3s;
 }
 
 ul {
@@ -112,6 +120,10 @@ hr {
   margin: 30px auto;
   border: none;
   border-bottom: 1px solid var(--secondary600);
+}
+
+img {
+  max-width: 100%;
 }
 
 .blog-post h2,

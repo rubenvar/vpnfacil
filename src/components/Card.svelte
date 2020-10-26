@@ -7,8 +7,9 @@
   const {
     name,
     id,
+    slug,
     color,
-    link,
+    // link,
     rating,
     servers,
     ips,
@@ -53,7 +54,7 @@
   const plats = managePlatforms(platforms, browsers);
 </script>
 
-<style>
+<style lang="scss">
   article {
     border: 2px solid var(--primary300);
     border-radius: var(--cardRadius);
@@ -64,16 +65,25 @@
     transition: all 0.3s;
     font-family: var(--specialFont);
     position: relative;
+    // &.emphasis {
+    //   box-shadow: 0 0 0 7px #ffcf00;
+    // }
+    &:hover {
+      transform: scale(1.02);
+      img {
+        filter: saturate(75%) blur(0px) opacity(90%);
+      }
+      h2 {
+        color: var(--vpn-color);
+      }
+      .go {
+        background-color: var(--primary300);
+        &:hover {
+          background-color: var(--primary500);
+        }
+      }
+    }
   }
-
-  /* article.emphasis {
-    box-shadow: 0 0 0 7px #ffcf00;
-  } */
-
-  article:hover {
-    transform: scale(1.02);
-  }
-
   img {
     position: absolute;
     width: 40px;
@@ -83,11 +93,6 @@
     filter: saturate(50%) blur(0.75px) opacity(70%);
     transition: all 0.3s;
   }
-
-  article:hover img {
-    filter: saturate(75%) blur(0px) opacity(90%);
-  }
-
   h2 {
     position: relative;
     transition: all 0.3s;
@@ -96,72 +101,56 @@
     text-align: center;
     font-family: var(--mainFont);
     align-self: center;
+    @media only screen and (min-width: 560px) {
+      font-size: 28px;
+    }
   }
-  article:hover h2 {
-    color: var(--vpn-color);
+  a {
+    text-decoration: none;
+    &:hover {
+      .go {
+        color: white;
+      }
+    }
   }
   ul {
     margin: 24px 0;
+    li {
+      padding: 0 20px;
+      display: flex;
+      margin-bottom: 14px;
+      &:last-child {
+        margin: 0;
+      }
+      svg {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+      }
+      > span {
+        margin-left: 10px;
+      }
+      .tag {
+        font-weight: 300;
+      }
+      .platform {
+        margin: 2px 2px;
+        background: #fafafa;
+        padding: 1px 2px;
+        border-radius: 5px;
+        display: inline-block;
+      }
+    }
   }
-
-  ul li {
-    padding: 0 20px;
-    display: flex;
-    margin-bottom: 14px;
-  }
-
-  ul li:last-child {
-    margin: 0;
-  }
-
-  ul li svg {
-    width: 20px;
-    min-width: 20px;
-    height: 20px;
-  }
-
-  ul li > span {
-    margin-left: 10px;
-  }
-
-  .tag {
-    font-weight: 300;
-  }
-
-  .platform {
-    margin: 2px 2px;
-    background: #fafafa;
-    padding: 1px 2px;
-    border-radius: 5px;
-    display: inline-block;
-  }
-
-  article a {
-    transition: all 0.3s;
-  }
-  article a:hover {
-    color: white;
-  }
-
   .go {
     background-color: var(--primary100);
     text-align: center;
     border-radius: 0;
     padding: 16px 0;
     transition: all 0.3s;
-  }
-
-  article:hover .go {
-    background-color: var(--primary300);
-  }
-
-  article:hover .go:hover {
-    background-color: var(--primary500);
-  }
-
-  @media only screen and (min-width: 560px) {
-    h2 {
-      font-size: 28px;
+    font-size: 20px;
+    @media only screen and (min-width: 580px) {
+      font-size: unset;
     }
   }
 </style>
@@ -169,11 +158,11 @@
 <article {id} style="--vpn-color: {color}" class={i < 3 ? 'emphasis' : ''}>
   <img src="/vpns/{id}.jpg" alt="Logo de {name}" />
 
-  <h2>{name}</h2>
+  <h2><a href="/vpn/{slug}/">{name}</a></h2>
 
-  {#if countries || servers || ips}
-    <Numbers {numbers} />
-  {/if}
+  <!-- {#if countries || servers || ips} -->
+  <Numbers {numbers} />
+  <!-- {/if} -->
 
   <ul>
     {#if devices}
@@ -285,8 +274,8 @@
     {/if}
   </ul>
 
-  {#if link}
-    <a href={link} target="_blank" title="Ir a {name}" rel="noopener nofollow">
+  {#if slug}
+    <a href="/vpn/{slug}/" title="Ir a {name}">
       <div class="go"><span>Ver más info</span></div>
     </a>
   {/if}

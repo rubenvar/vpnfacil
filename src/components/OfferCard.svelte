@@ -1,22 +1,9 @@
 <script>
   import StarRating from 'svelte-star-rating';
+  import { formatMoney } from '../utils';
   export let vpn;
   export let subtitle;
   export let comment;
-
-  function formatMoney(amount, currency = 'USD') {
-    const options = {
-      style: 'currency',
-      currency,
-      minimumFractionDigits: 2,
-    };
-
-    // if its a whole amount, leave off the .00
-    if (amount % 100 === 0) options.minimumFractionDigits = 0;
-
-    const formatter = new Intl.NumberFormat('es-ES', options);
-    return formatter.format(amount / 100);
-  }
 </script>
 
 <style lang="scss">
