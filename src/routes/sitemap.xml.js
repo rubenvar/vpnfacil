@@ -41,7 +41,12 @@ export async function get(req, res) {
       },
     }
   );
-  const allVpns = await fetch(process.env.ENDPOINT);
+  const allVpns = await fetch(process.env.ENDPOINT, {
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
   // TODO checkthat there is actually something in the response
   const posts = await allPosts.json();
   const vpns = await allVpns.json();
