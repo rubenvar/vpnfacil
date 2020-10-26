@@ -24,6 +24,12 @@
         grid-area: text;
         margin-bottom: 10px;
         color: var(--vpnColor);
+        a {
+          text-decoration: none;
+          &:hover {
+            text-shadow: 1px 1px 3px;
+          }
+        }
       }
       #description {
         @media only screen and (min-width: 880px) {
@@ -65,7 +71,14 @@
 <SingleSection id="top" wide={true}>
   <div id="top-container" style="--vpnColor: {vpn.color}">
     <div class="text">
-      <h1>{vpn.name}</h1>
+      <h1>
+        <a
+          href={vpn.link}
+          target="_blank"
+          rel="noopener"
+          title="Mira {vpn.name}">
+          {vpn.name}</a>
+      </h1>
       <StarRating
         id="rating-top"
         rating={vpn.rating / 20}
@@ -104,7 +117,7 @@
       <!-- <img id="logo" src="vpns/{vpn.id}.jpg" alt="Logo de {vpn.name}" /> -->
       <Button link={vpn.link} text="ver oferta AHORA" main={true} />
     </div>
-    <a href={vpn.link} target="_blank">
+    <a href={vpn.link} target="_blank" rel="noopener" title="Mira {vpn.name}">
       <img
         src="screenshots/{vpn.id}.png"
         alt="Página principal de {vpn.name}"
