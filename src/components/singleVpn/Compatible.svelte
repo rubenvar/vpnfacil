@@ -46,12 +46,15 @@
   }
   .row {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1.5fr;
     transition: all 0.3s;
     padding: 7px;
     align-items: center;
     gap: 15px;
     margin: 20px 0;
+    @media only screen and (min-width: 580px) {
+      grid-template-columns: 1fr 2fr;
+    }
     &:hover {
       background: var(--secondary100);
     }
@@ -77,12 +80,19 @@
         grid-template-columns: auto 1fr;
         align-items: center;
         gap: 10px;
-        margin: 15px;
+        margin: 6px;
+        @media only screen and (min-width: 580px) {
+          margin: 15px;
+        }
         img {
-          width: 33px;
-          max-width: 33px;
-          filter: grayscale(100%);
-          transition: all 0.3s;
+          width: 24px;
+          max-width: 24px;
+          @media only screen and (min-width: 580px) {
+            width: 33px;
+            max-width: 33px;
+            filter: grayscale(100%);
+            transition: all 0.3s;
+          }
         }
         &:hover {
           img {

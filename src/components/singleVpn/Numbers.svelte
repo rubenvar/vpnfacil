@@ -74,12 +74,15 @@
   }
   .row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 15px;
     transition: all 0.3s;
     padding: 7px;
     margin: 20px 0;
+    @media only screen and (min-width: 580px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
     &:hover {
       background: var(--secondary100);
     }
@@ -100,8 +103,11 @@
     .number {
       font-size: 32px;
       font-family: var(--specialFont);
-      text-align: center;
+      text-align: right;
       margin: 0;
+      @media only screen and (min-width: 580px) {
+        text-align: center;
+      }
       span {
         font-size: 23px;
         line-height: 1;
@@ -110,9 +116,12 @@
       }
     }
     .chart {
-      display: flex;
+      display: none;
       flex-direction: column;
       text-align: right;
+      @media only screen and (min-width: 580px) {
+        display: flex;
+      }
     }
   }
 </style>

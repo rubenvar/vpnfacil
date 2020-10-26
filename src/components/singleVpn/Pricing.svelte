@@ -44,20 +44,27 @@
   }
   #pricing-table {
     display: grid;
-    grid-template-columns: 1fr 1fr 1.1fr;
+    grid-template-columns: 1fr;
     gap: 35px;
     align-items: center;
+    @media only screen and (min-width: 580px) {
+      grid-template-columns: 1fr 1fr 1.1fr;
+    }
     .column {
       display: grid;
-      grid-template-rows: repeat(4, 1fr) 1.5fr;
+      grid-template-rows: repeat(5, auto);
       align-items: center;
       justify-items: center;
-      gap: 30px;
+      gap: 9px;
       transition: all 0.3s;
       padding: 7px;
       margin: 0;
       box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.1);
       border-radius: var(--cardRadius);
+      @media only screen and (min-width: 580px) {
+        gap: 30px;
+        grid-template-rows: repeat(4, 1fr) 1.5fr;
+      }
       &.main {
         border: 8px solid var(--winner500);
         transform: scale(1.02);

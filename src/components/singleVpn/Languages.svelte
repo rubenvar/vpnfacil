@@ -16,12 +16,16 @@
   }
   .row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 15px;
+    gap: 5px 15px;
     transition: all 0.3s;
     padding: 7px;
     margin: 20px 0;
+    @media only screen and (min-width: 580px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 15px;
+    }
     &:hover {
       background: var(--secondary100);
     }
@@ -40,13 +44,20 @@
       }
     }
     .language {
-      text-align: center;
+      text-align: right;
       font-size: 20px;
+      @media only screen and (min-width: 580px) {
+        text-align: center;
+      }
     }
     .see-more {
-      justify-self: end;
       text-align: right;
-      max-width: 75%;
+      grid-column: 1 / -1;
+      @media only screen and (min-width: 580px) {
+        grid-column: unset;
+        justify-self: end;
+        max-width: 75%;
+      }
       a {
         text-decoration: none;
         color: var(--primary400);

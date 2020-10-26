@@ -1,12 +1,8 @@
 <script>
   import SingleSection from './SingleSection.svelte';
-  // import PieChart from './PieChart.svelte';
-  // import { countReps } from '../../utils';
 
   export let vpn;
   export let vpns;
-  // const days = countReps(vpns, 'moneyBackDays');
-  // const free = countReps(vpns, 'freeTrialDays');
 </script>
 
 <style lang="scss">
@@ -20,12 +16,16 @@
   }
   .row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 15px;
+    gap: 5px 15px;
     transition: all 0.3s;
     padding: 7px;
     margin: 20px 0;
+    @media only screen and (min-width: 580px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 15px;
+    }
     &:hover {
       background: var(--secondary100);
     }
@@ -46,15 +46,22 @@
     .detail {
       font-size: 27px;
       font-family: var(--specialFont);
-      text-align: center;
+      text-align: right;
       margin: 0;
+      @media only screen and (min-width: 580px) {
+        text-align: center;
+      }
     }
     // .chart {
     // }
     .see-more {
-      justify-self: end;
       text-align: right;
-      max-width: 75%;
+      grid-column: 1 / -1;
+      @media only screen and (min-width: 580px) {
+        grid-column: unset;
+        justify-self: end;
+        max-width: 75%;
+      }
       a {
         text-decoration: none;
         color: var(--primary400);
@@ -94,12 +101,7 @@
       </div>
       <p class="detail">{vpn.moneyBackDays}</p>
       <div class="chart">
-        <!-- <PieChart
-          data={days}
-          value={vpn.moneyBackDays}
-          title="Back"
-          addToLabel="días"
-          color={vpn.color} /> -->
+        <!-- empty -->
       </div>
     </div>
   {/if}
@@ -129,12 +131,7 @@
         {:else}{vpn.freeTrialDays}{/if}
       </p>
       <div class="chart">
-        <!-- <PieChart
-          data={free}
-          value={vpn.freeTrialDays}
-          title="Free"
-          addToLabel="días"
-          color={vpn.color} /> -->
+        <!-- empty -->
       </div>
     </div>
   {/if}
