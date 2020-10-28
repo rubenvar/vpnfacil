@@ -1,12 +1,10 @@
 <script context="module">
+  import { awsConfig } from '../../config';
+
   export async function preload() {
-    const response = await this.fetch(process.env.ENDPOINT, {
-      method: 'get',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
+    const response = await this.fetch(process.env.ENDPOINT, awsConfig);
     const data = await response.json();
+    console.log(data.statusCode);
     return { vpns: data.body };
   }
 </script>

@@ -1,20 +1,11 @@
 <script context="module">
+  import { awsConfig } from '../../../config';
   export async function preload({ params }) {
     const response = await this.fetch(
       `${process.env.ENDPOINT}/${params.slug}`,
-      {
-        method: 'get',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
+      awsConfig
     );
-    const allResponse = await this.fetch(`${process.env.ENDPOINT}`, {
-      method: 'get',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    const allResponse = await this.fetch(`${process.env.ENDPOINT}`, awsConfig);
     const data = await response.json();
     const allData = await allResponse.json();
 
