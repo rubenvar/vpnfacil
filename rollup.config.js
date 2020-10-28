@@ -20,6 +20,7 @@ require('dotenv').config();
 // to make .env variables work, first get the here from the .env file
 const mode = process.env.NODE_ENV;
 const endpoint = JSON.stringify(process.env.ENDPOINT);
+const awsAPIKey = JSON.stringify(process.env.AWS_API_KEY);
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
@@ -48,16 +49,21 @@ const preprocess = [
   }),
 ];
 
+// use the replace plugin to find calls to process.env and replace them with the variable (both here and in server below)
+const replaceStrings = {
+  'process.env.NODE_ENV': JSON.stringify(mode),
+  'process.env.ENDPOINT': endpoint,
+  'process.env.AWS_API_KEY': awsAPIKey,
+};
+
 export default {
   client: {
     input: config.client.input(),
     output: config.client.output(),
     plugins: [
-      // use the replace plugin to find calls to process.env and replace them with the variable (both here and in server below)
       replace({
+        ...replaceStrings,
         'process.browser': true,
-        'process.env.NODE_ENV': JSON.stringify(mode),
-        'process.env.ENDPOINT': endpoint,
       }),
       svelte({
         extensions,
@@ -113,9 +119,8 @@ export default {
     output: config.server.output(),
     plugins: [
       replace({
+        ...replaceStrings,
         'process.browser': false,
-        'process.env.NODE_ENV': JSON.stringify(mode),
-        'process.env.ENDPOINT': endpoint,
       }),
       svelte({
         extensions,

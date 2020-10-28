@@ -1,4 +1,5 @@
 import fetch from 'node-fetch';
+import { awsConfig } from '../../config';
 
 const homePage =
   '<url><loc>https://vpnfacil.com/</loc><priority>1</priority></url>';
@@ -41,16 +42,12 @@ export async function get(req, res) {
       },
     }
   );
-  const allVpns = await fetch(process.env.ENDPOINT, {
-    method: 'get',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-  // TODO checkthat there is actually something in the response
+  const allVpns = await fetch(process.env.ENDPOINT, awsConfig);
+  // TODO check that there is actually something in the response
   const posts = await allPosts.json();
   const vpns = await allVpns.json();
   res.setHeader('Content-Type', 'application/xml');
-  const xml = render(posts, vpns.body);
+  // send only vpns body
+  const xml = await render(posts, vpns.body);
   res.end(xml);
 }
