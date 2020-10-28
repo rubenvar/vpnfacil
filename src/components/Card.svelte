@@ -43,7 +43,7 @@
 
   function managePlatforms(platforms, browsers) {
     // make array of platforms (shorten if it's too big) and browsers together
-    if (!platforms) return;
+    if (!platforms || platforms === '') return;
     let plats = platforms.split(', ');
     if (plats.length > 6) plats = plats.slice(0, 6).concat('...');
     if (!browsers) return plats;
