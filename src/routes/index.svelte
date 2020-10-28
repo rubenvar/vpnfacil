@@ -4,7 +4,6 @@
   export async function preload() {
     const response = await this.fetch(process.env.ENDPOINT, awsConfig);
     const data = await response.json();
-    console.log(data.statusCode);
     return { vpns: data.body };
   }
 </script>

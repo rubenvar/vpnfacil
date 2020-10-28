@@ -46,7 +46,6 @@ export async function get(req, res) {
   // TODO check that there is actually something in the response
   const posts = await allPosts.json();
   const vpns = await allVpns.json();
-  console.log(vpns);
   res.setHeader('Content-Type', 'application/xml');
   // send only vpns body
   const xml = await render(posts, vpns.body);
