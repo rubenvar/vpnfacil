@@ -4,14 +4,43 @@
 
   import SingleSection from './SingleSection.svelte';
   import Button from './Button.svelte';
-  import { formatMoney } from '../../utils';
+  import { formatMoney, insertString, takeNewScreenshot } from '../../utils';
 
   export let vpn;
 
-  const screenshot =
-    vpn.screenshot === ''
-      ? 'https://res.cloudinary.com/rub54381/image/upload/v1604082868/vpnf/screenshots/placeholder.png'
-      : vpn.screenshot;
+  const transf = 'c_scale,q_auto:eco,w_560';
+
+  let screenshot;
+  if (vpn.screenshot === '') {
+    // use placeholder just in case
+    screenshot =
+      'https://res.cloudinary.com/rub54381/image/upload/v1604082868/vpnf/screenshots/placeholder.png';
+  } else {
+    // modify screenshot string to add transformation
+    screenshot = vpn.screenshot;
+    const after = screenshot.match(/\/v\d+\//);
+    const { index } = after;
+    if (index) screenshot = insertString(screenshot, index, `/${transf}`);
+  }
+
+  // Let's see if screenshot needs updating...
+  // check if there is screenshot:
+  if (vpn.screenshot !== '') {
+    const existingScreenshot = vpn.screenshot;
+    // get link, get time with regex (it comes in seconds, not ms)
+    const taken = existingScreenshot.match(/\/v(\d+)\//)[1];
+    const now = Math.round(Date.now() / 1000);
+    // calculate if it's older than 15 days
+    const max = 30 * 24 * 60 * 60;
+    const isOld = now - taken > max;
+    // if it's recent, do nothing
+    // if it's old, call lambda
+    if (isOld) takeNewScreenshot(vpn.id, vpn.baseLink);
+  } else if (vpn.screenshot === '') {
+    // if no screenshot, take one
+    console.log('screenshot is empty, make a new one');
+    takeNewScreenshot(vpn.id, vpn.baseLink);
+  }
 </script>
 
 <style lang="scss">
