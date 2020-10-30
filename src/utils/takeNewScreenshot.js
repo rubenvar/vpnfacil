@@ -2,13 +2,13 @@
 import axios from 'axios';
 
 async function postScreenshot(id, screenshot) {
-  const resp = await axios
+  await axios
     .post(`${process.env.ENDPOINT}/update-screenshot`, {
       id,
       screenshot,
     })
     .then(res => {
-      console.log(resp);
+      console.log(res);
     })
     .catch(error => {
       console.log(error);
