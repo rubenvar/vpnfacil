@@ -7,6 +7,11 @@
   import { formatMoney } from '../../utils';
 
   export let vpn;
+
+  const screenshot =
+    vpn.screenshot === ''
+      ? 'https://res.cloudinary.com/rub54381/image/upload/v1604082868/vpnf/screenshots/placeholder.png'
+      : vpn.screenshot;
 </script>
 
 <style lang="scss">
@@ -119,7 +124,7 @@
     </div>
     <a href={vpn.link} target="_blank" rel="noopener" title="Mira {vpn.name}">
       <img
-        src="screenshots/{vpn.id}.png"
+        src={screenshot}
         alt="Página principal de {vpn.name}"
         title={vpn.name} />
     </a>
