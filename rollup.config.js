@@ -13,14 +13,13 @@ import copy from 'rollup-plugin-copy';
 import externalLinks from 'remark-external-links';
 // add sass support
 import sveltePreprocess from 'svelte-preprocess';
+import json from '@rollup/plugin-json';
 import pkg from './package.json';
 
 require('dotenv').config();
 
-// to make .env variables work, first get the here from the .env file
+// to make .env variables work, first get them here from the .env file
 const mode = process.env.NODE_ENV;
-const endpoint = JSON.stringify(process.env.ENDPOINT);
-const awsAPIKey = JSON.stringify(process.env.AWS_API_KEY);
 const dev = mode === 'development';
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
@@ -48,12 +47,15 @@ const preprocess = [
     ],
   }),
 ];
-
-// use the replace plugin to find calls to process.env and replace them with the variable (both here and in server below)
+// use the replace plugin to find calls to process.env
+// and replace them with the actual variable (client, server, serviceworker)
 const replaceStrings = {
   'process.env.NODE_ENV': JSON.stringify(mode),
-  'process.env.ENDPOINT': endpoint,
-  'process.env.AWS_API_KEY': awsAPIKey,
+  'process.env.ENDPOINT': JSON.stringify(process.env.ENDPOINT),
+  'process.env.AWS_API_KEY': JSON.stringify(process.env.AWS_API_KEY),
+  'process.env.SCREENSHOT_LAMBDA': JSON.stringify(
+    process.env.SCREENSHOT_LAMBDA
+  ),
 };
 
 export default {
@@ -109,6 +111,7 @@ export default {
         terser({
           module: true,
         }),
+      json(),
     ],
     preserveEntrySignatures: false,
     onwarn,
@@ -134,6 +137,7 @@ export default {
       }),
       commonjs(),
       glob(),
+      json(),
     ],
     external: [
       ...Object.keys(pkg.dependencies).concat(
@@ -152,9 +156,8 @@ export default {
     plugins: [
       resolve(),
       replace({
+        ...replaceStrings,
         'process.browser': true,
-        'process.env.NODE_ENV': JSON.stringify(mode),
-        'process.env.ENDPOINT': endpoint,
       }),
       commonjs(),
       !dev && terser(),
