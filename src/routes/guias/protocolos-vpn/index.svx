@@ -1,7 +1,7 @@
 ---
 title: 'Protocolos VPN: Qué son y Cómo Elegir'
 seoTitle: 'Protocolos VPN: Qué son y Cómo Elegir [Tabla Comparativa]'
-date: 2020-10-01
+date: 2020-10-30
 excerpt: 'Otra de esas cosas que no quieres hacer, pero tienes que saber cómo elegir el mejor protocolo VPN para tu conexión. Mira aquí cómo escoger, explicado con palabras normales'
 slug: protocolos-vpn
 ---
@@ -244,6 +244,8 @@ Algunos protocolos VPN los usan, como OpenVPN, pero SSL y TLS **no son protocolo
 El protocolo VPN **más nuevo**.
 
 Creado para sustituir a IPSec, se dice que es más rápido y estable. Además, es de _código abierto_ también, lo que garantiza menos problemas de seguridad.
+
+Utiliza métodos criptográficos modernos para mejorar el rendimiento del VPN, y ya dicen que se están consiguiendo las máximas velocidades, tanto con WiFi, 4G/5G, etc.
 
 Aun así, es todavía bastante nuevo y tiene problemas de **estabilidad** y de compatibilidad con diferentes plataformas.
 
