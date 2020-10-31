@@ -84,10 +84,10 @@
       {:else}🇬🇧 Solo en inglés{/if}
     </p>
     <div class="see-more">
-      {#if !vpn.appLanguage.includes('spanish')}
+      {#if vpn.appLanguage && !vpn.appLanguage.includes('spanish')}
         <a href="/">
           mira
-          {vpns.filter((vpn) => vpn.appLanguage.includes('spanish')).length}
+          {vpns.filter((vpn) => vpn.appLanguage && vpn.appLanguage.includes('spanish')).length}
           VPNs con la app en español
         </a>
       {/if}
@@ -104,10 +104,10 @@
       {:else}🇬🇧 Solo en inglés{/if}
     </p>
     <div class="see-more">
-      {#if !vpn.uiLanguage.includes('spanish')}
+      {#if vpn.uiLanguage && !vpn.uiLanguage.includes('spanish')}
         <a href="/">
           mira
-          {vpns.filter((vpn) => vpn.uiLanguage.includes('spanish')).length}
+          {vpns.filter((vpn) => vpn.uiLanguage && vpn.uiLanguage.includes('spanish')).length}
           VPNs con interfaz en español
         </a>
       {/if}
@@ -124,10 +124,10 @@
       {:else}🇬🇧 Solo en inglés{/if}
     </p>
     <div class="see-more">
-      {#if !vpn.supportLanguage.includes('spanish')}
+      {#if vpn.supportLanguage && !vpn.supportLanguage.includes('spanish')}
         <a href="/">
           mira
-          {vpns.filter((vpn) => vpn.supportLanguage.includes('spanish')).length}
+          {vpns.filter((vpn) => vpn.supportLanguage && vpn.supportLanguage.includes('spanish')).length}
           VPNs con soporte en español
         </a>
       {/if}
