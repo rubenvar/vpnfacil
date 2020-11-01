@@ -1,4 +1,5 @@
 import fetch from 'node-fetch';
+import axios from 'axios';
 import { awsConfig } from '../../config';
 
 const homePage =
@@ -42,12 +43,14 @@ export async function get(req, res) {
       },
     }
   );
-  const allVpns = await fetch(process.env.ENDPOINT, awsConfig);
+  const allVpns = await axios(process.env.ENDPOINT, awsConfig);
   // TODO check that there is actually something in the response
+
   const posts = await allPosts.json();
-  const vpns = await allVpns.json();
+  const vpns = await allVpns.data.body;
+
   res.setHeader('Content-Type', 'application/xml');
   // send only vpns body
-  const xml = await render(posts, vpns.body);
+  const xml = await render(posts, vpns);
   res.end(xml);
 }
