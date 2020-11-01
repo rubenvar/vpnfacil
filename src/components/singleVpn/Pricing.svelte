@@ -24,12 +24,13 @@
 
   plans.forEach((plan) => {
     plan.total = plan.price * plan.duration;
-    plan.discount =
-      Math.round(
-        100 -
-          (plan.price * plan.duration * 100) /
-            (vpn.plan1Pricing * plan.duration)
-      ) / 100;
+    plan.discount = vpn.plan1Pricing
+      ? Math.round(
+          100 -
+            (plan.price * plan.duration * 100) /
+              (vpn.plan1Pricing * plan.duration)
+        ) / 100
+      : false;
   });
 </script>
 
@@ -118,7 +119,7 @@
             {:else}-{/if}
           </p>
           <p clas="row">
-            {#if plan.discount !== 0}
+            {#if plan.discount}
               {formatPercent(plan.discount)}
               <span>ahorro</span>
             {:else}-{/if}

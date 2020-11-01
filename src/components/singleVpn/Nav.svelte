@@ -1,6 +1,7 @@
 <script>
   import { scrollto } from 'svelte-scrollto';
   export let technicalExists = false;
+  export let pricingExists = false;
   export let tests = false;
   export let review = false;
   export let name;
@@ -88,7 +89,7 @@
       {#if tests}<span use:scrollto={'#test'}>Pruebas</span>{/if}
       <span use:scrollto={'#details'}>Detalles</span>
       {#if technicalExists}<span use:scrollto={'#technical'}>Técnico</span>{/if}
-      <span use:scrollto={'#pricing'}>Precios</span>
+      {#if pricingExists}<span use:scrollto={'#pricing'}>Precios</span>{/if}
       {#if review}<span use:scrollto={'#review'}>Review</span>{/if}
     </nav>
   </div>

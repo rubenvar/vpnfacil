@@ -42,6 +42,8 @@
 
   const technicalExists =
     vpn.protocolsList !== '' || vpn.socks5 !== '' || vpn.moreList !== '';
+  const pricingExists = !!vpn.plan3Pricing;
+  console.log(pricingExists);
 </script>
 
 <svelte:head>
@@ -56,7 +58,13 @@
 {:else}
   <Top {vpn} />
 
-  <Nav name={vpn.name} id={vpn.id} {tests} {review} {technicalExists} />
+  <Nav
+    name={vpn.name}
+    id={vpn.id}
+    {tests}
+    {review}
+    {technicalExists}
+    {pricingExists} />
 
   <Ratings {vpn} />
 
@@ -80,7 +88,9 @@
     <Technical {vpn} {vpns} />
   {/if}
 
-  <Pricing {vpn} />
+  {#if pricingExists}
+    <Pricing {vpn} />
+  {/if}
 
   {#if review}
     <SingleSection>
