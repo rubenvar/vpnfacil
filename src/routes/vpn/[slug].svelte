@@ -33,12 +33,23 @@
   export let vpn;
   export let vpns;
 
+  const title = `${
+    vpn.name
+  }: Revisión y Detalles para Elegir en ${new Date().getFullYear()} ~ VPNFácil`;
+
   const tests = false;
   const review = false;
 
   const technicalExists =
     vpn.protocolsList !== '' || vpn.socks5 !== '' || vpn.moreList !== '';
 </script>
+
+<svelte:head>
+  <title>{title}</title>
+  <meta name="description" content={vpn.description} />
+  <link rel="canonical" href="https://vpnfacil.com/vpn/{vpn.slug}/" />
+  <meta property="og:title" content={title} />
+</svelte:head>
 
 {#if !vpn.name}
   <p>Este VPN no existe...</p>
