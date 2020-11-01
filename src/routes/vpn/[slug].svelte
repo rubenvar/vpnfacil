@@ -43,7 +43,6 @@
   const technicalExists =
     vpn.protocolsList !== '' || vpn.socks5 !== '' || vpn.moreList !== '';
   const pricingExists = !!vpn.plan3Pricing;
-  console.log(pricingExists);
 </script>
 
 <svelte:head>
