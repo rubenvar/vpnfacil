@@ -1,6 +1,8 @@
 <script>
   import Fluid from 'svelte-fluid-header';
   import SVGs from './SVGs.svelte';
+
+  export let isHomepage;
 </script>
 
 <style lang="scss">
@@ -11,19 +13,22 @@
     height: var(--headerHeight);
   }
 
-  h1 {
+  h1,
+  h2 {
     font-size: 26px;
     margin: 0;
     font-family: 'Audiowide', cursive;
   }
 
-  h1 a {
+  h1 a,
+  h2 a {
     text-decoration: none;
     opacity: 0.5;
     transition: all 0.3s;
     color: var(--secondary300);
   }
-  h1 a:hover {
+  h1 a:hover,
+  h2 a:hover {
     opacity: 0.95;
   }
 
@@ -67,7 +72,13 @@
 
 <header>
   <Fluid>
-    <h1 slot="left"><a href="/">VPN Fácil</a></h1>
+    <span slot="left">
+      {#if isHomepage}
+        <h1><a href="/">VPN Fácil</a></h1>
+      {:else}
+        <h2><a href="/">VPN Fácil</a></h2>
+      {/if}
+    </span>
     <nav slot="right">
       <a href="/guias/ofertas-vpn-2020/">Mejores Ofertas 2020</a>
       <a href="/guias/">Todas las Guías</a>

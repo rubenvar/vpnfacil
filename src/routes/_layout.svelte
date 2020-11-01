@@ -20,7 +20,7 @@
   const dev = process.env.NODE_ENV === 'development';
   const { page } = stores();
   // get path for conditionally loading the hero
-  $: route = $page.path;
+  $: isHomepage = $page.path === '/';
 </script>
 
 <style>
@@ -39,9 +39,9 @@
   <GoogleAnalytics />
 {/if}
 
-<Header />
+<Header {isHomepage} />
 
-{#if route === '/'}
+{#if isHomepage}
   <Hero />
 {/if}
 
