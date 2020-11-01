@@ -8,23 +8,23 @@
   const serversData = vpns
     .filter((vpn) => vpn.servers > 0)
     .map((vpn) => ({ name: vpn.name, id: vpn.id, value: vpn.servers }))
-    .sort((a, b) => a.value < b.value);
+    .sort((a, b) => (a.value < b.value ? 1 : -1));
   const ipsData = vpns
     .filter((vpn) => vpn.ips > 0)
     .map((vpn) => ({ name: vpn.name, id: vpn.id, value: vpn.ips }))
-    .sort((a, b) => a.value < b.value);
+    .sort((a, b) => (a.value < b.value ? 1 : -1));
   const countriesData = vpns
     .filter((vpn) => vpn.countries > 0)
     .map((vpn) => ({ name: vpn.name, id: vpn.id, value: vpn.countries }))
-    .sort((a, b) => a.value < b.value);
+    .sort((a, b) => (a.value < b.value ? 1 : -1));
   const locationsData = vpns
     .filter((vpn) => vpn.locations > 0)
     .map((vpn) => ({ name: vpn.name, id: vpn.id, value: vpn.locations }))
-    .sort((a, b) => a.value < b.value);
+    .sort((a, b) => (a.value < b.value ? 1 : -1));
   const devicesData = vpns
     .filter((vpn) => vpn.devices > 0)
     .map((vpn) => ({ name: vpn.name, id: vpn.id, value: vpn.devices }))
-    .sort((a, b) => a.value < b.value);
+    .sort((a, b) => (a.value < b.value ? 1 : -1));
 
   const numbers = [
     {
