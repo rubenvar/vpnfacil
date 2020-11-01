@@ -3,6 +3,8 @@
   export let technicalExists = false;
   export let tests = false;
   export let review = false;
+  export let name;
+  export let id;
 </script>
 
 <style lang="scss">
@@ -20,12 +22,29 @@
       margin: 0 auto;
       padding: 20px 15px;
       @media only screen and (min-width: 580px) {
-        padding: 20px var(--defSidePadding);
+        padding: 15px var(--defSidePadding);
       }
       nav {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        align-items: center;
+        #vpn-logo {
+          display: none;
+          cursor: unset;
+          color: unset;
+          img {
+            width: 34px;
+            border-radius: 50%;
+          }
+          h3 {
+            margin: 0 0 0 9px;
+          }
+          @media only screen and (min-width: 580px) {
+            display: flex;
+            align-items: center;
+          }
+        }
         span {
           cursor: pointer;
           transition: all 0.3s;
@@ -57,6 +76,10 @@
 <section id="bar">
   <div>
     <nav>
+      <span id="vpn-logo">
+        <img src="/vpns/{id}.jpg" alt="Logo de {name}" />
+        <h3>{name}</h3>
+      </span>
       <span use:scrollto={'#ratings'}>Puntuaciones</span>
       <span use:scrollto={'#numbers'}>En Cifras</span>
       <span use:scrollto={'#languages'}>Idiomas</span>

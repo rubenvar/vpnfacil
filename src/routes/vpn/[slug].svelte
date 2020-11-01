@@ -56,7 +56,7 @@
 {:else}
   <Top {vpn} />
 
-  <Nav {tests} {review} {technicalExists} />
+  <Nav name={vpn.name} id={vpn.id} {tests} {review} {technicalExists} />
 
   <Ratings {vpn} />
 
