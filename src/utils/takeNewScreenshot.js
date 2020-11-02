@@ -8,7 +8,7 @@ async function postScreenshot(id, screenshot) {
       screenshot,
     })
     .then(res => {
-      console.log(res);
+      // console.log(res);
     })
     .catch(error => {
       console.log(error);
@@ -16,7 +16,7 @@ async function postScreenshot(id, screenshot) {
 }
 
 export async function takeNewScreenshot(id, baseUrl) {
-  console.log(`new screenshot called, for VPN id ${id}. Let's see...`);
+  // console.log(`new screenshot called, for VPN id ${id}. Let's see...`);
 
   // call lambda (async)
   const body = {
@@ -29,14 +29,14 @@ export async function takeNewScreenshot(id, baseUrl) {
   await axios
     .post(process.env.SCREENSHOT_LAMBDA, body)
     .then(({ status, data }) => {
-      console.log(status);
-      console.log(data);
+      // console.log(status);
+      // console.log(data);
       const screenshot = data.url;
       postScreenshot(id, screenshot);
     })
     .catch(error => {
-      console.log('⚠️ 🐛 ⚠️ 🐛 ⚠️ 🐛 There was an error ↓');
+      // console.log('⚠️ 🐛 ⚠️ 🐛 ⚠️ 🐛 There was an error ↓');
       console.log(error);
-      console.log('⚠️ 🐛 ⚠️ 🐛 ⚠️ 🐛 There was an error ↑');
+      // console.log('⚠️ 🐛 ⚠️ 🐛 ⚠️ 🐛 There was an error ↑');
     });
 }

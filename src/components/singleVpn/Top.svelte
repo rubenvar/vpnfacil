@@ -38,7 +38,7 @@
     if (isOld) takeNewScreenshot(vpn.id, vpn.baseLink);
   } else if (vpn.screenshot === '') {
     // if no screenshot, take one
-    console.log('screenshot is empty, make a new one');
+    console.log('screenshot is empty, I make a new one');
     takeNewScreenshot(vpn.id, vpn.baseLink);
   }
 </script>
