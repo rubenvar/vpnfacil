@@ -1,6 +1,7 @@
 <script>
   import Card from './Card.svelte';
-  import { sortCriteria, direction } from '../stores';
+  import Row from './Row.svelte';
+  import { sortCriteria, direction, view } from '../stores';
   import { totalVpns } from '../stores/state';
 
   export let vpns;
@@ -40,9 +41,13 @@
   }
 
   $: sortedContent = vpns;
+
+  // manage view
+  let tableView;
+  view.subscribe((val) => (tableView = val === 'table'));
 </script>
 
-<style>
+<style lang="scss">
   section {
     max-width: var(--maxWidth);
     margin: 0 auto;
@@ -50,29 +55,26 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 34px;
-  }
-
-  @media only screen and (min-width: 660px) {
-    section {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media only screen and (min-width: 1024px) {
-    section {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media only screen and (min-width: 1280px) {
-    section {
-      grid-template-columns: repeat(4, 1fr);
+    &.block-view {
+      @media only screen and (min-width: 660px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media only screen and (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media only screen and (min-width: 1280px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   }
 </style>
 
-<section>
+<section class={tableView ? 'table-view' : 'block-view'}>
   {#each sortedContent as vpn, index (vpn.id)}
-    <Card {vpn} i={index} />
+    {#if tableView}
+      <Row {vpn} i={index} />
+    {:else}
+      <Card {vpn} i={index} />
+    {/if}
   {/each}
 </section>

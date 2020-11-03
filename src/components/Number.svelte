@@ -21,10 +21,10 @@
 </style>
 
 <span class="num">
-  {value && value > 0 ? formatNumber(value) : '-'}
+  {value && value === 'unlimited' ? '∞' : value > 0 ? formatNumber(value) : '-'}
   {#if tag === 'countries'}
     <span class="tag">países</span>
   {:else if tag === 'servers'}
     <span class="tag">servidores</span>
-  {:else if tag === 'ips'}<span class="tag">ips</span>{/if}
+  {:else if tag === 'devices'}<span class="tag">dispositivos</span>{/if}
 </span>

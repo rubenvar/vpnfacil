@@ -9,25 +9,20 @@
     id,
     slug,
     color,
-    // link,
     rating,
-    servers,
-    ips,
-    countries,
-    devices,
     moneyBack,
     moneyBackDays,
     appLanguage,
     platforms,
-    browserPlugins,
     browsers,
     p2p,
     noLogs,
   } = vpn;
+
   const numbers = {
-    countries,
-    servers,
-    ips,
+    countries: vpn.countries,
+    servers: vpn.servers,
+    devices: vpn.devices,
   };
 
   // format languages, platforms from string to array
@@ -90,7 +85,7 @@
     top: 10px;
     left: 10px;
     border-radius: 20%;
-    filter: saturate(50%) blur(0.75px) opacity(70%);
+    filter: saturate(30%) blur(0.75px) opacity(70%);
     transition: all 0.3s;
   }
   h2 {
@@ -160,26 +155,9 @@
 
   <h2><a href="/vpn/{slug}/">{name}</a></h2>
 
-  <!-- {#if countries || servers || ips} -->
   <Numbers {numbers} />
-  <!-- {/if} -->
 
   <ul>
-    {#if devices}
-      <li>
-        <svg>
-          <use href="#icon-desktop" />
-        </svg>
-        <span>
-          {#if devices !== 'unlimited'}{devices}{/if}
-          <span class="tag">
-            {devices === 'unlimited' ? 'D' : 'd'}ispositivos
-          </span>
-          {#if devices === 'unlimited'}ilimitados{/if}
-        </span>
-      </li>
-    {/if}
-
     {#if moneyBack === 'yes'}
       <li>
         <svg>
