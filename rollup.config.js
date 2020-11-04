@@ -85,7 +85,9 @@ export default {
       commonjs(),
       glob(),
       copy({
-        targets: [{ src: 'src/**/images/*.*', dest: 'static/images' }],
+        targets: [
+          { src: 'src/routes/guias/**/images/*.*', dest: 'static/images' },
+        ],
       }),
       legacy &&
         babel({
