@@ -1,69 +1,169 @@
 <script>
-  import Fluid from 'svelte-fluid-header';
+  // TODO maybe brack Nav into its own component? 🤷‍♂️
+  // idea for responsive nav from https://linguinecode.com/post/create-a-navbar-in-svelte
   import SVGs from './SVGs.svelte';
+  import { onMount } from 'svelte';
+  export let segment;
 
-  export let isHomepage;
+  let isMobileMenuOpen = false;
+
+  const navItems = [
+    { label: 'Mejores Ofertas 2020', href: '/guias/ofertas-vpn-2020/' },
+    { label: 'Todas las Guías', href: '/guias/' },
+    { label: 'FAQ', href: '/guias/preguntas-frecuentes/' },
+  ];
+
+  const handleMobileIconClick = () => (isMobileMenuOpen = !isMobileMenuOpen);
+  const hideMobileMenu = () => (isMobileMenuOpen = false);
+
+  const mediaQueryHandler = (e) => {
+    if (!e.matches) isMobileMenuOpen = false;
+  };
+
+  onMount(() => {
+    const mediaListener = window.matchMedia('(max-width: 767px)');
+    mediaListener.addEventListener('change', mediaQueryHandler);
+  });
 </script>
 
 <style lang="scss">
   header {
-    max-width: var(--maxWidth);
-    margin: 0 auto;
-    padding: 0 var(--defSidePadding);
-    height: var(--headerHeight);
-  }
+    .inner {
+      max-width: var(--maxWidth);
+      margin: 0 auto;
+      padding: 0 var(--defSidePadding);
+      height: var(--headerHeight);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  h1,
-  h2 {
-    font-size: 26px;
-    margin: 0;
-    font-family: 'Audiowide', cursive;
-  }
-
-  h1 a,
-  h2 a {
-    text-decoration: none;
-    opacity: 0.5;
-    transition: all 0.3s;
-    color: var(--secondary300);
-  }
-  h1 a:hover,
-  h2 a:hover {
-    opacity: 0.95;
-  }
-
-  nav {
-    display: flex;
-    font-size: 20px;
-    &.mobile {
-      flex-direction: column;
-      position: relative;
-      z-index: 99;
-      box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+    h1,
+    h2 {
+      font-size: 26px;
+      margin: 0;
+      font-family: 'Audiowide', cursive;
       a {
-        background: #fffe;
-        margin: 0;
-        padding: 12px 0 12px 30px;
-        &:nth-child(even) {
-          background-color: #fafafaee;
+        text-decoration: none;
+        opacity: 0.5;
+        transition: all 0.3s;
+        color: var(--secondary300);
+        &:hover {
+          opacity: 0.95;
         }
       }
     }
-  }
 
-  nav a {
-    text-decoration: none;
-    margin-left: 30px;
-    color: var(--primary300);
-    transition: all 0.3s;
-  }
+    nav {
+      height: 100%;
+      display: flex;
+      font-size: 20px;
+      align-items: center;
 
-  nav a:hover {
-    color: var(--secondary300);
-  }
+      .mobile-icon {
+        width: 25px;
+        height: 14px;
+        position: relative;
+        cursor: pointer;
+        @media only screen and (min-width: 767px) {
+          display: none;
+        }
+        &::before,
+        &::after,
+        .middle-line {
+          content: '';
+          position: absolute;
+          right: 0;
+          width: 100%;
+          height: 2px;
+          background-color: var(--secondary500);
+          transition: all 0.4s;
+          transform-origin: center;
+        }
+        &::before {
+          top: 0;
+          width: 33%;
+        }
+        &::after {
+          bottom: 0;
+          width: 66%;
+        }
+        .middle-line {
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+        &.active {
+          &::before {
+            width: 100%;
+            top: 50%;
+            transform: rotate(-45deg);
+          }
+          &::after {
+            width: 100%;
+            top: 50%;
+            transform: rotate(45deg);
+          }
+          .middle-line {
+            width: 100%;
+            opacity: 0;
+          }
+        }
+      }
 
-  :global(.svelte-fluid-header--button) {
-    color: var(--secondary600);
+      ul {
+        display: none;
+        width: 100%;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        @media only screen and (min-width: 767px) {
+          display: flex;
+        }
+        &.mobile {
+          background-color: #fffd;
+          position: fixed;
+          display: block;
+          height: calc(100% - var(--headerHeight));
+          bottom: 0;
+          left: 0;
+          z-index: 99;
+        }
+        li {
+          list-style-type: none;
+          position: relative;
+          padding: 0 0 0 20px;
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            @media only screen and (min-width: 767px) {
+              display: none;
+            }
+          }
+          a {
+            text-decoration: none;
+            display: flex;
+            height: 45px;
+            align-items: center;
+            padding: 0 10px;
+            color: var(--primary500);
+            transition: all 0.3s;
+            &:hover {
+              color: var(--secondary300);
+            }
+            @media only screen and (min-width: 767px) {
+              display: inline-flex;
+              color: var(--primary300);
+            }
+          }
+        }
+      }
+    }
   }
 </style>
 
@@ -71,23 +171,25 @@
 <SVGs />
 
 <header>
-  <Fluid>
-    <span slot="left">
-      {#if isHomepage}
-        <h1><a href="/">VPN Fácil</a></h1>
-      {:else}
-        <h2><a href="/">VPN Fácil</a></h2>
-      {/if}
-    </span>
-    <nav slot="right">
-      <a href="/guias/ofertas-vpn-2020/">Mejores Ofertas 2020</a>
-      <a href="/guias/">Todas las Guías</a>
-      <a href="/guias/preguntas-frecuentes/">FAQ</a>
+  <div class="inner">
+    {#if !segment}
+      <h1><a href="/">VPN Fácil</a></h1>
+    {:else}
+      <h2><a href="/">VPN Fácil</a></h2>
+    {/if}
+    <nav>
+      <div
+        on:click={handleMobileIconClick}
+        class={`mobile-icon${isMobileMenuOpen ? ' active' : ''}`}>
+        <div class="middle-line" />
+      </div>
+      <ul class={`navbar-list${isMobileMenuOpen ? ' mobile' : ''}`}>
+        {#each navItems as item}
+          <li>
+            <a href={item.href} on:click={hideMobileMenu}> {item.label} </a>
+          </li>
+        {/each}
+      </ul>
     </nav>
-    <nav class="mobile" slot="drawer">
-      <a href="/guias/ofertas-vpn-2020/">Mejores Ofertas 2020</a>
-      <a href="/guias/">Todas las Guías</a>
-      <a href="/guias/preguntas-frecuentes/">FAQ</a>
-    </nav>
-  </Fluid>
+  </div>
 </header>

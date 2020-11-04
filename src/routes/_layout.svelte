@@ -1,11 +1,12 @@
 <script>
   // import * as Sentry from '@sentry/browser';
   // import { Integrations } from '@sentry/tracing';
-  import { stores } from '@sapper/app';
+  // import { stores } from '@sapper/app';
   import GoogleAnalytics from '../components/GoogleAnalytics.svelte';
   import Header from '../components/Header.svelte';
   import Hero from '../components/Hero.svelte';
   import Footer from '../components/Footer.svelte';
+  export let segment;
 
   // not working, on error app just crashes 🤷‍♂️
   // Sentry.init({
@@ -18,19 +19,16 @@
   // });
 
   const dev = process.env.NODE_ENV === 'development';
-  const { page } = stores();
-  // get path for conditionally loading the hero
-  $: isHomepage = $page.path === '/';
+
+  // this is how to get path, but I'm using the 'segment' prop now
+  // const { page } = stores();
+  // $: isHomepage = $page.path === '/';
 </script>
 
 <style>
   main {
     position: relative;
-    /* max-width: calc(100vw); */
-    /* max-width: var(--maxWidth); */
     background-color: white;
-    /* padding: 2em; */
-    /* margin: 0 auto; */
     box-sizing: border-box;
   }
 </style>
@@ -39,9 +37,9 @@
   <GoogleAnalytics />
 {/if}
 
-<Header {isHomepage} />
+<Header {segment} />
 
-{#if isHomepage}
+{#if !segment}
   <Hero />
 {/if}
 
