@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.14.0] - 2020-11-04
+
+### Added
+
+- Added a simple, fully responsive nav ([idea](https://linguinecode.com/post/create-a-navbar-in-svelte)).
+
+### Removed
+
+- Previous _fluid header_ was created with [svelte-fluid-header](https://github.com/collardeau/svelte-fluid-header). Remove it as it's not used anymore.
+
 ## [1.13.0] - 2020-11-01
 
 ### Added
