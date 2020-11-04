@@ -96,13 +96,6 @@
         font-weight: 300;
         width: 100%;
       }
-      .platform {
-        margin: 2px 2px;
-        background: #fafafa;
-        padding: 1px 2px;
-        border-radius: 5px;
-        display: inline-block;
-      }
     }
   }
   .go {

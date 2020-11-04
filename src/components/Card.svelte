@@ -13,8 +13,7 @@
     moneyBack,
     moneyBackDays,
     appLanguage,
-    platforms,
-    browsers,
+    compatIndex,
     p2p,
     noLogs,
   } = vpn;
@@ -25,28 +24,8 @@
     devices: vpn.devices,
   };
 
-  // format languages, platforms from string to array
-  // TODO maybe do it in the API (lambda)
-  let languages;
-  if (appLanguage && appLanguage.length) {
-    languages = appLanguage
-      .replace(/ /g, '')
-      .replace('english', 'inglés')
-      .replace('spanish', 'español')
-      .split(',');
-  }
-
-  function managePlatforms(platforms, browsers) {
-    // make array of platforms (shorten if it's too big) and browsers together
-    if (!platforms || platforms === '') return;
-    let plats = platforms.split(', ');
-    if (plats.length > 6) plats = plats.slice(0, 6).concat('...');
-    if (!browsers) return plats;
-    const brows = browsers.split(', ');
-    return plats.concat(brows);
-  }
-
-  const plats = managePlatforms(platforms, browsers);
+  let spanish = false;
+  if (appLanguage && appLanguage.includes('spanish')) spanish = true;
 </script>
 
 <style lang="scss">
@@ -128,13 +107,6 @@
       .tag {
         font-weight: 300;
       }
-      .platform {
-        margin: 2px 2px;
-        background: #fafafa;
-        padding: 1px 2px;
-        border-radius: 5px;
-        display: inline-block;
-      }
     }
   }
   .go {
@@ -179,34 +151,27 @@
       </li>
     {/if}
 
-    {#if languages && languages.length === 1 && languages[0] !== ''}
-      <li>
-        <svg>
-          <use href="#icon-translate" />
-        </svg>
-        <span> <span class="tag">Solo en</span> {languages[0]} </span>
-      </li>
-    {:else if languages && languages.length >= 2}
+    {#if appLanguage !== ''}
       <li>
         <svg>
           <use href="#icon-translate" />
         </svg>
         <span>
-          <span class="tag">En</span>
-          {#each languages as lang}<span>{lang}{', '}</span>{/each}
-          <span class="tag">etc.</span>
+          {#if spanish}
+            <span class="tag">Disponible en </span>español
+          {:else}<span class="tag">Solo en</span> inglés{/if}
         </span>
       </li>
     {/if}
 
-    {#if plats && plats.length > 0}
+    {#if compatIndex}
       <li>
         <svg>
           <use href="#icon-dashboard" />
         </svg>
         <span>
-          <span class="tag">Disponible para</span>
-          {#each plats as plat}<span class="platform">{plat}</span> {' '}{/each}
+          <span class="tag">Compatibilidad</span>
+          {compatIndex < 6 ? 'baja' : compatIndex > 5 && compatIndex < 12 ? 'media' : 'alta'}
         </span>
       </li>
     {/if}
