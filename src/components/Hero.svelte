@@ -1,5 +1,6 @@
 <script>
   import { scrollto } from 'svelte-scrollto';
+  import bg from 'images/bg.jpg';
 </script>
 
 <style>
@@ -8,7 +9,7 @@
         hsla(270, 70%, 25%, 0.65),
         hsla(270, 70%, 25%, 0.65)
       ),
-      url('/bg.jpg');
+      var(--hero-bg);
     background-position: 30% 40%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -84,16 +85,9 @@
   }
 </style>
 
-<div class="hero">
-  <p>
-    Necesitas un VPN para ser
-    <strong>libre</strong>
-    en internet
-  </p>
-  <p>
-    Hay muchas opciones, pero aquí lo tienes
-    <strong>fácil</strong>
-  </p>
+<div class="hero" style="--hero-bg: url({bg})">
+  <p>Necesitas un VPN para ser <strong>libre</strong> en internet</p>
+  <p>Hay muchas opciones, pero aquí lo tienes <strong>fácil</strong></p>
   <div class="down">
     <span use:scrollto={'#main'}>
       <svg>
