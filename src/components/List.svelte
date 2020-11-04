@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte';
   import Card from './Card.svelte';
   import Row from './Row.svelte';
   import { sortCriteria, direction, view } from '../stores';
@@ -45,6 +46,17 @@
   // manage view
   let tableView;
   view.subscribe((val) => (tableView = val === 'table'));
+
+  // 'listen' for window width. if smaller than 767 onMount or on change (resize), force 'blocks' view
+  onMount(() => {
+    const mediaListener = window.matchMedia('(min-width: 767px)');
+
+    if (!mediaListener.matches) view.set('blocks');
+
+    mediaListener.addEventListener('change', (e) => {
+      if (!e.matches) view.set('blocks');
+    });
+  });
 </script>
 
 <style lang="scss">
