@@ -1,6 +1,7 @@
 <script>
   import Number from './Number.svelte';
   export let numbers;
+  export let isRow = false;
 
   const numbersArray = Object.keys(numbers).map((key) => ({
     tag: key,
@@ -18,10 +19,15 @@
     background-color: var(--primary100);
     padding: 15px 0;
   }
+  .numbers.in-row {
+    padding: 0;
+    /* background: none; */
+    height: 100%;
+  }
 </style>
 
-<div class="numbers">
+<div class={`numbers${isRow ? ' in-row' : ''}`}>
   {#each numbersArray as number}
-    <Number {number} />
+    <Number {number} {isRow} />
   {/each}
 </div>
