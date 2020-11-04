@@ -39,14 +39,31 @@
       }
       #general-info {
         display: none;
-        display: flex;
         flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
         @media only screen and (min-width: 680px) {
-          display: unset;
+          display: flex;
         }
         p {
           margin: 0;
           color: var(--grey500);
+          &#view {
+            display: flex;
+            justify-content: space-between;
+            #change-view {
+              cursor: pointer;
+              color: var(--primary500);
+              transition: all 0.3s;
+              border: 1px solid var(--primary500);
+              border-radius: var(--buttonRadius);
+              padding: 0 3px;
+              &:hover {
+                color: var(--secondary500);
+                border-color: var(--secondary500);
+              }
+            }
+          }
         }
       }
     }
@@ -57,10 +74,9 @@
   <div class="container">
     <div id="general-info">
       <p>Estás viendo {total} VPNs</p>
-      <p>
-        Vista:
-        {tableView ? 'tabla' : 'bloques'}
-        <span class="change-view" on:click={changeView}>Cambiar</span>
+      <p id="view">
+        <span>Vista: {tableView ? 'tabla' : 'bloques'} </span>
+        <span id="change-view" on:click={changeView}>Cambiar</span>
       </p>
     </div>
     <Sort />
