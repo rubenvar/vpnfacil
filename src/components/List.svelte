@@ -1,7 +1,10 @@
 <script>
-  import Card from './Card.svelte';
-  import { sortCriteria, direction } from '../stores';
+  import { onMount } from 'svelte';
+  import { sortCriteria, direction, view } from '../stores';
   import { totalVpns } from '../stores/state';
+  import TableHeader from './TableHeader.svelte';
+  import Row from './Row.svelte';
+  import Card from './Card.svelte';
 
   export let vpns;
   // set the total of vpns to store
@@ -40,39 +43,57 @@
   }
 
   $: sortedContent = vpns;
+
+  // manage view
+  let tableView;
+  view.subscribe((val) => (tableView = val === 'table'));
+
+  // 'listen' for window width. if smaller than 767 onMount or on change (resize), force 'blocks' view
+  onMount(() => {
+    const mediaListener = window.matchMedia('(min-width: 767px)');
+
+    if (!mediaListener.matches) view.set('blocks');
+
+    mediaListener.addEventListener('change', (e) => {
+      if (!e.matches) view.set('blocks');
+    });
+  });
 </script>
 
-<style>
+<style lang="scss">
   section {
     max-width: var(--maxWidth);
     margin: 0 auto;
     padding: 0 var(--defSidePadding);
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 34px;
-  }
-
-  @media only screen and (min-width: 660px) {
-    section {
-      grid-template-columns: repeat(2, 1fr);
+    gap: 34px;
+    &.table-view {
+      gap: 12px;
     }
-  }
-
-  @media only screen and (min-width: 1024px) {
-    section {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media only screen and (min-width: 1280px) {
-    section {
-      grid-template-columns: repeat(4, 1fr);
+    &.block-view {
+      @media only screen and (min-width: 660px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media only screen and (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media only screen and (min-width: 1280px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   }
 </style>
 
-<section>
+<section class={tableView ? 'table-view' : 'block-view'}>
+  {#if tableView}
+    <TableHeader />
+  {/if}
   {#each sortedContent as vpn, index (vpn.id)}
-    <Card {vpn} i={index} />
+    {#if tableView}
+      <Row {vpn} i={index} />
+    {:else}
+      <Card {vpn} i={index} />
+    {/if}
   {/each}
 </section>

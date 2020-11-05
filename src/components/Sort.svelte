@@ -38,14 +38,13 @@
 </script>
 
 <style>
-  .buttons {
-    display: flex;
-  }
-
   p {
     color: var(--grey500);
     margin: 0 0 5px;
-    /* border-bottom: 2px solid #ddd; */
+  }
+
+  .buttons {
+    display: flex;
   }
 
   select {

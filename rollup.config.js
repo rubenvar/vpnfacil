@@ -1,6 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
+import url from '@rollup/plugin-url';
 import svelte from 'rollup-plugin-svelte';
 import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
@@ -8,11 +9,10 @@ import config from 'sapper/config/rollup.js';
 import glob from 'rollup-plugin-glob';
 import { mdsvex } from 'mdsvex';
 import a11yEmoji from '@fec/remark-a11y-emoji';
-import { join } from 'path';
+import path from 'path';
 import copy from 'rollup-plugin-copy';
 import externalLinks from 'remark-external-links';
-// add sass support
-import sveltePreprocess from 'svelte-preprocess';
+import sveltePreprocess from 'svelte-preprocess'; // add sass support
 import json from '@rollup/plugin-json';
 import pkg from './package.json';
 
@@ -36,7 +36,7 @@ const onwarn = (warning, onwarn) =>
   onwarn(warning);
 
 const extensions = ['.svelte', '.svx'];
-const layout = join(__dirname, './src/routes/guias/_guias-layout.svelte');
+const layout = path.join(__dirname, './src/routes/guias/_guias-layout.svelte');
 const preprocess = [
   sveltePreprocess(),
   mdsvex({
@@ -74,6 +74,10 @@ export default {
         preprocess,
         emitCss: true,
       }),
+      url({
+        sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
+        publicPath: '/client/',
+      }),
       resolve({
         browser: true,
         dedupe: ['svelte'],
@@ -81,7 +85,9 @@ export default {
       commonjs(),
       glob(),
       copy({
-        targets: [{ src: 'src/**/images/*.*', dest: 'static/images' }],
+        targets: [
+          { src: 'src/routes/guias/**/images/*.*', dest: 'static/images' },
+        ],
       }),
       legacy &&
         babel({
@@ -131,6 +137,11 @@ export default {
         hydratable: true,
         preprocess,
         generate: 'ssr',
+      }),
+      url({
+        sourceDir: path.resolve(__dirname, 'src/node_modules/images'),
+        publicPath: '/client/',
+        emitFiles: false, // already emitted by client build
       }),
       resolve({
         dedupe: ['svelte'],
