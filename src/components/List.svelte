@@ -1,9 +1,10 @@
 <script>
   import { onMount } from 'svelte';
-  import Card from './Card.svelte';
-  import Row from './Row.svelte';
   import { sortCriteria, direction, view } from '../stores';
   import { totalVpns } from '../stores/state';
+  import TableHeader from './TableHeader.svelte';
+  import Row from './Row.svelte';
+  import Card from './Card.svelte';
 
   export let vpns;
   // set the total of vpns to store
@@ -66,7 +67,10 @@
     padding: 0 var(--defSidePadding);
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 34px;
+    gap: 34px;
+    &.table-view {
+      gap: 12px;
+    }
     &.block-view {
       @media only screen and (min-width: 660px) {
         grid-template-columns: repeat(2, 1fr);
@@ -82,6 +86,9 @@
 </style>
 
 <section class={tableView ? 'table-view' : 'block-view'}>
+  {#if tableView}
+    <TableHeader />
+  {/if}
   {#each sortedContent as vpn, index (vpn.id)}
     {#if tableView}
       <Row {vpn} i={index} />

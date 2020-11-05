@@ -1,6 +1,6 @@
 <script>
   import StarRating from 'svelte-star-rating';
-  import Numbers from './Numbers.svelte';
+  import { formatNumber } from '../utils';
   export let vpn;
   export let i;
 
@@ -10,6 +10,9 @@
     slug,
     color,
     rating,
+    countries,
+    servers,
+    devices,
     moneyBack,
     moneyBackDays,
     appLanguage,
@@ -29,42 +32,41 @@
 </script>
 
 <style lang="scss">
+  .card-link {
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 2px 7px rgba(0, 0, 0, 0.05);
+      img {
+        filter: saturate(75%) blur(0px) opacity(95%);
+      }
+      h2 {
+        color: var(--vpn-color);
+      }
+    }
+    &:nth-child(even) {
+      background-color: #eaeaea;
+    }
+  }
   article {
-    border: 2px solid var(--primary300);
-    border-radius: var(--cardRadius);
+    // border-bottom: 1px solid var(--primary300);
     color: #444;
     // overflow: hidden;
     display: grid;
-    grid-template-columns: auto 0.6fr 1fr 2fr 0.4fr;
+    grid-template-columns: auto 0.6fr 3fr;
     gap: 15px;
     align-items: center;
     transition: all 0.3s;
     font-family: var(--specialFont);
     max-width: 100%;
+    padding: 15px 0;
     // &.emphasis {
-    //   box-shadow: 0 0 0 5px #ffcf00;
-    //   border: none;
+    //   background-color: #fef4ca;
     // }
-    &:hover {
-      transform: scale(1.02);
-      img {
-        filter: saturate(75%) blur(0px) opacity(90%);
-      }
-      h2 {
-        color: var(--vpn-color);
-      }
-      .go {
-        background-color: var(--primary300);
-        &:hover {
-          background-color: var(--primary500);
-        }
-      }
-    }
   }
   img {
     width: 40px;
     border-radius: 20%;
-    filter: saturate(50%) blur(0.75px) opacity(70%);
+    filter: saturate(50%) blur(0.75px) opacity(90%);
     transition: all 0.3s;
     margin-left: 7px;
   }
@@ -75,29 +77,25 @@
     h2 {
       position: relative;
       transition: all 0.3s;
-      font-size: 21px;
+      font-size: 19px;
       margin: 0;
       font-family: var(--mainFont);
       @media only screen and (min-width: 960px) {
-        font-size: 25px;
+        font-size: 21px;
       }
     }
   }
   a {
     text-decoration: none;
-    &:hover {
-      .go {
-        color: white;
-      }
-    }
   }
   .all-details {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    // grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     gap: 7px;
     align-items: center;
     @media only screen and (min-width: 960px) {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(8, 1fr);
       gap: 15px;
     }
     .info {
@@ -106,7 +104,7 @@
       text-align: center;
       justify-content: center;
       @media only screen and (min-width: 960px) {
-        display: flex;
+        // display: flex;
       }
       .tag {
         font-weight: 300;
@@ -114,78 +112,65 @@
       }
     }
   }
-  .go-link {
-    height: 100%;
-    .go {
-      background-color: var(--primary100);
-      transition: all 0.3s;
-      font-size: 20px;
-      height: 100%;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-top-right-radius: 13px;
-      border-bottom-right-radius: 13px;
-      @media only screen and (min-width: 580px) {
-        font-size: unset;
-      }
-    }
-  }
 </style>
 
-<a href="/vpn/{slug}">
+<a href="/vpn/{slug}/" class="card-link">
   <article {id} style="--vpn-color: {color}" class={i < 3 ? 'emphasis' : ''}>
     <img src="/vpns/{id}.jpg" alt="Logo de {name}" />
+
     <div class="title">
       <h2><a href="/vpn/{slug}/">{name}</a></h2>
-
       {#if rating}
         <StarRating
           {id}
           rating={rating / 20}
-          config={{ fullColor: '#ffd65a', emptyColor: '#a9a9a9', size: 16 }}
+          config={{ fullColor: '#ffd65a', emptyColor: '#a9a9a9', size: 15 }}
           style="justify-content: center;margin: 7px 0;" />
       {/if}
     </div>
-    <Numbers {numbers} isRow />
 
     <div class="all-details">
+      {#if countries}
+        <span class="info">{formatNumber(countries)}</span>
+      {:else}<span class="info">-</span>{/if}
+
+      {#if servers}
+        <span class="info">{formatNumber(servers)}</span>
+      {:else}<span class="info">-</span>{/if}
+
+      {#if devices}
+        <span class="info">{devices === 'unlimited' ? '∞' : devices}</span>
+      {:else}<span class="info">-</span>{/if}
+
       {#if moneyBack === 'yes'}
-        <span class="info">
+        <span class="info">✅
           {moneyBackDays}
-          días
-          <span class="tag">devolución</span>
-        </span>
+          <span class="tag">días</span></span>
       {:else if moneyBack === 'no'}
-        <span class="info">No<span class="tag">devolución</span></span>
+        <span class="info">❌ No</span>
       {:else}<span class="info">-</span>{/if}
 
       {#if appLanguage !== ''}
-        <span class="info">{#if spanish}
-            <span class="tag">en</span>
-            español
-          {:else}<span class="tag">en</span> inglés{/if}</span>
+        <span class="info">{#if spanish}español{:else}inglés{/if}</span>
       {:else}<span class="info">-</span>{/if}
 
       {#if compatIndex}
         <span class="info">
-          <span class="tag">compatibilidad</span>
           {compatIndex < 6 ? 'baja' : compatIndex > 5 && compatIndex < 12 ? 'media' : 'alta'}
         </span>
       {:else}<span class="info">-</span>{/if}
 
       {#if noLogs === 'yes'}
-        <span class="info">No guarda logs</span>
+        <span class="info">✅ No</span>
       {:else if noLogs === 'no'}
-        <span class="info">Puede guardar logs</span>
+        <span class="info">❌ Quizás</span>
+      {:else}<span class="info">-</span>{/if}
+
+      {#if p2p === 'yes'}
+        <span class="info">✅ Sí</span>
+      {:else if p2p === 'no'}
+        <span class="info">❌ No</span>
       {:else}<span class="info">-</span>{/if}
     </div>
-
-    {#if slug}
-      <a class="go-link" href="/vpn/{slug}/" title="Ir a {name}">
-        <div class="go"><span>Ver más info</span></div>
-      </a>
-    {/if}
   </article>
 </a>
