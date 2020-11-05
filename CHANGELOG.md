@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.15.0] - 2020-11-05
+
+### Added
+
+- Added a table view for the main VPN list in the front page. Now the table view is the default, but in smaller screens it defaults to blocks and disables the table view.
+- Added a view switcher in the main bar, along the sorting and (future) filtering features.
+
 ## [1.14.0] - 2020-11-04
 
 ### Added
