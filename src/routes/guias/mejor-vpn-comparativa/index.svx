@@ -126,7 +126,7 @@ excerpt: 'Cómo elegir el mejor VPN para ti: navega 100% seguro por Internet, al
 </style>
 
 
-Usar Internet sin protección puede ser **muy peligroso**. Ya lo vimos en la teoría de [qués es un VPN](/guias/que-es-vpn/)... Bueno, aquí tienes la _práctica_.
+Usar Internet sin protección puede ser **muy peligroso**. Ya lo vimos en la teoría de [qué es un VPN](/guias/que-es-vpn/)... Bueno, aquí tienes la _práctica_.
 
 Mira la tabla comparativa para descubrir el mejor VPN para ti [actualizada {currentDate}].
 
