@@ -1,4 +1,5 @@
 <script>
+  import { LayoutList, GridDots } from 'tabler-icons-svelte';
   import { totalVpns } from '../stores/state';
   import { view } from '../stores';
   import Sort from '../components/Sort.svelte';
@@ -45,7 +46,7 @@
           display: flex;
           // justify-content: space-around;
           button {
-            color: #444;
+            // color: #444;
             box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
             border: 1px solid #ddd;
             border-radius: 10px;
@@ -53,11 +54,12 @@
             cursor: pointer;
             transition: all 0.3s;
             line-height: 1;
-            padding: 0.6em 13px 0.5em;
+            // padding: 0.6em 13px 0.5em;
+            padding: 6px 18px;
             &:disabled {
               cursor: unset;
               opacity: 0.8;
-              color: #4447;
+              // color: #4447;
               box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.01);
               background-color: #fefefe;
             }
@@ -87,11 +89,19 @@
     <div id="general-info">
       <p>Estás viendo {total} VPNs</p>
       <div class="buttons">
-        <button disabled={tableView} on:click={() => view.set('table')}>
-          Tabla
+        <button
+          disabled={tableView}
+          on:click={() => view.set('table')}
+          title="Cambiar a vista de Tabla">
+          <LayoutList color={tableView ? '#4447' : '#444'} />
+          <!-- Tabla -->
         </button>
-        <button disabled={!tableView} on:click={() => view.set('blocks')}>
-          Bloques
+        <button
+          disabled={!tableView}
+          on:click={() => view.set('blocks')}
+          title="Cambiar a vista de Bloques">
+          <GridDots color={tableView ? '#444' : '#4447'} />
+          <!-- Bloques -->
         </button>
       </div>
     </div>
