@@ -1,4 +1,12 @@
 <script>
+  import {
+    Certificate,
+    Language,
+    Devices2,
+    FileShredder,
+    FileSearch,
+    CloudDownload,
+  } from 'tabler-icons-svelte';
   import StarRating from 'svelte-star-rating';
   import Numbers from './Numbers.svelte';
   export let vpn;
@@ -26,6 +34,8 @@
 
   let spanish = false;
   if (appLanguage && appLanguage.includes('spanish')) spanish = true;
+
+  const primary500 = 'hsl(270, 75%, 70%)';
 </script>
 
 <style lang="scss">
@@ -35,7 +45,7 @@
     color: #444;
     overflow: hidden;
     display: grid;
-    grid-template-rows: 1fr auto 5fr auto;
+    grid-template-rows: 1fr auto 4.5fr auto;
     transition: all 0.3s;
     font-family: var(--specialFont);
     position: relative;
@@ -96,11 +106,6 @@
       &:last-child {
         margin: 0;
       }
-      svg {
-        width: 20px;
-        min-width: 20px;
-        height: 20px;
-      }
       > span {
         margin-left: 10px;
       }
@@ -132,9 +137,10 @@
   <ul>
     {#if moneyBack === 'yes'}
       <li>
-        <svg>
+        <!-- <svg>
           <use href="#icon-certificate" />
-        </svg>
+        </svg> -->
+        <Certificate color={primary500} />
         <span>
           Garantía
           <span class="tag">
@@ -144,18 +150,20 @@
       </li>
     {:else if moneyBack === 'no'}
       <li>
-        <svg>
+        <!-- <svg>
           <use href="#icon-certificate" />
-        </svg>
+        </svg> -->
+        <Certificate color={primary500} />
         <span> Sin garantía <span class="tag">de devolución</span> </span>
       </li>
     {/if}
 
     {#if appLanguage !== ''}
       <li>
-        <svg>
+        <!-- <svg>
           <use href="#icon-translate" />
-        </svg>
+        </svg> -->
+        <Language color={primary500} />
         <span>
           {#if spanish}
             <span class="tag">Disponible en </span>español
@@ -166,9 +174,10 @@
 
     {#if compatIndex}
       <li>
-        <svg>
+        <!-- <svg>
           <use href="#icon-dashboard" />
-        </svg>
+        </svg> -->
+        <Devices2 color={primary500} />
         <span>
           <span class="tag">Compatibilidad</span>
           {compatIndex < 6 ? 'baja' : compatIndex > 5 && compatIndex < 12 ? 'media' : 'alta'}
@@ -178,32 +187,36 @@
 
     {#if noLogs === 'yes'}
       <li>
-        <svg>
+        <!-- <svg>
           <use href="#icon-document-notes" />
-        </svg>
+        </svg> -->
+        <FileShredder color={primary500} />
         <span>No guarda logs</span>
       </li>
     {:else if noLogs === 'no'}
       <li>
-        <svg>
+        <!-- <svg>
           <use href="#icon-document-notes" />
-        </svg>
+        </svg> -->
+        <FileSearch color={primary500} />
         <span>Puede guardar logs</span>
       </li>
     {/if}
 
     {#if p2p === 'yes'}
       <li>
-        <svg>
+        <!-- <svg>
           <use href="#icon-cloud-download" />
-        </svg>
+        </svg> -->
+        <CloudDownload color={primary500} />
         <span>Compatible con P2P</span>
       </li>
     {:else if p2p === 'no'}
       <li>
-        <svg>
+        <!-- <svg>
           <use href="#icon-cloud-download" />
-        </svg>
+        </svg> -->
+        <CloudDownload color={primary500} />
         <span>No compatible con P2P</span>
       </li>
     {/if}
