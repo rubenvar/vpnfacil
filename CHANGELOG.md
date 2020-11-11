@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.16.0] - 2020-11-11
+
+### Changed
+
+- Almost all SVG icons are now from [tabler-icons](https://github.com/tabler/tabler-icons) (`tabler-icons-svelte`) instead of from the Refactoring UI pack.
+- Countries in single VPN pages are now shown in Spanish (`country-list-spanish`).
+
 ## [1.15.0] - 2020-11-05
 
 ### Added
