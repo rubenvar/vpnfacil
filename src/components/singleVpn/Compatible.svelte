@@ -1,5 +1,6 @@
 <script>
   import SingleSection from './SingleSection.svelte';
+  import { ExternalLink } from 'tabler-icons-svelte';
 
   export let vpn;
   export let vpns;
@@ -116,11 +117,6 @@
       &:hover {
         color: var(--secondary500);
       }
-      svg {
-        width: 20px;
-        min-width: 20px;
-        height: 20px;
-      }
     }
   }
 </style>
@@ -172,7 +168,8 @@
       <a href="/">Mira aquí
         {vpns.filter((vpn) => vpn.compatIndex > 11).length}
         VPNs con mayor compatibilidad
-        <svg><use href="#icon-external-window" /></svg></a>
+        <ExternalLink color="hsl(270, 75%, 70%)" />
+      </a>
     </p>
   {/if}
 </SingleSection>
