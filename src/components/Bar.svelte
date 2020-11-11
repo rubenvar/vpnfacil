@@ -87,12 +87,12 @@
     <div id="general-info">
       <p>Estás viendo {total} VPNs</p>
       <div class="buttons">
-        <button
-          disabled={tableView}
-          on:click={() => view.set('table')}>Tabla</button>
-        <button
-          disabled={!tableView}
-          on:click={() => view.set('blocks')}>Bloques</button>
+        <button disabled={tableView} on:click={() => view.set('table')}>
+          Tabla
+        </button>
+        <button disabled={!tableView} on:click={() => view.set('blocks')}>
+          Bloques
+        </button>
       </div>
     </div>
     <Sort />
