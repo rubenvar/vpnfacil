@@ -1,6 +1,7 @@
 <script>
   import countryFlagEmoji from 'country-flag-emoji';
   import StarRating from 'svelte-star-rating';
+  import { getCountry } from 'country-list-spanish';
 
   import SingleSection from './SingleSection.svelte';
   import Button from './Button.svelte';
@@ -129,7 +130,7 @@
           {#if vpn.basedIn}
             <span>
               {countryFlagEmoji.get(vpn.basedIn).emoji}
-              {countryFlagEmoji.get(vpn.basedIn).name}
+              {getCountry(vpn.basedIn)}
             </span>
           {/if}
           {#if vpn.moneyBack === 'yes'}

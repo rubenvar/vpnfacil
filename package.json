@@ -31,6 +31,7 @@
     "axios": "^0.21.0",
     "chart.js": "^2.9.4",
     "country-flag-emoji": "^1.0.3",
+    "country-list-spanish": "^0.2.0",
     "date-fns": "^2.16.1",
     "dotenv": "^8.2.0",
     "gray-matter": "^4.0.2",
