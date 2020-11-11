@@ -50,6 +50,7 @@
     "svelte-local-storage-store": "^0.1.4",
     "svelte-preprocess": "^4.5.2",
     "svelte-scrollto": "^0.2.0",
-    "svelte-star-rating": "^1.1.1"
+    "svelte-star-rating": "^1.1.1",
+    "tabler-icons-svelte": "^1.0.0"
   }
 }
