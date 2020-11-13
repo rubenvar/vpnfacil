@@ -1,5 +1,4 @@
 <script>
-  // import countryFlagEmoji from 'country-flag-emoji';
   import StarRating from 'svelte-star-rating';
   import flag from 'country-code-emoji';
   import { getCountry } from 'country-list-spanish';
