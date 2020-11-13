@@ -1,5 +1,6 @@
 <script>
-  import countryFlagEmoji from 'country-flag-emoji';
+  // import countryFlagEmoji from 'country-flag-emoji';
+  import flag from 'country-code-emoji';
   import { getCountry } from 'country-list-spanish';
 
   import SingleSection from './SingleSection.svelte';
@@ -65,9 +66,10 @@
     },
   ];
 
-  let country, flag;
+  let country, emoji;
   if (vpn.basedIn) {
-    ({ emoji: flag } = countryFlagEmoji.get(vpn.basedIn));
+    // ({ emoji: flag } = countryFlagEmoji.get(vpn.basedIn));
+    emoji = flag(vpn.basedIn);
     country = getCountry(vpn.basedIn);
   }
 </script>
@@ -201,7 +203,7 @@
           y cuyas leyes aplican</span>
       </div>
       {#if vpn.basedIn}
-        <p id="country">{flag} {country}</p>
+        <p id="country">{emoji} {country}</p>
       {/if}
     </div>
   {/if}
