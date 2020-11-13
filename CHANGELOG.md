@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.17.0] - 2020-11-13
+
+### Changed
+
+- Replace chart.js with Google Charts in the single VPN page. Now the page build is 200kb less, from 350+kb to 100kb 🚀.
+
 ## [1.16.0] - 2020-11-11
 
 ### Changed
