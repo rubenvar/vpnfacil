@@ -149,7 +149,7 @@
             <BarChart
               title={number.title}
               data={number.data}
-              id={vpn.id}
+              single={vpn.id}
               color={vpn.color} />
           {/if}
         </div>

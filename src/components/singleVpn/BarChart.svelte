@@ -1,54 +1,65 @@
 <script>
-  import Chart from 'chart.js';
+  import { GoogleCharts } from 'google-charts';
   import { onMount } from 'svelte';
+
+  let chartContainer;
 
   export let title;
   export let data;
-  export let id;
+  export let single;
   export let color;
 
   // find the index of the single vpn in the whole vpns data array
-  const ind = data.findIndex((obj) => obj.id === id);
-  // and use it to replace a default color with the vpn color in the final
-  const backgroundColor = new Array(data.length).fill('hsl(160, 10%, 90%)');
-  backgroundColor[ind] = color;
+  const ind = data.findIndex((obj) => obj.id === single);
+  // mutate the data array
+  data[ind].color = color;
 
-  function createChart() {
-    var ctx = document.getElementById(`${title}-chart`);
-    var myChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: data.map((obj) => obj.name).reverse(),
-        datasets: [
-          {
-            data: data.map((obj) => obj.value).reverse(),
-            backgroundColor: backgroundColor.reverse(),
-          },
-        ],
+  // prepare data
+  let dataArray = [['vpn', title, { role: 'style' }]];
+  data.forEach((obj) => dataArray.push([obj.name, obj.value, obj.color]));
+
+  function drawChart() {
+    const chart = new GoogleCharts.api.visualization.ColumnChart(
+      chartContainer
+    );
+    const data = GoogleCharts.api.visualization.arrayToDataTable(dataArray);
+    const config = {
+      animation: { startup: true, duration: 250 },
+      backgroundColor: {
+        fill: 'transparent',
       },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        legend: { display: false },
-        scales: {
-          yAxes: [
-            {
-              gridLines: { display: false },
-              ticks: { display: false, beginAtZero: true },
-            },
-          ],
-          xAxes: [{ gridLines: { display: false }, ticks: { display: false } }],
+      bar: {
+        groupWidth: '90%',
+      },
+      chartArea: {
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'transparent',
+      },
+      colors: ['#e3e8e6'],
+      hAxis: {
+        direction: -1, // reverse the order
+        textPosition: 'none',
+      },
+      height: 110,
+      legend: {
+        position: 'none',
+      },
+      vAxis: {
+        baseline: 'none',
+        textPosition: 'none',
+        gridlines: {
+          count: 0,
         },
       },
-    });
+      width: 220,
+    };
+
+    chart.draw(data, config);
   }
-  onMount(createChart);
+
+  // load the thing
+  onMount(() => GoogleCharts.load(drawChart));
 </script>
 
-<style>
-  canvas {
-    width: 220px;
-  }
-</style>
-
-<canvas id={`${title}-chart`} width="220" />
+<div bind:this={chartContainer} />
