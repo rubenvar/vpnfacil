@@ -32,7 +32,7 @@
     const taken = existingScreenshot.match(/\/v(\d+)\//)[1];
     const now = Math.round(Date.now() / 1000);
     // calculate if it's older than 15 days
-    const max = 30 * 24 * 60 * 60;
+    const max = 15 * 24 * 60 * 60;
     const isOld = now - taken > max;
     // if it's recent, do nothing
     // if it's old, call lambda
