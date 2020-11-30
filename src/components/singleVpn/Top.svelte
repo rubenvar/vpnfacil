@@ -115,7 +115,6 @@
           {vpn.name}</a>
       </h1>
       <StarRating
-        id="rating-top"
         rating={vpn.rating / 20}
         config={{ fullColor: '#ffc107', showText: false, size: 28 }}
         style="margin: 0 0 30px;" />

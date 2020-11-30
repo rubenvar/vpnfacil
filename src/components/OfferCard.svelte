@@ -128,7 +128,6 @@
         <img src="/vpns/{vpn.id}.jpg" alt="Logo de {vpn.name}" />
       </a>
       <StarRating
-        id={vpn.id}
         rating={vpn.rating / 20}
         config={{ size: 30, fullColor: '#ffc107', showText: true }}
         style="" />

@@ -122,7 +122,6 @@
       <h2><a href="/vpn/{slug}/">{name}</a></h2>
       {#if rating}
         <StarRating
-          {id}
           rating={rating / 20}
           config={{ fullColor: '#ffd65a', emptyColor: '#a9a9a9', size: 15 }}
           style="justify-content: center;margin: 7px 0;" />

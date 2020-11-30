@@ -223,7 +223,6 @@
 
     {#if rating}
       <StarRating
-        {id}
         rating={rating / 20}
         config={{ fullColor: '#ffc107', showText: true }}
         style="justify-content: center;margin: 20px 0 0;" />

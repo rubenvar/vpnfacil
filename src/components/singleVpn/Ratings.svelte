@@ -86,7 +86,6 @@
           {#if rat.text}<span>{rat.text}</span>{/if}
         </div>
         <StarRating
-          id="rat-{i}"
           rating={rat.value / 20}
           config={{ fullColor: '#ffc107', showText: true, size: 28 }}
           style="justify-content: flex-end;margin: 0;" />
