@@ -198,8 +198,8 @@
       <div class="title">
         <h3>País de Registro</h3>
         <span>territorio donde está registrado
-          {vpn.name}
-          y cuyas leyes aplican</span>
+          {' '}{vpn.name}
+          {' '}y cuyas leyes aplican</span>
       </div>
       {#if vpn.basedIn}
         <p id="country">{emoji} {country}</p>

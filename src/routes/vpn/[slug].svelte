@@ -48,7 +48,7 @@
 <svelte:head>
   <title>{title}</title>
   <meta name="description" content={vpn.description} />
-  <link rel="canonical" href="https://vpnfacil.com/vpn/{vpn.slug}/" />
+  <link rel="canonical" href="https://sapper.vpnfacil.com/vpn/{vpn.slug}/" />
   <meta property="og:title" content={title} />
 </svelte:head>
 
