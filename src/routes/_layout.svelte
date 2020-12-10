@@ -2,7 +2,7 @@
   // import * as Sentry from '@sentry/browser';
   // import { Integrations } from '@sentry/tracing';
   // import { stores } from '@sapper/app';
-  import GoogleAnalytics from '../components/GoogleAnalytics.svelte';
+  // import GoogleAnalytics from '../components/GoogleAnalytics.svelte';
   import Header from '../components/Header.svelte';
   import Hero from '../components/Hero.svelte';
   import Footer from '../components/Footer.svelte';
@@ -33,9 +33,9 @@
   }
 </style>
 
-{#if !dev}
+<!-- {#if !dev}
   <GoogleAnalytics />
-{/if}
+{/if} -->
 
 <Header {segment} />
 
